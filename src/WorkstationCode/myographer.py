@@ -5,7 +5,7 @@ import pyqtgraph as pg
 import serial
 import keyboard
 # Create object serial port
-portName = "COM4"                      # replace this port name by yours!
+portName = "/dev/tty.usbserial-DA01QTCZ"                      # replace this port name by yours!
 baudrate = 9600
 ser = serial.Serial(portName,baudrate)
 
@@ -13,21 +13,21 @@ ser = serial.Serial(portName,baudrate)
 app = QtGui.QApplication([])            # you MUST do this once (initialize things)
 ##################
 win = pg.GraphicsWindow(title="Signal from serialcom 4") # creates a window
-p = win.addPlot(title="Realtime plot")  # creates empty space for the plot in the window
+p = win.addPlot(title="myo1")  # creates empty space for the plot in the window
 p.showButtons()
 curve = p.plot()                        # create an empty "plot" (a curve to plot)
 
-windowWidth = 1500                       # width of the window displaying the curve
+windowWidth = 1000                       # width of the window displaying the curve
 Xm = linspace(0,0,windowWidth)          # create array that will contain the relevant time series     
 ptr = -windowWidth                      # set first x position
 
 
 win2 = pg.GraphicsWindow(title="Signal from serialcom 5") # creates a window
-p2 = win.addPlot(title="Realtime plot")  # creates empty space for the plot in the window
+p2 = win.addPlot(title="myo2")  # creates empty space for the plot in the window
 p2.showButtons()
 curve2 = p2.plot()                        # create an empty "plot" (a curve to plot)
 
-windowWidth2 = 1500                       # width of the window displaying the curve
+windowWidth2 = 1000                       # width of the window displaying the curve
 Xm2 = linspace(0,0,windowWidth2)          # create array that will contain the relevant time series     
 ptr2 = -windowWidth2     
 
