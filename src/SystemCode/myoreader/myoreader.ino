@@ -48,17 +48,17 @@ void loop() { //implements a task which will run at Fs > 2Fc
 
   //prints to serial usb port to computer
   Serial.println(indexFILTERED);
-  Serial.println(pinkyFILTERED);
+  //Serial.println(pinkyFILTERED);
 
   //--------------------------------------Data Interpretation--------------------------------//
-  if(pinkyFILTERED > 200)
-  {
-    digitalWrite(PINKYOUT,HIGH);
-  }
-  else
-  {
-    digitalWrite(PINKYOUT,LOW);
-  }
+//  if(pinkyFILTERED > 200)
+//  {
+//    digitalWrite(PINKYOUT,HIGH);
+//  }
+//  else
+//  {
+//    digitalWrite(PINKYOUT,LOW);
+//  }
 
   
   if(indexFILTERED > 200)
