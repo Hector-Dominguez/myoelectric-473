@@ -26,4 +26,12 @@ I had a really frustrating time with python :( . Now I have everything I need in
 		* From supp. videos for the paper, when a position is reached, the EMG waveform tends to oscillate during hold periods and at rest the signal goes to a baseline 0 or something 	
 	*  	
 
+##10/21/18
+###Agenda:
+
+1. Figure out muscle(s) to measure for index finger
+2. Implement Linear filtering algo from paper
+	* Implement InitializeChannels and get Yc & Yr (Done?)
+	* Implement samplingTask ()
+	* Implement processingTask()
 

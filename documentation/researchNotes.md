@@ -6,6 +6,7 @@ Links to papers and websites -
 3. [Design and Development of EMG Controlled Prosthetics Limb](https://www.sciencedirect.com/science/article/pii/S1877705812023223)
 4. [Learning a Novel Myoelectric-Controlled Interface Task](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2576223/)
 5. [Myoelectric Prosthetic hand video](https://www.youtube.com/watch?v=U-ROKIqaH08)
+6. https://www.collectionscanada.gc.ca/obj/thesescanada/vol2/OKQ/TC-OKQ-1574.pdf
 
 ##Myoelectric Sensor Info
 * Adafruit Myoware Sensor:
