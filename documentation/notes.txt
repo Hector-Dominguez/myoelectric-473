@@ -1,4 +1,0 @@
-10/18/18
-had a really frustrating time with python :( . Now I have everything I need installed in order to use the python we had to plot, but it is really slow. Even with changing windowwidth there is a fuckton on latency. Gonna try and use the arduino Serial Plotter.
-
-
