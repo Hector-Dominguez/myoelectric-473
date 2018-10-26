@@ -35,3 +35,10 @@ I had a really frustrating time with python :( . Now I have everything I need in
 	* Implement samplingTask ()
 	* Implement processingTask()
 
+##10/24/18
+###Agenda:
+
+1. Design classes for Myosensors and MyoHand
+2. Work on filtering algorithm for myoinput
+3. Work on sensor initialization function (getting Yc,Yr) for each sensor
+4. Start algorithm on getting YVALi - the muscle activation value
