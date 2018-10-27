@@ -10,13 +10,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CircularBuffer/MyoDataCollectTests.cpp"
-            timestampString = "562123702.508957"
+            timestampString = "562278789.3740849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
             landmarkName = "test1()"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CircularBuffer/MyoHand.cpp"
+            timestampString = "562278789.374192"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MyoHand::MyoHand(FourTuple Channels, int windowSize)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyoHand::MyoHand(FourTuple, int)"
+                  moduleName = "CircularBuffer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hector2/Desktop/Senior/EECS473/project/src/SystemCode/xmcCode/CircularBuffer/MyoHand.cpp"
+                  timestampString = "562278789.7870539"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyoHand::MyoHand(FourTuple, int)"
+                  moduleName = "CircularBuffer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hector2/Desktop/Senior/EECS473/project/src/SystemCode/xmcCode/CircularBuffer/MyoHand.cpp"
+                  timestampString = "562278789.789685"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C392EBCE2181317B00F6D20C /* MyoDataCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C392EBCC2181317B00F6D20C /* MyoDataCollector.cpp */; };
-		C392EBD021814D6200F6D20C /* MyoDataCollectTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C392EBCF2181496400F6D20C /* MyoDataCollectTests.cpp */; };
-		C392EBD72183B17400F6D20C /* MyoHand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C392EBD12182910F00F6D20C /* MyoHand.cpp */; };
+		C392EBE52183B20600F6D20C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C392EBE42183B20600F6D20C /* main.c */; };
+		C392EBED2183B22700F6D20C /* MyoDataCollector.c in Sources */ = {isa = PBXBuildFile; fileRef = C392EBEC2183B22700F6D20C /* MyoDataCollector.c */; };
+		C3D30D502184FFBE003F264F /* MyoHand.c in Sources */ = {isa = PBXBuildFile; fileRef = C3D30D4E2184FA30003F264F /* MyoHand.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C392EBBF2181307400F6D20C /* CopyFiles */ = {
+		C392EBDF2183B20600F6D20C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,16 +25,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C392EBC12181307500F6D20C /* CircularBuffer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CircularBuffer; sourceTree = BUILT_PRODUCTS_DIR; };
-		C392EBCC2181317B00F6D20C /* MyoDataCollector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoDataCollector.cpp; sourceTree = "<group>"; };
-		C392EBCD2181317B00F6D20C /* MyoDataCollector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MyoDataCollector.hpp; sourceTree = "<group>"; };
-		C392EBCF2181496400F6D20C /* MyoDataCollectTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoDataCollectTests.cpp; sourceTree = "<group>"; };
-		C392EBD12182910F00F6D20C /* MyoHand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoHand.cpp; sourceTree = "<group>"; };
-		C392EBD22182910F00F6D20C /* MyoHand.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MyoHand.hpp; sourceTree = "<group>"; };
+		C392EBE12183B20600F6D20C /* MyoSensor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyoSensor; sourceTree = BUILT_PRODUCTS_DIR; };
+		C392EBE42183B20600F6D20C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C392EBEB2183B22700F6D20C /* MyoDataCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoDataCollector.h; sourceTree = "<group>"; };
+		C392EBEC2183B22700F6D20C /* MyoDataCollector.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = MyoDataCollector.c; sourceTree = "<group>"; };
+		C3D30D4D2184FA30003F264F /* MyoHand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoHand.h; sourceTree = "<group>"; };
+		C3D30D4E2184FA30003F264F /* MyoHand.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = MyoHand.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C392EBBE2181307400F6D20C /* Frameworks */ = {
+		C392EBDE2183B20600F6D20C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,101 +44,100 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C392EBB82181307400F6D20C = {
+		C392EBD82183B20600F6D20C = {
 			isa = PBXGroup;
 			children = (
-				C392EBC32181307500F6D20C /* CircularBuffer */,
-				C392EBC22181307500F6D20C /* Products */,
+				C392EBE32183B20600F6D20C /* MyoSensor */,
+				C392EBE22183B20600F6D20C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C392EBC22181307500F6D20C /* Products */ = {
+		C392EBE22183B20600F6D20C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C392EBC12181307500F6D20C /* CircularBuffer */,
+				C392EBE12183B20600F6D20C /* MyoSensor */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C392EBC32181307500F6D20C /* CircularBuffer */ = {
+		C392EBE32183B20600F6D20C /* MyoSensor */ = {
 			isa = PBXGroup;
 			children = (
-				C392EBCC2181317B00F6D20C /* MyoDataCollector.cpp */,
-				C392EBCD2181317B00F6D20C /* MyoDataCollector.hpp */,
-				C392EBCF2181496400F6D20C /* MyoDataCollectTests.cpp */,
-				C392EBD12182910F00F6D20C /* MyoHand.cpp */,
-				C392EBD22182910F00F6D20C /* MyoHand.hpp */,
+				C392EBE42183B20600F6D20C /* main.c */,
+				C392EBEB2183B22700F6D20C /* MyoDataCollector.h */,
+				C392EBEC2183B22700F6D20C /* MyoDataCollector.c */,
+				C3D30D4D2184FA30003F264F /* MyoHand.h */,
+				C3D30D4E2184FA30003F264F /* MyoHand.c */,
 			);
-			path = CircularBuffer;
+			path = MyoSensor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C392EBC02181307400F6D20C /* CircularBuffer */ = {
+		C392EBE02183B20600F6D20C /* MyoSensor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C392EBC82181307500F6D20C /* Build configuration list for PBXNativeTarget "CircularBuffer" */;
+			buildConfigurationList = C392EBE82183B20600F6D20C /* Build configuration list for PBXNativeTarget "MyoSensor" */;
 			buildPhases = (
-				C392EBBD2181307400F6D20C /* Sources */,
-				C392EBBE2181307400F6D20C /* Frameworks */,
-				C392EBBF2181307400F6D20C /* CopyFiles */,
+				C392EBDD2183B20600F6D20C /* Sources */,
+				C392EBDE2183B20600F6D20C /* Frameworks */,
+				C392EBDF2183B20600F6D20C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CircularBuffer;
-			productName = CircularBuffer;
-			productReference = C392EBC12181307500F6D20C /* CircularBuffer */;
+			name = MyoSensor;
+			productName = MyoSensor;
+			productReference = C392EBE12183B20600F6D20C /* MyoSensor */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C392EBB92181307400F6D20C /* Project object */ = {
+		C392EBD92183B20600F6D20C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Hector Dominguez";
 				TargetAttributes = {
-					C392EBC02181307400F6D20C = {
+					C392EBE02183B20600F6D20C = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
-			buildConfigurationList = C392EBBC2181307400F6D20C /* Build configuration list for PBXProject "CircularBuffer" */;
+			buildConfigurationList = C392EBDC2183B20600F6D20C /* Build configuration list for PBXProject "MyoSensor" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = C392EBB82181307400F6D20C;
-			productRefGroup = C392EBC22181307500F6D20C /* Products */;
+			mainGroup = C392EBD82183B20600F6D20C;
+			productRefGroup = C392EBE22183B20600F6D20C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C392EBC02181307400F6D20C /* CircularBuffer */,
+				C392EBE02183B20600F6D20C /* MyoSensor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C392EBBD2181307400F6D20C /* Sources */ = {
+		C392EBDD2183B20600F6D20C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C392EBD72183B17400F6D20C /* MyoHand.cpp in Sources */,
-				C392EBD021814D6200F6D20C /* MyoDataCollectTests.cpp in Sources */,
-				C392EBCE2181317B00F6D20C /* MyoDataCollector.cpp in Sources */,
+				C3D30D502184FFBE003F264F /* MyoHand.c in Sources */,
+				C392EBE52183B20600F6D20C /* main.c in Sources */,
+				C392EBED2183B22700F6D20C /* MyoDataCollector.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C392EBC62181307500F6D20C /* Debug */ = {
+		C392EBE62183B20600F6D20C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -194,12 +193,10 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		C392EBC72181307500F6D20C /* Release */ = {
+		C392EBE72183B20600F6D20C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,51 +245,47 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		C392EBC92181307500F6D20C /* Debug */ = {
+		C392EBE92183B20600F6D20C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		C392EBCA2181307500F6D20C /* Release */ = {
+		C392EBEA2183B20600F6D20C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C392EBBC2181307400F6D20C /* Build configuration list for PBXProject "CircularBuffer" */ = {
+		C392EBDC2183B20600F6D20C /* Build configuration list for PBXProject "MyoSensor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C392EBC62181307500F6D20C /* Debug */,
-				C392EBC72181307500F6D20C /* Release */,
+				C392EBE62183B20600F6D20C /* Debug */,
+				C392EBE72183B20600F6D20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C392EBC82181307500F6D20C /* Build configuration list for PBXNativeTarget "CircularBuffer" */ = {
+		C392EBE82183B20600F6D20C /* Build configuration list for PBXNativeTarget "MyoSensor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C392EBC92181307500F6D20C /* Debug */,
-				C392EBCA2181307500F6D20C /* Release */,
+				C392EBE92183B20600F6D20C /* Debug */,
+				C392EBEA2183B20600F6D20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C392EBB92181307400F6D20C /* Project object */;
+	rootObject = C392EBD92183B20600F6D20C /* Project object */;
 }
