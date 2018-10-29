@@ -11,21 +11,21 @@
     <downwardMapList xsi:type="ResourceModel:App" href="../../CLOCK_XMC1/v4_0_20/CLOCK_XMC1_0.app#/"/>
   </requiredApps>
   <hwResources name="Global" URI="http://resources/4.1.12/app/GLOBAL_CCU4/0/hwres_peripheral_ccu4_global" resourceGroupUri="peripheral/ccu4/sv0/global" solverVariable="true" mResGrpUri="peripheral/ccu4/sv0/global">
-    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/ccu40/ccu40_0.dd#//@provided.0"/>
+    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/ccu41/ccu41_1.dd#//@provided.13"/>
     <solverVarMap index="2">
-      <value variableName="sv0" solverValue="0"/>
+      <value variableName="sv0" solverValue="1"/>
     </solverVarMap>
     <solverVarMap index="2">
-      <value variableName="sv0" solverValue="0"/>
+      <value variableName="sv0" solverValue="1"/>
     </solverVarMap>
   </hwResources>
   <hwResources name="CCU4 sync start" URI="http://resources/4.1.12/app/GLOBAL_CCU4/0/hwres_peripheral_scu_gcu_ccu4_global_enable" resourceGroupUri="peripheral/scu/*/gcu/ccu4_global_enable/sv0" solverVariable="true" mResGrpUri="peripheral/scu/*/gcu/ccu4_global_enable/sv0">
-    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/scu/scu_0.dd#//@provided.3"/>
+    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/scu/scu_0.dd#//@provided.4"/>
     <solverVarMap index="5">
-      <value variableName="sv0" solverValue="0"/>
+      <value variableName="sv0" solverValue="1"/>
     </solverVarMap>
     <solverVarMap index="5">
-      <value variableName="sv0" solverValue="0"/>
+      <value variableName="sv0" solverValue="1"/>
     </solverVarMap>
   </hwResources>
 </ResourceModel:App>

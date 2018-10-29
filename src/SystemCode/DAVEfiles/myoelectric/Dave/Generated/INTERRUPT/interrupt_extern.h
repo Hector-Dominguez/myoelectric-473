@@ -56,13 +56,17 @@
  * MACROS
  **********************************************************************************************************************/
 	
-#define SampleEMGs IRQ_Hdlr_0
+#define SampleEMGs IRQ_Hdlr_21
+		
+#define printValue IRQ_Hdlr_0
 		
 /***********************************************************************************************************************
  * EXTERN DECLARATIONS
 ***********************************************************************************************************************/
 	
 extern const INTERRUPT_t samplingInterrupt; 
+	
+extern const INTERRUPT_t printingValueInterrupt; 
 	
 #endif  /* INTERRUPT_EXTERN_H */
 

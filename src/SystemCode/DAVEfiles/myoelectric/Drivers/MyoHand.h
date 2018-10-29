@@ -31,6 +31,9 @@ struct FourTuple GetActivationLevels(struct MyoHand * myohandPtr);
 //5 seconds contracted to compute yC - comfortable contraction level
 void InitializeLevels(struct MyoHand * myohandPtr);
 
+//Delays for X milliseconds, provided nothing interrupts this
+void delayMils(uint x);
+
 
 #endif /* MyoHand_h */
 

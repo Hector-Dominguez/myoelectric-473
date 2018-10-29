@@ -75,7 +75,7 @@ XMC_CCU4_SLICE_COMPARE_CONFIG_t TIMER_0_config =
   .dither_duty_cycle   = false,
   .prescaler_mode      = XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL,
   .mcm_enable          = false,
-  .prescaler_initval   = 11U,
+  .prescaler_initval   = 1U,
   .float_limit         = 0U,
   .dither_limit        = 0U,
   .passive_level       = XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_LOW, 
@@ -84,13 +84,53 @@ XMC_CCU4_SLICE_COMPARE_CONFIG_t TIMER_0_config =
 
 TIMER_t TIMER_0 = 
 {
-  .ccu4_slice_ptr         = (XMC_CCU4_SLICE_t*) CCU40_CC41,
+  .ccu4_slice_ptr         = (XMC_CCU4_SLICE_t*) CCU41_CC41,
   .ccu4_slice_number      = 1U,
-  .time_interval_value_us = 100000000U,
+  .time_interval_value_us = 97400U,
   .timer_max_value_us     = 2236928000U,
   .timer_min_value_us     = 10U,
   .global_ccu4_handler    = (GLOBAL_CCU4_t*)&GLOBAL_CCU4_0, 
   .ccu4_slice_config_ptr  = (XMC_CCU4_SLICE_COMPARE_CONFIG_t*)&TIMER_0_config,
+  .shadow_mask            = (uint32_t)((uint32_t)XMC_CCU4_SHADOW_TRANSFER_SLICE_1 | 
+                                       (uint32_t)XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_1),
+  .ccu4_period_match_node = XMC_CCU4_SLICE_SR_ID_0,
+  .timer_module           = TIMER_MODULE_CCU4,
+  .period_value           = 46751U,
+  .start_control          = true,
+  .period_match_enable    = true,
+  .initialized            = false
+};
+
+                      
+/**
+ * @brief Contents entered via GUI
+ */
+
+XMC_CCU4_SLICE_COMPARE_CONFIG_t TIMER_1_config =
+{
+  .timer_mode          = XMC_CCU4_SLICE_TIMER_COUNT_MODE_EA,
+  .monoshot            = XMC_CCU4_SLICE_TIMER_REPEAT_MODE_REPEAT,
+  .shadow_xfer_clear   = false,
+  .dither_timer_period = false,
+  .dither_duty_cycle   = false,
+  .prescaler_mode      = XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL,
+  .mcm_enable          = false,
+  .prescaler_initval   = 12U,
+  .float_limit         = 0U,
+  .dither_limit        = 0U,
+  .passive_level       = XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_LOW, 
+  .timer_concatenation = false
+};
+
+TIMER_t TIMER_1 = 
+{
+  .ccu4_slice_ptr         = (XMC_CCU4_SLICE_t*) CCU40_CC41,
+  .ccu4_slice_number      = 1U,
+  .time_interval_value_us = 200000000U,
+  .timer_max_value_us     = 2236928000U,
+  .timer_min_value_us     = 10U,
+  .global_ccu4_handler    = (GLOBAL_CCU4_t*)&GLOBAL_CCU4_1, 
+  .ccu4_slice_config_ptr  = (XMC_CCU4_SLICE_COMPARE_CONFIG_t*)&TIMER_1_config,
   .shadow_mask            = (uint32_t)((uint32_t)XMC_CCU4_SHADOW_TRANSFER_SLICE_1 | 
                                        (uint32_t)XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_1),
   .ccu4_period_match_node = XMC_CCU4_SLICE_SR_ID_0,

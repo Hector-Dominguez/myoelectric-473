@@ -111,7 +111,7 @@
   69:../Dave/Generated/DAVE.c ****      init_status = (DAVE_STATUS_t)CLOCK_XMC1_Init(&CLOCK_XMC1_0);
   44              	 .loc 1 69 0
   45 000c FC1D     	 add r4,r7,#7
-  46 000e 1C4B     	 ldr r3,.L7
+  46 000e 2C4B     	 ldr r3,.L10
   47 0010 181C     	 mov r0,r3
   48 0012 FFF7FEFF 	 bl CLOCK_XMC1_Init
   49 0016 031C     	 mov r3,r0
@@ -128,7 +128,7 @@
   74:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)ADC_MEASUREMENT_Init(&ADC_MEASUREMENT_0); 
   56              	 .loc 1 74 0
   57 0022 FC1D     	 add r4,r7,#7
-  58 0024 174B     	 ldr r3,.L7+4
+  58 0024 274B     	 ldr r3,.L10+4
   59 0026 181C     	 mov r0,r3
   60 0028 FFF7FEFF 	 bl ADC_MEASUREMENT_Init
   61 002c 031C     	 mov r3,r0
@@ -146,7 +146,7 @@
   79:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)TIMER_Init(&TIMER_0); 
   69              	 .loc 1 79 0
   70 0038 FC1D     	 add r4,r7,#7
-  71 003a 134B     	 ldr r3,.L7+8
+  71 003a 234B     	 ldr r3,.L10+8
   72 003c 181C     	 mov r0,r3
   73 003e FFF7FEFF 	 bl TIMER_Init
   74 0042 031C     	 mov r3,r0
@@ -164,7 +164,7 @@
   84:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&samplingInterrupt); 
   82              	 .loc 1 84 0
   83 004e FC1D     	 add r4,r7,#7
-  84 0050 0E4B     	 ldr r3,.L7+12
+  84 0050 1E4B     	 ldr r3,.L10+12
   85 0052 181C     	 mov r0,r3
   86 0054 FFF7FEFF 	 bl INTERRUPT_Init
   87 0058 031C     	 mov r3,r0
@@ -182,63 +182,120 @@
   89:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)DIGITAL_IO_Init(&LEDpin); 
   95              	 .loc 1 89 0
   96 0064 FC1D     	 add r4,r7,#7
-  97 0066 0A4B     	 ldr r3,.L7+16
+  97 0066 1A4B     	 ldr r3,.L10+16
   98 0068 181C     	 mov r0,r3
   99 006a FFF7FEFF 	 bl DIGITAL_IO_Init
  100 006e 031C     	 mov r3,r0
  101 0070 2370     	 strb r3,[r4]
  102              	.L5:
-  90:../Dave/Generated/DAVE.c ****    }  
-  91:../Dave/Generated/DAVE.c ****   return init_status;
+  90:../Dave/Generated/DAVE.c ****    } 
+  91:../Dave/Generated/DAVE.c ****   if (init_status == DAVE_STATUS_SUCCESS)
  103              	 .loc 1 91 0
  104 0072 FB1D     	 add r3,r7,#7
  105 0074 1B78     	 ldrb r3,[r3]
-  92:../Dave/Generated/DAVE.c **** } /**  End of function DAVE_Init */
- 106              	 .loc 1 92 0
- 107 0076 181C     	 mov r0,r3
- 108 0078 BD46     	 mov sp,r7
- 109 007a 03B0     	 add sp,sp,#12
- 110              	 
- 111 007c 90BD     	 pop {r4,r7,pc}
- 112              	.L8:
- 113 007e C046     	 .align 2
- 114              	.L7:
- 115 0080 00000000 	 .word CLOCK_XMC1_0
- 116 0084 00000000 	 .word ADC_MEASUREMENT_0
- 117 0088 00000000 	 .word TIMER_0
- 118 008c 00000000 	 .word samplingInterrupt
- 119 0090 00000000 	 .word LEDpin
- 120              	 .cfi_endproc
- 121              	.LFE222:
- 123              	 .text
- 124              	.Letext0:
- 125              	 .file 2 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 126              	 .file 3 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 127              	 .file 4 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
- 128              	 .file 5 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
- 129              	 .file 6 "../Dave/Generated/CLOCK_XMC1/clock_xmc1.h"
- 130              	 .file 7 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_vadc.h"
- 131              	 .file 8 "../Dave/Generated/GLOBAL_ADC/global_adc.h"
- 132              	 .file 9 "../Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
- 133              	 .file 10 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_ccu4.h"
- 134              	 .file 11 "../Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
- 135              	 .file 12 "../Dave/Generated/TIMER/timer.h"
- 136              	 .file 13 "../Dave/Generated/INTERRUPT/interrupt.h"
- 137              	 .file 14 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_gpio.h"
- 138              	 .file 15 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_gpio.h"
- 139              	 .file 16 "../Dave/Generated/DIGITAL_IO/digital_io.h"
- 140              	 .file 17 "../Dave/Generated/DAVE.h"
- 141              	 .file 18 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
- 142              	 .file 19 "../Dave/Generated/CLOCK_XMC1/clock_xmc1_extern.h"
- 143              	 .file 20 "../Dave/Generated/ADC_MEASUREMENT/ADC_MEASUREMENT_Extern.h"
- 144              	 .file 21 "../Dave/Generated/TIMER/timer_extern.h"
- 145              	 .file 22 "../Dave/Generated/INTERRUPT/interrupt_extern.h"
- 146              	 .file 23 "../Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+ 106 0076 002B     	 cmp r3,#0
+ 107 0078 06D1     	 bne .L6
+  92:../Dave/Generated/DAVE.c ****   {
+  93:../Dave/Generated/DAVE.c **** 	 /**  Initialization of DIGITAL_IO APP instance OutputPin1 */
+  94:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)DIGITAL_IO_Init(&OutputPin1); 
+ 108              	 .loc 1 94 0
+ 109 007a FC1D     	 add r4,r7,#7
+ 110 007c 154B     	 ldr r3,.L10+20
+ 111 007e 181C     	 mov r0,r3
+ 112 0080 FFF7FEFF 	 bl DIGITAL_IO_Init
+ 113 0084 031C     	 mov r3,r0
+ 114 0086 2370     	 strb r3,[r4]
+ 115              	.L6:
+  95:../Dave/Generated/DAVE.c ****    } 
+  96:../Dave/Generated/DAVE.c ****   if (init_status == DAVE_STATUS_SUCCESS)
+ 116              	 .loc 1 96 0
+ 117 0088 FB1D     	 add r3,r7,#7
+ 118 008a 1B78     	 ldrb r3,[r3]
+ 119 008c 002B     	 cmp r3,#0
+ 120 008e 06D1     	 bne .L7
+  97:../Dave/Generated/DAVE.c ****   {
+  98:../Dave/Generated/DAVE.c **** 	 /**  Initialization of TIMER APP instance TIMER_1 */
+  99:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)TIMER_Init(&TIMER_1); 
+ 121              	 .loc 1 99 0
+ 122 0090 FC1D     	 add r4,r7,#7
+ 123 0092 114B     	 ldr r3,.L10+24
+ 124 0094 181C     	 mov r0,r3
+ 125 0096 FFF7FEFF 	 bl TIMER_Init
+ 126 009a 031C     	 mov r3,r0
+ 127 009c 2370     	 strb r3,[r4]
+ 128              	.L7:
+ 100:../Dave/Generated/DAVE.c ****    } 
+ 101:../Dave/Generated/DAVE.c ****   if (init_status == DAVE_STATUS_SUCCESS)
+ 129              	 .loc 1 101 0
+ 130 009e FB1D     	 add r3,r7,#7
+ 131 00a0 1B78     	 ldrb r3,[r3]
+ 132 00a2 002B     	 cmp r3,#0
+ 133 00a4 06D1     	 bne .L8
+ 102:../Dave/Generated/DAVE.c ****   {
+ 103:../Dave/Generated/DAVE.c **** 	 /**  Initialization of INTERRUPT APP instance printingValueInterrupt */
+ 104:../Dave/Generated/DAVE.c **** 	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&printingValueInterrupt); 
+ 134              	 .loc 1 104 0
+ 135 00a6 FC1D     	 add r4,r7,#7
+ 136 00a8 0C4B     	 ldr r3,.L10+28
+ 137 00aa 181C     	 mov r0,r3
+ 138 00ac FFF7FEFF 	 bl INTERRUPT_Init
+ 139 00b0 031C     	 mov r3,r0
+ 140 00b2 2370     	 strb r3,[r4]
+ 141              	.L8:
+ 105:../Dave/Generated/DAVE.c ****    }  
+ 106:../Dave/Generated/DAVE.c ****   return init_status;
+ 142              	 .loc 1 106 0
+ 143 00b4 FB1D     	 add r3,r7,#7
+ 144 00b6 1B78     	 ldrb r3,[r3]
+ 107:../Dave/Generated/DAVE.c **** } /**  End of function DAVE_Init */
+ 145              	 .loc 1 107 0
+ 146 00b8 181C     	 mov r0,r3
+ 147 00ba BD46     	 mov sp,r7
+ 148 00bc 03B0     	 add sp,sp,#12
+ 149              	 
+ 150 00be 90BD     	 pop {r4,r7,pc}
+ 151              	.L11:
+ 152              	 .align 2
+ 153              	.L10:
+ 154 00c0 00000000 	 .word CLOCK_XMC1_0
+ 155 00c4 00000000 	 .word ADC_MEASUREMENT_0
+ 156 00c8 00000000 	 .word TIMER_0
+ 157 00cc 00000000 	 .word samplingInterrupt
+ 158 00d0 00000000 	 .word LEDpin
+ 159 00d4 00000000 	 .word OutputPin1
+ 160 00d8 00000000 	 .word TIMER_1
+ 161 00dc 00000000 	 .word printingValueInterrupt
+ 162              	 .cfi_endproc
+ 163              	.LFE222:
+ 165              	 .text
+ 166              	.Letext0:
+ 167              	 .file 2 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 168              	 .file 3 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 169              	 .file 4 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
+ 170              	 .file 5 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
+ 171              	 .file 6 "../Dave/Generated/CLOCK_XMC1/clock_xmc1.h"
+ 172              	 .file 7 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_vadc.h"
+ 173              	 .file 8 "../Dave/Generated/GLOBAL_ADC/global_adc.h"
+ 174              	 .file 9 "../Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 175              	 .file 10 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_ccu4.h"
+ 176              	 .file 11 "../Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+ 177              	 .file 12 "../Dave/Generated/TIMER/timer.h"
+ 178              	 .file 13 "../Dave/Generated/INTERRUPT/interrupt.h"
+ 179              	 .file 14 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_gpio.h"
+ 180              	 .file 15 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_gpio.h"
+ 181              	 .file 16 "../Dave/Generated/DIGITAL_IO/digital_io.h"
+ 182              	 .file 17 "../Dave/Generated/DAVE.h"
+ 183              	 .file 18 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+ 184              	 .file 19 "../Dave/Generated/CLOCK_XMC1/clock_xmc1_extern.h"
+ 185              	 .file 20 "../Dave/Generated/ADC_MEASUREMENT/ADC_MEASUREMENT_Extern.h"
+ 186              	 .file 21 "../Dave/Generated/TIMER/timer_extern.h"
+ 187              	 .file 22 "../Dave/Generated/INTERRUPT/interrupt_extern.h"
+ 188              	 .file 23 "../Dave/Generated/DIGITAL_IO/digital_io_extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 DAVE.c
     {standard input}:18     .text.DAVE_Init:00000000 $t
     {standard input}:23     .text.DAVE_Init:00000000 DAVE_Init
-    {standard input}:115    .text.DAVE_Init:00000080 $d
+    {standard input}:154    .text.DAVE_Init:000000c0 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
@@ -252,3 +309,6 @@ ADC_MEASUREMENT_0
 TIMER_0
 samplingInterrupt
 LEDpin
+OutputPin1
+TIMER_1
+printingValueInterrupt

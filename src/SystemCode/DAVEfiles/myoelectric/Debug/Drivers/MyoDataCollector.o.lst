@@ -107,380 +107,379 @@
   20:../Drivers/MyoDataCollector.c ****     {
   85              	 .loc 1 20 0 is_stmt 0 discriminator 1
   86 004c FB69     	 ldr r3,[r7,#28]
-  87 004e 632B     	 cmp r3,#99
-  88 0050 EDDD     	 ble .L3
-  89              	.LBE2:
+  87 004e 0E4A     	 ldr r2,.L4
+  88 0050 9342     	 cmp r3,r2
+  89 0052 ECDD     	 ble .L3
+  90              	.LBE2:
   23:../Drivers/MyoDataCollector.c ****     }
   24:../Drivers/MyoDataCollector.c ****     myoDataPtr->oldestIdx = 0;
-  90              	 .loc 1 24 0 is_stmt 1
-  91 0052 7A68     	 ldr r2,[r7,#4]
-  92 0054 C923     	 mov r3,#201
-  93 0056 DB00     	 lsl r3,r3,#3
+  91              	 .loc 1 24 0 is_stmt 1
+  92 0054 7B68     	 ldr r3,[r7,#4]
+  93 0056 0D4A     	 ldr r2,.L4+4
   94 0058 0021     	 mov r1,#0
-  95 005a D150     	 str r1,[r2,r3]
+  95 005a 9950     	 str r1,[r3,r2]
   25:../Drivers/MyoDataCollector.c ****     myoDataPtr->recentIdx = DataWindow - 1;
   96              	 .loc 1 25 0
   97 005c 7B68     	 ldr r3,[r7,#4]
-  98 005e 094A     	 ldr r2,.L4
-  99 0060 6321     	 mov r1,#99
+  98 005e 0C4A     	 ldr r2,.L4+8
+  99 0060 0949     	 ldr r1,.L4
  100 0062 9950     	 str r1,[r3,r2]
   26:../Drivers/MyoDataCollector.c ****     myoDataPtr->SIZE = DataWindow;
  101              	 .loc 1 26 0
  102 0064 7B68     	 ldr r3,[r7,#4]
- 103 0066 6422     	 mov r2,#100
- 104 0068 1A60     	 str r2,[r3]
+ 103 0066 AF22     	 mov r2,#175
+ 104 0068 9200     	 lsl r2,r2,#2
+ 105 006a 1A60     	 str r2,[r3]
   27:../Drivers/MyoDataCollector.c ****     myoDataPtr->averages = zeroVals;
- 105              	 .loc 1 27 0
- 106 006a 7B68     	 ldr r3,[r7,#4]
- 107 006c 064A     	 ldr r2,.L4+4
- 108 006e 0C21     	 mov r1,#12
- 109 0070 7918     	 add r1,r7,r1
- 110 0072 9B18     	 add r3,r3,r2
- 111 0074 0A1C     	 mov r2,r1
- 112 0076 13CA     	 ldmia r2!,{r0,r1,r4}
- 113 0078 13C3     	 stmia r3!,{r0,r1,r4}
- 114 007a 1268     	 ldr r2,[r2]
- 115 007c 1A60     	 str r2,[r3]
+ 106              	 .loc 1 27 0
+ 107 006c 7B68     	 ldr r3,[r7,#4]
+ 108 006e 094A     	 ldr r2,.L4+12
+ 109 0070 0C21     	 mov r1,#12
+ 110 0072 7918     	 add r1,r7,r1
+ 111 0074 9B18     	 add r3,r3,r2
+ 112 0076 0A1C     	 mov r2,r1
+ 113 0078 13CA     	 ldmia r2!,{r0,r1,r4}
+ 114 007a 13C3     	 stmia r3!,{r0,r1,r4}
+ 115 007c 1268     	 ldr r2,[r2]
+ 116 007e 1A60     	 str r2,[r3]
   28:../Drivers/MyoDataCollector.c ****  
   29:../Drivers/MyoDataCollector.c **** };
- 116              	 .loc 1 29 0
- 117 007e BD46     	 mov sp,r7
- 118 0080 09B0     	 add sp,sp,#36
- 119              	 
- 120 0082 90BD     	 pop {r4,r7,pc}
- 121              	.L5:
- 122              	 .align 2
- 123              	.L4:
- 124 0084 44060000 	 .word 1604
- 125 0088 4C060000 	 .word 1612
- 126              	 .cfi_endproc
- 127              	.LFE0:
- 129              	 .global __aeabi_idiv
- 130              	 .global __aeabi_idivmod
- 131              	 .section .text.MyoDataPush,"ax",%progbits
- 132              	 .align 2
- 133              	 .global MyoDataPush
- 134              	 .code 16
- 135              	 .thumb_func
- 137              	MyoDataPush:
- 138              	.LFB1:
+ 117              	 .loc 1 29 0
+ 118 0080 BD46     	 mov sp,r7
+ 119 0082 09B0     	 add sp,sp,#36
+ 120              	 
+ 121 0084 90BD     	 pop {r4,r7,pc}
+ 122              	.L5:
+ 123 0086 C046     	 .align 2
+ 124              	.L4:
+ 125 0088 BB020000 	 .word 699
+ 126 008c C82B0000 	 .word 11208
+ 127 0090 C42B0000 	 .word 11204
+ 128 0094 CC2B0000 	 .word 11212
+ 129              	 .cfi_endproc
+ 130              	.LFE0:
+ 132              	 .global __aeabi_idiv
+ 133              	 .global __aeabi_idivmod
+ 134              	 .section .text.MyoDataPush,"ax",%progbits
+ 135              	 .align 2
+ 136              	 .global MyoDataPush
+ 137              	 .code 16
+ 138              	 .thumb_func
+ 140              	MyoDataPush:
+ 141              	.LFB1:
   30:../Drivers/MyoDataCollector.c **** 
   31:../Drivers/MyoDataCollector.c **** 
   32:../Drivers/MyoDataCollector.c **** //inserts sensor read values into the buffer of SIZE readings
   33:../Drivers/MyoDataCollector.c **** void MyoDataPush(struct MyoDataCollector * myoDataPtr, struct FourTuple * readingsPtr)
   34:../Drivers/MyoDataCollector.c **** {
- 139              	 .loc 1 34 0
- 140              	 .cfi_startproc
- 141 0000 90B5     	 push {r4,r7,lr}
- 142              	.LCFI3:
- 143              	 .cfi_def_cfa_offset 12
- 144              	 .cfi_offset 4,-12
- 145              	 .cfi_offset 7,-8
- 146              	 .cfi_offset 14,-4
- 147 0002 8DB0     	 sub sp,sp,#52
- 148              	.LCFI4:
- 149              	 .cfi_def_cfa_offset 64
- 150 0004 00AF     	 add r7,sp,#0
- 151              	.LCFI5:
- 152              	 .cfi_def_cfa_register 7
- 153 0006 7860     	 str r0,[r7,#4]
- 154 0008 3960     	 str r1,[r7]
+ 142              	 .loc 1 34 0
+ 143              	 .cfi_startproc
+ 144 0000 90B5     	 push {r4,r7,lr}
+ 145              	.LCFI3:
+ 146              	 .cfi_def_cfa_offset 12
+ 147              	 .cfi_offset 4,-12
+ 148              	 .cfi_offset 7,-8
+ 149              	 .cfi_offset 14,-4
+ 150 0002 8DB0     	 sub sp,sp,#52
+ 151              	.LCFI4:
+ 152              	 .cfi_def_cfa_offset 64
+ 153 0004 00AF     	 add r7,sp,#0
+ 154              	.LCFI5:
+ 155              	 .cfi_def_cfa_register 7
+ 156 0006 7860     	 str r0,[r7,#4]
+ 157 0008 3960     	 str r1,[r7]
   35:../Drivers/MyoDataCollector.c ****     //update the average of the data
   36:../Drivers/MyoDataCollector.c ****     struct FourTuple oldestData = myoDataPtr->arrayPtr[myoDataPtr->oldestIdx];
- 155              	 .loc 1 36 0
- 156 000a 7A68     	 ldr r2,[r7,#4]
- 157 000c C923     	 mov r3,#201
- 158 000e DB00     	 lsl r3,r3,#3
- 159 0010 D358     	 ldr r3,[r2,r3]
- 160 0012 1C22     	 mov r2,#28
- 161 0014 B818     	 add r0,r7,r2
- 162 0016 7A68     	 ldr r2,[r7,#4]
- 163 0018 1B01     	 lsl r3,r3,#4
- 164 001a 0421     	 mov r1,#4
- 165 001c D318     	 add r3,r2,r3
- 166 001e 5A18     	 add r2,r3,r1
- 167 0020 031C     	 mov r3,r0
- 168 0022 13CA     	 ldmia r2!,{r0,r1,r4}
- 169 0024 13C3     	 stmia r3!,{r0,r1,r4}
- 170 0026 1268     	 ldr r2,[r2]
- 171 0028 1A60     	 str r2,[r3]
+ 158              	 .loc 1 36 0
+ 159 000a 7B68     	 ldr r3,[r7,#4]
+ 160 000c 514A     	 ldr r2,.L7
+ 161 000e 9B58     	 ldr r3,[r3,r2]
+ 162 0010 1C22     	 mov r2,#28
+ 163 0012 B818     	 add r0,r7,r2
+ 164 0014 7A68     	 ldr r2,[r7,#4]
+ 165 0016 1B01     	 lsl r3,r3,#4
+ 166 0018 0421     	 mov r1,#4
+ 167 001a D318     	 add r3,r2,r3
+ 168 001c 5A18     	 add r2,r3,r1
+ 169 001e 031C     	 mov r3,r0
+ 170 0020 13CA     	 ldmia r2!,{r0,r1,r4}
+ 171 0022 13C3     	 stmia r3!,{r0,r1,r4}
+ 172 0024 1268     	 ldr r2,[r2]
+ 173 0026 1A60     	 str r2,[r3]
   37:../Drivers/MyoDataCollector.c ****     
   38:../Drivers/MyoDataCollector.c ****     struct FourTuple averages = myoDataPtr->averages;
- 172              	 .loc 1 38 0
- 173 002a 0C23     	 mov r3,#12
- 174 002c FA18     	 add r2,r7,r3
- 175 002e 7B68     	 ldr r3,[r7,#4]
- 176 0030 4A49     	 ldr r1,.L7
- 177 0032 5B18     	 add r3,r3,r1
- 178 0034 13CB     	 ldmia r3!,{r0,r1,r4}
- 179 0036 13C2     	 stmia r2!,{r0,r1,r4}
- 180 0038 1B68     	 ldr r3,[r3]
- 181 003a 1360     	 str r3,[r2]
+ 174              	 .loc 1 38 0
+ 175 0028 0C23     	 mov r3,#12
+ 176 002a FA18     	 add r2,r7,r3
+ 177 002c 7B68     	 ldr r3,[r7,#4]
+ 178 002e 4A49     	 ldr r1,.L7+4
+ 179 0030 5B18     	 add r3,r3,r1
+ 180 0032 13CB     	 ldmia r3!,{r0,r1,r4}
+ 181 0034 13C2     	 stmia r2!,{r0,r1,r4}
+ 182 0036 1B68     	 ldr r3,[r3]
+ 183 0038 1360     	 str r3,[r2]
   39:../Drivers/MyoDataCollector.c ****     
   40:../Drivers/MyoDataCollector.c ****     int SIZE = myoDataPtr->SIZE;
- 182              	 .loc 1 40 0
- 183 003c 7B68     	 ldr r3,[r7,#4]
- 184 003e 1B68     	 ldr r3,[r3]
- 185 0040 FB62     	 str r3,[r7,#44]
+ 184              	 .loc 1 40 0
+ 185 003a 7B68     	 ldr r3,[r7,#4]
+ 186 003c 1B68     	 ldr r3,[r3]
+ 187 003e FB62     	 str r3,[r7,#44]
   41:../Drivers/MyoDataCollector.c ****     
   42:../Drivers/MyoDataCollector.c ****     //thumb
   43:../Drivers/MyoDataCollector.c ****     averages.thumb = averages.thumb - oldestData.thumb/SIZE + readingsPtr->thumb/SIZE;
- 186              	 .loc 1 43 0
- 187 0042 0C23     	 mov r3,#12
- 188 0044 FB18     	 add r3,r7,r3
- 189 0046 1C68     	 ldr r4,[r3]
- 190 0048 1C23     	 mov r3,#28
- 191 004a FB18     	 add r3,r7,r3
- 192 004c 1B68     	 ldr r3,[r3]
- 193 004e 181C     	 mov r0,r3
- 194 0050 F96A     	 ldr r1,[r7,#44]
- 195 0052 FFF7FEFF 	 bl __aeabi_idiv
- 196 0056 031C     	 mov r3,r0
- 197 0058 E41A     	 sub r4,r4,r3
- 198 005a 3B68     	 ldr r3,[r7]
- 199 005c 1B68     	 ldr r3,[r3]
- 200 005e 181C     	 mov r0,r3
- 201 0060 F96A     	 ldr r1,[r7,#44]
- 202 0062 FFF7FEFF 	 bl __aeabi_idiv
- 203 0066 031C     	 mov r3,r0
- 204 0068 E218     	 add r2,r4,r3
- 205 006a 0C23     	 mov r3,#12
- 206 006c FB18     	 add r3,r7,r3
- 207 006e 1A60     	 str r2,[r3]
+ 188              	 .loc 1 43 0
+ 189 0040 0C23     	 mov r3,#12
+ 190 0042 FB18     	 add r3,r7,r3
+ 191 0044 1C68     	 ldr r4,[r3]
+ 192 0046 1C23     	 mov r3,#28
+ 193 0048 FB18     	 add r3,r7,r3
+ 194 004a 1B68     	 ldr r3,[r3]
+ 195 004c 181C     	 mov r0,r3
+ 196 004e F96A     	 ldr r1,[r7,#44]
+ 197 0050 FFF7FEFF 	 bl __aeabi_idiv
+ 198 0054 031C     	 mov r3,r0
+ 199 0056 E41A     	 sub r4,r4,r3
+ 200 0058 3B68     	 ldr r3,[r7]
+ 201 005a 1B68     	 ldr r3,[r3]
+ 202 005c 181C     	 mov r0,r3
+ 203 005e F96A     	 ldr r1,[r7,#44]
+ 204 0060 FFF7FEFF 	 bl __aeabi_idiv
+ 205 0064 031C     	 mov r3,r0
+ 206 0066 E218     	 add r2,r4,r3
+ 207 0068 0C23     	 mov r3,#12
+ 208 006a FB18     	 add r3,r7,r3
+ 209 006c 1A60     	 str r2,[r3]
   44:../Drivers/MyoDataCollector.c ****     //index
   45:../Drivers/MyoDataCollector.c ****     averages.index = averages.index - oldestData.index/SIZE + readingsPtr->index/SIZE;
- 208              	 .loc 1 45 0
- 209 0070 0C23     	 mov r3,#12
- 210 0072 FB18     	 add r3,r7,r3
- 211 0074 5C68     	 ldr r4,[r3,#4]
- 212 0076 1C23     	 mov r3,#28
- 213 0078 FB18     	 add r3,r7,r3
- 214 007a 5B68     	 ldr r3,[r3,#4]
- 215 007c 181C     	 mov r0,r3
- 216 007e F96A     	 ldr r1,[r7,#44]
- 217 0080 FFF7FEFF 	 bl __aeabi_idiv
- 218 0084 031C     	 mov r3,r0
- 219 0086 E41A     	 sub r4,r4,r3
- 220 0088 3B68     	 ldr r3,[r7]
- 221 008a 5B68     	 ldr r3,[r3,#4]
- 222 008c 181C     	 mov r0,r3
- 223 008e F96A     	 ldr r1,[r7,#44]
- 224 0090 FFF7FEFF 	 bl __aeabi_idiv
- 225 0094 031C     	 mov r3,r0
- 226 0096 E218     	 add r2,r4,r3
- 227 0098 0C23     	 mov r3,#12
- 228 009a FB18     	 add r3,r7,r3
- 229 009c 5A60     	 str r2,[r3,#4]
+ 210              	 .loc 1 45 0
+ 211 006e 0C23     	 mov r3,#12
+ 212 0070 FB18     	 add r3,r7,r3
+ 213 0072 5C68     	 ldr r4,[r3,#4]
+ 214 0074 1C23     	 mov r3,#28
+ 215 0076 FB18     	 add r3,r7,r3
+ 216 0078 5B68     	 ldr r3,[r3,#4]
+ 217 007a 181C     	 mov r0,r3
+ 218 007c F96A     	 ldr r1,[r7,#44]
+ 219 007e FFF7FEFF 	 bl __aeabi_idiv
+ 220 0082 031C     	 mov r3,r0
+ 221 0084 E41A     	 sub r4,r4,r3
+ 222 0086 3B68     	 ldr r3,[r7]
+ 223 0088 5B68     	 ldr r3,[r3,#4]
+ 224 008a 181C     	 mov r0,r3
+ 225 008c F96A     	 ldr r1,[r7,#44]
+ 226 008e FFF7FEFF 	 bl __aeabi_idiv
+ 227 0092 031C     	 mov r3,r0
+ 228 0094 E218     	 add r2,r4,r3
+ 229 0096 0C23     	 mov r3,#12
+ 230 0098 FB18     	 add r3,r7,r3
+ 231 009a 5A60     	 str r2,[r3,#4]
   46:../Drivers/MyoDataCollector.c ****     //middle
   47:../Drivers/MyoDataCollector.c ****     averages.middle = averages.middle - oldestData.middle/SIZE + readingsPtr->middle/SIZE;
- 230              	 .loc 1 47 0
- 231 009e 0C23     	 mov r3,#12
- 232 00a0 FB18     	 add r3,r7,r3
- 233 00a2 9C68     	 ldr r4,[r3,#8]
- 234 00a4 1C23     	 mov r3,#28
- 235 00a6 FB18     	 add r3,r7,r3
- 236 00a8 9B68     	 ldr r3,[r3,#8]
- 237 00aa 181C     	 mov r0,r3
- 238 00ac F96A     	 ldr r1,[r7,#44]
- 239 00ae FFF7FEFF 	 bl __aeabi_idiv
- 240 00b2 031C     	 mov r3,r0
- 241 00b4 E41A     	 sub r4,r4,r3
- 242 00b6 3B68     	 ldr r3,[r7]
- 243 00b8 9B68     	 ldr r3,[r3,#8]
- 244 00ba 181C     	 mov r0,r3
- 245 00bc F96A     	 ldr r1,[r7,#44]
- 246 00be FFF7FEFF 	 bl __aeabi_idiv
- 247 00c2 031C     	 mov r3,r0
- 248 00c4 E218     	 add r2,r4,r3
- 249 00c6 0C23     	 mov r3,#12
- 250 00c8 FB18     	 add r3,r7,r3
- 251 00ca 9A60     	 str r2,[r3,#8]
+ 232              	 .loc 1 47 0
+ 233 009c 0C23     	 mov r3,#12
+ 234 009e FB18     	 add r3,r7,r3
+ 235 00a0 9C68     	 ldr r4,[r3,#8]
+ 236 00a2 1C23     	 mov r3,#28
+ 237 00a4 FB18     	 add r3,r7,r3
+ 238 00a6 9B68     	 ldr r3,[r3,#8]
+ 239 00a8 181C     	 mov r0,r3
+ 240 00aa F96A     	 ldr r1,[r7,#44]
+ 241 00ac FFF7FEFF 	 bl __aeabi_idiv
+ 242 00b0 031C     	 mov r3,r0
+ 243 00b2 E41A     	 sub r4,r4,r3
+ 244 00b4 3B68     	 ldr r3,[r7]
+ 245 00b6 9B68     	 ldr r3,[r3,#8]
+ 246 00b8 181C     	 mov r0,r3
+ 247 00ba F96A     	 ldr r1,[r7,#44]
+ 248 00bc FFF7FEFF 	 bl __aeabi_idiv
+ 249 00c0 031C     	 mov r3,r0
+ 250 00c2 E218     	 add r2,r4,r3
+ 251 00c4 0C23     	 mov r3,#12
+ 252 00c6 FB18     	 add r3,r7,r3
+ 253 00c8 9A60     	 str r2,[r3,#8]
   48:../Drivers/MyoDataCollector.c ****     //rp
   49:../Drivers/MyoDataCollector.c ****     averages.rp = averages.rp - oldestData.rp/SIZE + readingsPtr->rp/SIZE;
- 252              	 .loc 1 49 0
- 253 00cc 0C23     	 mov r3,#12
- 254 00ce FB18     	 add r3,r7,r3
- 255 00d0 DC68     	 ldr r4,[r3,#12]
- 256 00d2 1C23     	 mov r3,#28
- 257 00d4 FB18     	 add r3,r7,r3
- 258 00d6 DB68     	 ldr r3,[r3,#12]
- 259 00d8 181C     	 mov r0,r3
- 260 00da F96A     	 ldr r1,[r7,#44]
- 261 00dc FFF7FEFF 	 bl __aeabi_idiv
- 262 00e0 031C     	 mov r3,r0
- 263 00e2 E41A     	 sub r4,r4,r3
- 264 00e4 3B68     	 ldr r3,[r7]
- 265 00e6 DB68     	 ldr r3,[r3,#12]
- 266 00e8 181C     	 mov r0,r3
- 267 00ea F96A     	 ldr r1,[r7,#44]
- 268 00ec FFF7FEFF 	 bl __aeabi_idiv
- 269 00f0 031C     	 mov r3,r0
- 270 00f2 E218     	 add r2,r4,r3
- 271 00f4 0C23     	 mov r3,#12
- 272 00f6 FB18     	 add r3,r7,r3
- 273 00f8 DA60     	 str r2,[r3,#12]
+ 254              	 .loc 1 49 0
+ 255 00ca 0C23     	 mov r3,#12
+ 256 00cc FB18     	 add r3,r7,r3
+ 257 00ce DC68     	 ldr r4,[r3,#12]
+ 258 00d0 1C23     	 mov r3,#28
+ 259 00d2 FB18     	 add r3,r7,r3
+ 260 00d4 DB68     	 ldr r3,[r3,#12]
+ 261 00d6 181C     	 mov r0,r3
+ 262 00d8 F96A     	 ldr r1,[r7,#44]
+ 263 00da FFF7FEFF 	 bl __aeabi_idiv
+ 264 00de 031C     	 mov r3,r0
+ 265 00e0 E41A     	 sub r4,r4,r3
+ 266 00e2 3B68     	 ldr r3,[r7]
+ 267 00e4 DB68     	 ldr r3,[r3,#12]
+ 268 00e6 181C     	 mov r0,r3
+ 269 00e8 F96A     	 ldr r1,[r7,#44]
+ 270 00ea FFF7FEFF 	 bl __aeabi_idiv
+ 271 00ee 031C     	 mov r3,r0
+ 272 00f0 E218     	 add r2,r4,r3
+ 273 00f2 0C23     	 mov r3,#12
+ 274 00f4 FB18     	 add r3,r7,r3
+ 275 00f6 DA60     	 str r2,[r3,#12]
   50:../Drivers/MyoDataCollector.c ****     
   51:../Drivers/MyoDataCollector.c ****     //update the averages in the MyoDataCollector
   52:../Drivers/MyoDataCollector.c ****     myoDataPtr->averages = averages;
- 274              	 .loc 1 52 0
- 275 00fa 7B68     	 ldr r3,[r7,#4]
- 276 00fc 174A     	 ldr r2,.L7
- 277 00fe 0C21     	 mov r1,#12
- 278 0100 7918     	 add r1,r7,r1
- 279 0102 9B18     	 add r3,r3,r2
- 280 0104 0A1C     	 mov r2,r1
- 281 0106 13CA     	 ldmia r2!,{r0,r1,r4}
- 282 0108 13C3     	 stmia r3!,{r0,r1,r4}
- 283 010a 1268     	 ldr r2,[r2]
- 284 010c 1A60     	 str r2,[r3]
+ 276              	 .loc 1 52 0
+ 277 00f8 7B68     	 ldr r3,[r7,#4]
+ 278 00fa 174A     	 ldr r2,.L7+4
+ 279 00fc 0C21     	 mov r1,#12
+ 280 00fe 7918     	 add r1,r7,r1
+ 281 0100 9B18     	 add r3,r3,r2
+ 282 0102 0A1C     	 mov r2,r1
+ 283 0104 13CA     	 ldmia r2!,{r0,r1,r4}
+ 284 0106 13C3     	 stmia r3!,{r0,r1,r4}
+ 285 0108 1268     	 ldr r2,[r2]
+ 286 010a 1A60     	 str r2,[r3]
   53:../Drivers/MyoDataCollector.c ****     
   54:../Drivers/MyoDataCollector.c ****     //update the data point collection
   55:../Drivers/MyoDataCollector.c ****     myoDataPtr->arrayPtr[myoDataPtr->oldestIdx] = *readingsPtr;
- 285              	 .loc 1 55 0
- 286 010e 7A68     	 ldr r2,[r7,#4]
- 287 0110 C923     	 mov r3,#201
- 288 0112 DB00     	 lsl r3,r3,#3
- 289 0114 D358     	 ldr r3,[r2,r3]
- 290 0116 7A68     	 ldr r2,[r7,#4]
- 291 0118 1B01     	 lsl r3,r3,#4
- 292 011a 0421     	 mov r1,#4
- 293 011c D318     	 add r3,r2,r3
- 294 011e 5B18     	 add r3,r3,r1
- 295 0120 3A68     	 ldr r2,[r7]
- 296 0122 13CA     	 ldmia r2!,{r0,r1,r4}
- 297 0124 13C3     	 stmia r3!,{r0,r1,r4}
- 298 0126 1268     	 ldr r2,[r2]
- 299 0128 1A60     	 str r2,[r3]
+ 287              	 .loc 1 55 0
+ 288 010c 7B68     	 ldr r3,[r7,#4]
+ 289 010e 114A     	 ldr r2,.L7
+ 290 0110 9B58     	 ldr r3,[r3,r2]
+ 291 0112 7A68     	 ldr r2,[r7,#4]
+ 292 0114 1B01     	 lsl r3,r3,#4
+ 293 0116 0421     	 mov r1,#4
+ 294 0118 D318     	 add r3,r2,r3
+ 295 011a 5B18     	 add r3,r3,r1
+ 296 011c 3A68     	 ldr r2,[r7]
+ 297 011e 13CA     	 ldmia r2!,{r0,r1,r4}
+ 298 0120 13C3     	 stmia r3!,{r0,r1,r4}
+ 299 0122 1268     	 ldr r2,[r2]
+ 300 0124 1A60     	 str r2,[r3]
   56:../Drivers/MyoDataCollector.c ****     myoDataPtr->recentIdx = myoDataPtr->oldestIdx;
- 300              	 .loc 1 56 0
- 301 012a 7A68     	 ldr r2,[r7,#4]
- 302 012c C923     	 mov r3,#201
- 303 012e DB00     	 lsl r3,r3,#3
- 304 0130 D258     	 ldr r2,[r2,r3]
- 305 0132 7B68     	 ldr r3,[r7,#4]
- 306 0134 0A49     	 ldr r1,.L7+4
- 307 0136 5A50     	 str r2,[r3,r1]
+ 301              	 .loc 1 56 0
+ 302 0126 7B68     	 ldr r3,[r7,#4]
+ 303 0128 0A4A     	 ldr r2,.L7
+ 304 012a 9A58     	 ldr r2,[r3,r2]
+ 305 012c 7B68     	 ldr r3,[r7,#4]
+ 306 012e 0B49     	 ldr r1,.L7+8
+ 307 0130 5A50     	 str r2,[r3,r1]
   57:../Drivers/MyoDataCollector.c ****     myoDataPtr->oldestIdx = (myoDataPtr->oldestIdx + 1) % SIZE;
  308              	 .loc 1 57 0
- 309 0138 7A68     	 ldr r2,[r7,#4]
- 310 013a C923     	 mov r3,#201
- 311 013c DB00     	 lsl r3,r3,#3
- 312 013e D358     	 ldr r3,[r2,r3]
- 313 0140 0133     	 add r3,r3,#1
- 314 0142 181C     	 mov r0,r3
- 315 0144 F96A     	 ldr r1,[r7,#44]
- 316 0146 FFF7FEFF 	 bl __aeabi_idivmod
- 317 014a 0B1C     	 mov r3,r1
- 318 014c 191C     	 mov r1,r3
- 319 014e 7A68     	 ldr r2,[r7,#4]
- 320 0150 C923     	 mov r3,#201
- 321 0152 DB00     	 lsl r3,r3,#3
- 322 0154 D150     	 str r1,[r2,r3]
+ 309 0132 7B68     	 ldr r3,[r7,#4]
+ 310 0134 074A     	 ldr r2,.L7
+ 311 0136 9B58     	 ldr r3,[r3,r2]
+ 312 0138 0133     	 add r3,r3,#1
+ 313 013a 181C     	 mov r0,r3
+ 314 013c F96A     	 ldr r1,[r7,#44]
+ 315 013e FFF7FEFF 	 bl __aeabi_idivmod
+ 316 0142 0B1C     	 mov r3,r1
+ 317 0144 191C     	 mov r1,r3
+ 318 0146 7B68     	 ldr r3,[r7,#4]
+ 319 0148 024A     	 ldr r2,.L7
+ 320 014a 9950     	 str r1,[r3,r2]
   58:../Drivers/MyoDataCollector.c **** }
- 323              	 .loc 1 58 0
- 324 0156 BD46     	 mov sp,r7
- 325 0158 0DB0     	 add sp,sp,#52
- 326              	 
- 327 015a 90BD     	 pop {r4,r7,pc}
- 328              	.L8:
- 329              	 .align 2
- 330              	.L7:
- 331 015c 4C060000 	 .word 1612
- 332 0160 44060000 	 .word 1604
- 333              	 .cfi_endproc
- 334              	.LFE1:
- 336              	 .section .text.CompareFourTuple,"ax",%progbits
- 337              	 .align 2
- 338              	 .global CompareFourTuple
- 339              	 .code 16
- 340              	 .thumb_func
- 342              	CompareFourTuple:
- 343              	.LFB2:
+ 321              	 .loc 1 58 0
+ 322 014c BD46     	 mov sp,r7
+ 323 014e 0DB0     	 add sp,sp,#52
+ 324              	 
+ 325 0150 90BD     	 pop {r4,r7,pc}
+ 326              	.L8:
+ 327 0152 C046     	 .align 2
+ 328              	.L7:
+ 329 0154 C82B0000 	 .word 11208
+ 330 0158 CC2B0000 	 .word 11212
+ 331 015c C42B0000 	 .word 11204
+ 332              	 .cfi_endproc
+ 333              	.LFE1:
+ 335              	 .section .text.CompareFourTuple,"ax",%progbits
+ 336              	 .align 2
+ 337              	 .global CompareFourTuple
+ 338              	 .code 16
+ 339              	 .thumb_func
+ 341              	CompareFourTuple:
+ 342              	.LFB2:
   59:../Drivers/MyoDataCollector.c **** 
   60:../Drivers/MyoDataCollector.c **** 
   61:../Drivers/MyoDataCollector.c **** int CompareFourTuple(struct FourTuple * aPtr, struct FourTuple * bPtr)
   62:../Drivers/MyoDataCollector.c **** {
- 344              	 .loc 1 62 0
- 345              	 .cfi_startproc
- 346 0000 80B5     	 push {r7,lr}
- 347              	.LCFI6:
- 348              	 .cfi_def_cfa_offset 8
- 349              	 .cfi_offset 7,-8
- 350              	 .cfi_offset 14,-4
- 351 0002 82B0     	 sub sp,sp,#8
- 352              	.LCFI7:
- 353              	 .cfi_def_cfa_offset 16
- 354 0004 00AF     	 add r7,sp,#0
- 355              	.LCFI8:
- 356              	 .cfi_def_cfa_register 7
- 357 0006 7860     	 str r0,[r7,#4]
- 358 0008 3960     	 str r1,[r7]
+ 343              	 .loc 1 62 0
+ 344              	 .cfi_startproc
+ 345 0000 80B5     	 push {r7,lr}
+ 346              	.LCFI6:
+ 347              	 .cfi_def_cfa_offset 8
+ 348              	 .cfi_offset 7,-8
+ 349              	 .cfi_offset 14,-4
+ 350 0002 82B0     	 sub sp,sp,#8
+ 351              	.LCFI7:
+ 352              	 .cfi_def_cfa_offset 16
+ 353 0004 00AF     	 add r7,sp,#0
+ 354              	.LCFI8:
+ 355              	 .cfi_def_cfa_register 7
+ 356 0006 7860     	 str r0,[r7,#4]
+ 357 0008 3960     	 str r1,[r7]
   63:../Drivers/MyoDataCollector.c ****     if (aPtr->index == bPtr->index && aPtr->thumb == bPtr->thumb && aPtr->middle == bPtr->middle &&
- 359              	 .loc 1 63 0
- 360 000a 7B68     	 ldr r3,[r7,#4]
- 361 000c 5A68     	 ldr r2,[r3,#4]
- 362 000e 3B68     	 ldr r3,[r7]
- 363 0010 5B68     	 ldr r3,[r3,#4]
- 364 0012 9A42     	 cmp r2,r3
- 365 0014 13D1     	 bne .L10
- 366              	 .loc 1 63 0 is_stmt 0 discriminator 1
- 367 0016 7B68     	 ldr r3,[r7,#4]
- 368 0018 1A68     	 ldr r2,[r3]
- 369 001a 3B68     	 ldr r3,[r7]
- 370 001c 1B68     	 ldr r3,[r3]
- 371 001e 9A42     	 cmp r2,r3
- 372 0020 0DD1     	 bne .L10
- 373              	 .loc 1 63 0 discriminator 2
- 374 0022 7B68     	 ldr r3,[r7,#4]
- 375 0024 9A68     	 ldr r2,[r3,#8]
- 376 0026 3B68     	 ldr r3,[r7]
- 377 0028 9B68     	 ldr r3,[r3,#8]
- 378 002a 9A42     	 cmp r2,r3
- 379 002c 07D1     	 bne .L10
- 380              	 .loc 1 63 0 discriminator 3
- 381 002e 7B68     	 ldr r3,[r7,#4]
- 382 0030 DA68     	 ldr r2,[r3,#12]
- 383 0032 3B68     	 ldr r3,[r7]
- 384 0034 DB68     	 ldr r3,[r3,#12]
- 385 0036 9A42     	 cmp r2,r3
- 386 0038 01D1     	 bne .L10
+ 358              	 .loc 1 63 0
+ 359 000a 7B68     	 ldr r3,[r7,#4]
+ 360 000c 5A68     	 ldr r2,[r3,#4]
+ 361 000e 3B68     	 ldr r3,[r7]
+ 362 0010 5B68     	 ldr r3,[r3,#4]
+ 363 0012 9A42     	 cmp r2,r3
+ 364 0014 13D1     	 bne .L10
+ 365              	 .loc 1 63 0 is_stmt 0 discriminator 1
+ 366 0016 7B68     	 ldr r3,[r7,#4]
+ 367 0018 1A68     	 ldr r2,[r3]
+ 368 001a 3B68     	 ldr r3,[r7]
+ 369 001c 1B68     	 ldr r3,[r3]
+ 370 001e 9A42     	 cmp r2,r3
+ 371 0020 0DD1     	 bne .L10
+ 372              	 .loc 1 63 0 discriminator 2
+ 373 0022 7B68     	 ldr r3,[r7,#4]
+ 374 0024 9A68     	 ldr r2,[r3,#8]
+ 375 0026 3B68     	 ldr r3,[r7]
+ 376 0028 9B68     	 ldr r3,[r3,#8]
+ 377 002a 9A42     	 cmp r2,r3
+ 378 002c 07D1     	 bne .L10
+ 379              	 .loc 1 63 0 discriminator 3
+ 380 002e 7B68     	 ldr r3,[r7,#4]
+ 381 0030 DA68     	 ldr r2,[r3,#12]
+ 382 0032 3B68     	 ldr r3,[r7]
+ 383 0034 DB68     	 ldr r3,[r3,#12]
+ 384 0036 9A42     	 cmp r2,r3
+ 385 0038 01D1     	 bne .L10
   64:../Drivers/MyoDataCollector.c ****     {
   65:../Drivers/MyoDataCollector.c ****         return 1;
- 387              	 .loc 1 65 0 is_stmt 1
- 388 003a 0123     	 mov r3,#1
- 389 003c 00E0     	 b .L11
- 390              	.L10:
+ 386              	 .loc 1 65 0 is_stmt 1
+ 387 003a 0123     	 mov r3,#1
+ 388 003c 00E0     	 b .L11
+ 389              	.L10:
   66:../Drivers/MyoDataCollector.c ****     }
   67:../Drivers/MyoDataCollector.c ****     else
   68:../Drivers/MyoDataCollector.c ****     {
   69:../Drivers/MyoDataCollector.c ****         return 0;
- 391              	 .loc 1 69 0
- 392 003e 0023     	 mov r3,#0
- 393              	.L11:
+ 390              	 .loc 1 69 0
+ 391 003e 0023     	 mov r3,#0
+ 392              	.L11:
   70:../Drivers/MyoDataCollector.c ****     }
   71:../Drivers/MyoDataCollector.c ****     
   72:../Drivers/MyoDataCollector.c **** }
- 394              	 .loc 1 72 0
- 395 0040 181C     	 mov r0,r3
- 396 0042 BD46     	 mov sp,r7
- 397 0044 02B0     	 add sp,sp,#8
- 398              	 
- 399 0046 80BD     	 pop {r7,pc}
- 400              	 .cfi_endproc
- 401              	.LFE2:
- 403              	 .text
- 404              	.Letext0:
- 405              	 .file 2 "../Drivers/MyoDataCollector.h"
+ 393              	 .loc 1 72 0
+ 394 0040 181C     	 mov r0,r3
+ 395 0042 BD46     	 mov sp,r7
+ 396 0044 02B0     	 add sp,sp,#8
+ 397              	 
+ 398 0046 80BD     	 pop {r7,pc}
+ 399              	 .cfi_endproc
+ 400              	.LFE2:
+ 402              	 .text
+ 403              	.Letext0:
+ 404              	 .file 2 "../Drivers/MyoDataCollector.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 MyoDataCollector.c
     {standard input}:18     .text.MyoDataCollectorINIT:00000000 $t
     {standard input}:23     .text.MyoDataCollectorINIT:00000000 MyoDataCollectorINIT
-    {standard input}:124    .text.MyoDataCollectorINIT:00000084 $d
-    {standard input}:132    .text.MyoDataPush:00000000 $t
-    {standard input}:137    .text.MyoDataPush:00000000 MyoDataPush
-    {standard input}:331    .text.MyoDataPush:0000015c $d
-    {standard input}:337    .text.CompareFourTuple:00000000 $t
-    {standard input}:342    .text.CompareFourTuple:00000000 CompareFourTuple
+    {standard input}:125    .text.MyoDataCollectorINIT:00000088 $d
+    {standard input}:135    .text.MyoDataPush:00000000 $t
+    {standard input}:140    .text.MyoDataPush:00000000 MyoDataPush
+    {standard input}:329    .text.MyoDataPush:00000154 $d
+    {standard input}:336    .text.CompareFourTuple:00000000 $t
+    {standard input}:341    .text.CompareFourTuple:00000000 CompareFourTuple
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

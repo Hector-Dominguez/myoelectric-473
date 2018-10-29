@@ -67,6 +67,8 @@
 
 extern const DIGITAL_IO_t LEDpin; 
 	
+extern const DIGITAL_IO_t OutputPin1; 
+	
  
 #endif  /* DIGITAL_IO_EXTERN_H */
 

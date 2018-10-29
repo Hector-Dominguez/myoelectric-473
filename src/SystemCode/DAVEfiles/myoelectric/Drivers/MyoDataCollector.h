@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 
-#define DataWindow 100
+#define DataWindow 700
 
 struct FourTuple {
     int thumb;

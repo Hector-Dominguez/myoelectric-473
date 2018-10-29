@@ -66,3 +66,14 @@ const DIGITAL_IO_t LEDpin =
   .hwctrl = XMC_GPIO_HWCTRL_DISABLED
 };
 		
+const DIGITAL_IO_t OutputPin1 =
+{
+  .gpio_port = XMC_GPIO_PORT4,
+  .gpio_pin = 2U,
+  .gpio_config = {
+    .mode = XMC_GPIO_MODE_INPUT_TRISTATE,
+    .input_hysteresis = XMC_GPIO_INPUT_HYSTERESIS_STANDARD
+  },
+  .hwctrl = XMC_GPIO_HWCTRL_DISABLED
+};
+		

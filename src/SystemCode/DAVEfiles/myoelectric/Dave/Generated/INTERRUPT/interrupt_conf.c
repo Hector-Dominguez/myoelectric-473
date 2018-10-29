@@ -67,10 +67,24 @@
 const INTERRUPT_t samplingInterrupt =
 {
 #if(UC_SERIES == XMC14)
+ .irqctrl = (XMC_SCU_IRQCTRL_t)1U,
+#endif
+  .node = (IRQn_Type)21,
+  .priority = 3,  
+#if(UC_FAMILY == XMC4)  
+  .subpriority = 0,
+#endif  
+
+  .enable_at_init = false
+
+};
+const INTERRUPT_t printingValueInterrupt =
+{
+#if(UC_SERIES == XMC14)
  .irqctrl = (XMC_SCU_IRQCTRL_t)2U,
 #endif
   .node = (IRQn_Type)0,
-  .priority = 3,  
+  .priority = 2,  
 #if(UC_FAMILY == XMC4)  
   .subpriority = 0,
 #endif  

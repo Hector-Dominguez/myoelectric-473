@@ -23,6 +23,7 @@ void MyoHandINIT(struct MyoHand * myohandPtr)
     myohandPtr->yvalI = zeroVals;
     myohandPtr->yR = zeroVals;
     myohandPtr->yC = zeroVals;
+
 }
 
 //Computes yvalI for each finger
@@ -42,13 +43,15 @@ struct FourTuple GetActivationLevels(struct MyoHand * myohandPtr)
     return myohandPtr->yvalI;
 }
 
-//5 seconds resting to compute yR - resting level for each channel
-//5 seconds contracted to compute yC - comfortable contraction level
-void InitializeLevels(struct MyoHand * myohandPtr)
+
+
+void delayMils(uint x)
 {
-    //5 seconds
-    
-    
-    //5 seconds
-    
+	volatile int i = 0;
+	while(x > 0){
+		for(; i < 2307; i++);
+		i = 0;
+		x--;
+
+	}
 }

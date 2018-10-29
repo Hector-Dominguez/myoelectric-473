@@ -26,4 +26,11 @@
     <upwardMapList xsi:type="ResourceModel:HWResource" href="../../APPS/DIGITAL_IO/v4_0_16/DIGITAL_IO_0.app#//@hwResources.1"/>
     <resourcesList name="pin" requiredResourceUri="http://resources/VQFN64.0.0/devicepackage/0/pin62"/>
   </provided>
+  <provided xsi:type="ResourceModel:ResourceGroup" name="59" URI="http://resources/vqfn64.0.0/devicepackage/0/59">
+    <resourcesList name="pin" requiredResourceUri="http://resources/VQFN64.0.0/devicepackage/0/pin59"/>
+  </provided>
+  <provided xsi:type="ResourceModel:ResourceGroup" name="61" URI="http://resources/vqfn64.0.0/devicepackage/0/61">
+    <upwardMapList xsi:type="ResourceModel:HWResource" href="../../APPS/DIGITAL_IO/v4_0_16/DIGITAL_IO_1.app#//@hwResources.1"/>
+    <resourcesList name="pin" requiredResourceUri="http://resources/VQFN64.0.0/devicepackage/0/pin61"/>
+  </provided>
 </ResourceModel:DevicePackage>

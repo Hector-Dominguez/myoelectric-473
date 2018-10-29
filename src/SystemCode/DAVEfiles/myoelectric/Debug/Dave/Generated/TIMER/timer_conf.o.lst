@@ -22,47 +22,83 @@
   24 0001 00       	 .byte 0
   25 0002 00       	 .byte 0
   26 0003 00       	 .byte 0
-  27 0004 0B       	 .byte 11
+  27 0004 01       	 .byte 1
   28 0005 00       	 .byte 0
   29 0006 0000     	 .space 2
   30              	 .global TIMER_0
   31              	 .section .data.TIMER_0,"aw",%progbits
   32              	 .align 2
   35              	TIMER_0:
-  36 0000 00E1F505 	 .word 100000000
+  36 0000 787C0100 	 .word 97400
   37 0004 00D05485 	 .word -2058039296
   38 0008 0A000000 	 .word 10
   39 000c 50000000 	 .word 80
   40 0010 00000000 	 .word GLOBAL_CCU4_0
-  41 0014 00020448 	 .word 1208222208
+  41 0014 00420448 	 .word 1208238592
   42 0018 01       	 .byte 1
   43 0019 000000   	 .space 3
   44 001c 00000000 	 .word TIMER_0_config
   45 0020 00       	 .byte 0
   46 0021 00       	 .byte 0
-  47 0022 1AB7     	 .short -18662
+  47 0022 9FB6     	 .short -18785
   48 0024 01       	 .byte 1
   49 0025 01       	 .byte 1
   50 0026 00       	 .byte 0
   51 0027 00       	 .space 1
-  52              	 .text
-  53              	.Letext0:
-  54              	 .file 1 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
-  55              	 .file 2 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
-  56              	 .file 3 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
-  57              	 .file 4 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_ccu4.h"
-  58              	 .file 5 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
-  59              	 .file 6 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
-  60              	 .file 7 "../Dave/Generated/TIMER/timer.h"
-  61              	 .file 8 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
-  62              	 .file 9 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_CCU4/global_ccu4_extern.h"
-  63              	 .file 10 "../Dave/Generated/TIMER/timer_conf.c"
+  52              	 .global TIMER_1_config
+  53              	 .section .data.TIMER_1_config,"aw",%progbits
+  54              	 .align 2
+  57              	TIMER_1_config:
+  58 0000 00       	 .byte 0
+  59 0001 00       	 .byte 0
+  60 0002 00       	 .byte 0
+  61 0003 00       	 .byte 0
+  62 0004 0C       	 .byte 12
+  63 0005 00       	 .byte 0
+  64 0006 0000     	 .space 2
+  65              	 .global TIMER_1
+  66              	 .section .data.TIMER_1,"aw",%progbits
+  67              	 .align 2
+  70              	TIMER_1:
+  71 0000 00C2EB0B 	 .word 200000000
+  72 0004 00D05485 	 .word -2058039296
+  73 0008 0A000000 	 .word 10
+  74 000c 50000000 	 .word 80
+  75 0010 00000000 	 .word GLOBAL_CCU4_1
+  76 0014 00020448 	 .word 1208222208
+  77 0018 01       	 .byte 1
+  78 0019 000000   	 .space 3
+  79 001c 00000000 	 .word TIMER_1_config
+  80 0020 00       	 .byte 0
+  81 0021 00       	 .byte 0
+  82 0022 1AB7     	 .short -18662
+  83 0024 01       	 .byte 1
+  84 0025 01       	 .byte 1
+  85 0026 00       	 .byte 0
+  86 0027 00       	 .space 1
+  87              	 .text
+  88              	.Letext0:
+  89              	 .file 1 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  90              	 .file 2 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  91              	 .file 3 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
+  92              	 .file 4 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_ccu4.h"
+  93              	 .file 5 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
+  94              	 .file 6 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+  95              	 .file 7 "../Dave/Generated/TIMER/timer.h"
+  96              	 .file 8 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+  97              	 .file 9 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_CCU4/global_ccu4_extern.h"
+  98              	 .file 10 "../Dave/Generated/TIMER/timer_conf.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 timer_conf.c
     {standard input}:22     .data.TIMER_0_config:00000000 TIMER_0_config
     {standard input}:19     .data.TIMER_0_config:00000000 $d
     {standard input}:35     .data.TIMER_0:00000000 TIMER_0
     {standard input}:32     .data.TIMER_0:00000000 $d
+    {standard input}:57     .data.TIMER_1_config:00000000 TIMER_1_config
+    {standard input}:54     .data.TIMER_1_config:00000000 $d
+    {standard input}:70     .data.TIMER_1:00000000 TIMER_1
+    {standard input}:67     .data.TIMER_1:00000000 $d
 
 UNDEFINED SYMBOLS
 GLOBAL_CCU4_0
+GLOBAL_CCU4_1

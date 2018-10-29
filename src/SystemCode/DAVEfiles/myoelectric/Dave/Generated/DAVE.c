@@ -87,6 +87,21 @@ DAVE_STATUS_t DAVE_Init(void)
   {
 	 /**  Initialization of DIGITAL_IO APP instance LEDpin */
 	 init_status = (DAVE_STATUS_t)DIGITAL_IO_Init(&LEDpin); 
+   } 
+  if (init_status == DAVE_STATUS_SUCCESS)
+  {
+	 /**  Initialization of DIGITAL_IO APP instance OutputPin1 */
+	 init_status = (DAVE_STATUS_t)DIGITAL_IO_Init(&OutputPin1); 
+   } 
+  if (init_status == DAVE_STATUS_SUCCESS)
+  {
+	 /**  Initialization of TIMER APP instance TIMER_1 */
+	 init_status = (DAVE_STATUS_t)TIMER_Init(&TIMER_1); 
+   } 
+  if (init_status == DAVE_STATUS_SUCCESS)
+  {
+	 /**  Initialization of INTERRUPT APP instance printingValueInterrupt */
+	 init_status = (DAVE_STATUS_t)INTERRUPT_Init(&printingValueInterrupt); 
    }  
   return init_status;
 } /**  End of function DAVE_Init */

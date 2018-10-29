@@ -942,12 +942,12 @@
  102 0018 80BD     	 pop {r7,pc}
  103              	 .cfi_endproc
  104              	.LFE203:
- 106 001a C046     	 .section .text.XMC_GPIO_ToggleOutput,"ax",%progbits
+ 106 001a C046     	 .section .text.XMC_GPIO_SetOutputHigh,"ax",%progbits
  107              	 .align 2
  108              	 .code 16
  109              	 .thumb_func
- 111              	XMC_GPIO_ToggleOutput:
- 112              	.LFB212:
+ 111              	XMC_GPIO_SetOutputHigh:
+ 112              	.LFB210:
  113              	 .file 3 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_gpio.h"
    1:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** /**
    2:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * @file xmc_gpio.h
@@ -1206,10 +1206,47 @@
  255:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
  256:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputHigh(XMC_GPIO_PORT_t *const port, const uint8_t pin)
  257:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 114              	 .loc 3 257 0
+ 115              	 .cfi_startproc
+ 116 0000 80B5     	 push {r7,lr}
+ 117              	.LCFI6:
+ 118              	 .cfi_def_cfa_offset 8
+ 119              	 .cfi_offset 7,-8
+ 120              	 .cfi_offset 14,-4
+ 121 0002 82B0     	 sub sp,sp,#8
+ 122              	.LCFI7:
+ 123              	 .cfi_def_cfa_offset 16
+ 124 0004 00AF     	 add r7,sp,#0
+ 125              	.LCFI8:
+ 126              	 .cfi_def_cfa_register 7
+ 127 0006 7860     	 str r0,[r7,#4]
+ 128 0008 0A1C     	 mov r2,r1
+ 129 000a FB1C     	 add r3,r7,#3
+ 130 000c 1A70     	 strb r2,[r3]
  258:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputHigh: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
  259:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
  260:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)0x1U << pin;
+ 131              	 .loc 3 260 0
+ 132 000e FB1C     	 add r3,r7,#3
+ 133 0010 1B78     	 ldrb r3,[r3]
+ 134 0012 0122     	 mov r2,#1
+ 135 0014 9A40     	 lsl r2,r2,r3
+ 136 0016 7B68     	 ldr r3,[r7,#4]
+ 137 0018 5A60     	 str r2,[r3,#4]
  261:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 138              	 .loc 3 261 0
+ 139 001a BD46     	 mov sp,r7
+ 140 001c 02B0     	 add sp,sp,#8
+ 141              	 
+ 142 001e 80BD     	 pop {r7,pc}
+ 143              	 .cfi_endproc
+ 144              	.LFE210:
+ 146              	 .section .text.XMC_GPIO_SetOutputLow,"ax",%progbits
+ 147              	 .align 2
+ 148              	 .code 16
+ 149              	 .thumb_func
+ 151              	XMC_GPIO_SetOutputLow:
+ 152              	.LFB211:
  262:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
  263:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** /**
  264:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  *
@@ -1232,78 +1269,49 @@
  281:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
  282:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLow(XMC_GPIO_PORT_t *const port, const uint8_t pin)
  283:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 153              	 .loc 3 283 0
+ 154              	 .cfi_startproc
+ 155 0000 80B5     	 push {r7,lr}
+ 156              	.LCFI9:
+ 157              	 .cfi_def_cfa_offset 8
+ 158              	 .cfi_offset 7,-8
+ 159              	 .cfi_offset 14,-4
+ 160 0002 82B0     	 sub sp,sp,#8
+ 161              	.LCFI10:
+ 162              	 .cfi_def_cfa_offset 16
+ 163 0004 00AF     	 add r7,sp,#0
+ 164              	.LCFI11:
+ 165              	 .cfi_def_cfa_register 7
+ 166 0006 7860     	 str r0,[r7,#4]
+ 167 0008 0A1C     	 mov r2,r1
+ 168 000a FB1C     	 add r3,r7,#3
+ 169 000c 1A70     	 strb r2,[r3]
  284:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLow: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
  285:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
  286:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10000U << pin;
+ 170              	 .loc 3 286 0
+ 171 000e FB1C     	 add r3,r7,#3
+ 172 0010 1B78     	 ldrb r3,[r3]
+ 173 0012 8022     	 mov r2,#128
+ 174 0014 5202     	 lsl r2,r2,#9
+ 175 0016 9A40     	 lsl r2,r2,r3
+ 176 0018 7B68     	 ldr r3,[r7,#4]
+ 177 001a 5A60     	 str r2,[r3,#4]
  287:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** }
- 288:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
- 289:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** /**
- 290:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  *
- 291:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
- 292:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param pin  port pin number.
- 293:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  *
- 294:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
- 295:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  *
- 296:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
- 297:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * Configures port pin output to Toggle. It configures hardware registers Pn_OMR.
- 298:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  *
- 299:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
- 300:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
- 301:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  *
- 302:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
- 303:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode(). Regis
- 304:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  * and does not contain any flip-flop. A read action delivers the value of 0.
- 305:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  *
- 306:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****  */
- 307:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
- 308:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_ToggleOutput(XMC_GPIO_PORT_t *const port, const uint8_t pin)
- 309:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** {
- 114              	 .loc 3 309 0
- 115              	 .cfi_startproc
- 116 0000 80B5     	 push {r7,lr}
- 117              	.LCFI6:
- 118              	 .cfi_def_cfa_offset 8
- 119              	 .cfi_offset 7,-8
- 120              	 .cfi_offset 14,-4
- 121 0002 82B0     	 sub sp,sp,#8
- 122              	.LCFI7:
- 123              	 .cfi_def_cfa_offset 16
- 124 0004 00AF     	 add r7,sp,#0
- 125              	.LCFI8:
- 126              	 .cfi_def_cfa_register 7
- 127 0006 7860     	 str r0,[r7,#4]
- 128 0008 0A1C     	 mov r2,r1
- 129 000a FB1C     	 add r3,r7,#3
- 130 000c 1A70     	 strb r2,[r3]
- 310:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_ToggleOutput: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
- 311:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** 
- 312:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10001U << pin;
- 131              	 .loc 3 312 0
- 132 000e FB1C     	 add r3,r7,#3
- 133 0010 1B78     	 ldrb r3,[r3]
- 134 0012 034A     	 ldr r2,.L7
- 135 0014 9A40     	 lsl r2,r2,r3
- 136 0016 7B68     	 ldr r3,[r7,#4]
- 137 0018 5A60     	 str r2,[r3,#4]
- 313:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_gpio.h **** }
- 138              	 .loc 3 313 0
- 139 001a BD46     	 mov sp,r7
- 140 001c 02B0     	 add sp,sp,#8
- 141              	 
- 142 001e 80BD     	 pop {r7,pc}
- 143              	.L8:
- 144              	 .align 2
- 145              	.L7:
- 146 0020 01000100 	 .word 65537
- 147              	 .cfi_endproc
- 148              	.LFE212:
- 150              	 .section .text.DIGITAL_IO_ToggleOutput,"ax",%progbits
- 151              	 .align 2
- 152              	 .code 16
- 153              	 .thumb_func
- 155              	DIGITAL_IO_ToggleOutput:
- 156              	.LFB220:
- 157              	 .file 4 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO/digital_io.h"
+ 178              	 .loc 3 287 0
+ 179 001c BD46     	 mov sp,r7
+ 180 001e 02B0     	 add sp,sp,#8
+ 181              	 
+ 182 0020 80BD     	 pop {r7,pc}
+ 183              	 .cfi_endproc
+ 184              	.LFE211:
+ 186 0022 C046     	 .section .text.DIGITAL_IO_SetOutputHigh,"ax",%progbits
+ 187              	 .align 2
+ 188              	 .code 16
+ 189              	 .thumb_func
+ 191              	DIGITAL_IO_SetOutputHigh:
+ 192              	.LFB218:
+ 193              	 .file 4 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO/digital_io.h"
    1:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** /*
    2:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
    3:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @file digital_io.h
@@ -1573,9 +1581,44 @@
  267:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** 
  268:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputHigh(const DIGITAL_IO_t *const handler)
  269:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 194              	 .loc 4 269 0
+ 195              	 .cfi_startproc
+ 196 0000 80B5     	 push {r7,lr}
+ 197              	.LCFI12:
+ 198              	 .cfi_def_cfa_offset 8
+ 199              	 .cfi_offset 7,-8
+ 200              	 .cfi_offset 14,-4
+ 201 0002 82B0     	 sub sp,sp,#8
+ 202              	.LCFI13:
+ 203              	 .cfi_def_cfa_offset 16
+ 204 0004 00AF     	 add r7,sp,#0
+ 205              	.LCFI14:
+ 206              	 .cfi_def_cfa_register 7
+ 207 0006 7860     	 str r0,[r7,#4]
  270:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputHigh: handler null pointer", handler != NULL);
  271:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputHigh(handler->gpio_port, handler->gpio_pin);
+ 208              	 .loc 4 271 0
+ 209 0008 7B68     	 ldr r3,[r7,#4]
+ 210 000a 1A68     	 ldr r2,[r3]
+ 211 000c 7B68     	 ldr r3,[r7,#4]
+ 212 000e 1B7B     	 ldrb r3,[r3,#12]
+ 213 0010 101C     	 mov r0,r2
+ 214 0012 191C     	 mov r1,r3
+ 215 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputHigh
  272:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 216              	 .loc 4 272 0
+ 217 0018 BD46     	 mov sp,r7
+ 218 001a 02B0     	 add sp,sp,#8
+ 219              	 
+ 220 001c 80BD     	 pop {r7,pc}
+ 221              	 .cfi_endproc
+ 222              	.LFE218:
+ 224 001e C046     	 .section .text.DIGITAL_IO_SetOutputLow,"ax",%progbits
+ 225              	 .align 2
+ 226              	 .code 16
+ 227              	 .thumb_func
+ 229              	DIGITAL_IO_SetOutputLow:
+ 230              	.LFB219:
  273:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** 
  274:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
  275:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to reset port pin.
@@ -1620,100 +1663,48 @@
  314:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** 
  315:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputLow(const DIGITAL_IO_t *const handler)
  316:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 231              	 .loc 4 316 0
+ 232              	 .cfi_startproc
+ 233 0000 80B5     	 push {r7,lr}
+ 234              	.LCFI15:
+ 235              	 .cfi_def_cfa_offset 8
+ 236              	 .cfi_offset 7,-8
+ 237              	 .cfi_offset 14,-4
+ 238 0002 82B0     	 sub sp,sp,#8
+ 239              	.LCFI16:
+ 240              	 .cfi_def_cfa_offset 16
+ 241 0004 00AF     	 add r7,sp,#0
+ 242              	.LCFI17:
+ 243              	 .cfi_def_cfa_register 7
+ 244 0006 7860     	 str r0,[r7,#4]
  317:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputLow: handler null pointer", handler != NULL);
  318:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputLow(handler->gpio_port,handler->gpio_pin);
+ 245              	 .loc 4 318 0
+ 246 0008 7B68     	 ldr r3,[r7,#4]
+ 247 000a 1A68     	 ldr r2,[r3]
+ 248 000c 7B68     	 ldr r3,[r7,#4]
+ 249 000e 1B7B     	 ldrb r3,[r3,#12]
+ 250 0010 101C     	 mov r0,r2
+ 251 0012 191C     	 mov r1,r3
+ 252 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputLow
  319:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** }
- 320:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** 
- 321:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
- 322:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to Toggle port pin.
- 323:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
- 324:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
- 325:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *
- 326:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
- 327:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to toggle port pin.
- 328:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *
- 329:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
- 330:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * DIGITAL_IO_SetOutputLow(), DIGITAL_IO_SetOutputHigh()
- 331:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *
- 332:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
- 333:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *
- 334:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
- 335:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
- 336:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
- 337:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
- 338:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
- 339:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   uint32_t delay_count;;
- 340:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
- 341:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
- 342:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
- 343:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
- 344:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
- 345:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
- 346:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
- 347:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
- 348:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      while(1U)
- 349:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      {
- 350:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      }
- 351:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
- 352:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
- 353:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
- 354:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
- 355:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      DIGITAL_IO_ToggleOutput(&DIGITAL_IO_0); //toggles : 1 -> 0 (if initial output level is logic
- 356:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      //Add application code here
- 357:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      for(delay_count = 0;delay_count<0xfffff;delay_count++);
- 358:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      DIGITAL_IO_ToggleOutput(&DIGITAL_IO_0); //toggles : 0 -> 1
- 359:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      //Add application code here
- 360:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *      for(delay_count = 0;delay_count<0xfffff;delay_count++);
- 361:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
- 362:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
- 363:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
- 364:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
- 365:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** */
- 366:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** 
- 367:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_ToggleOutput(const DIGITAL_IO_t *const handler)
- 368:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** {
- 158              	 .loc 4 368 0
- 159              	 .cfi_startproc
- 160 0000 80B5     	 push {r7,lr}
- 161              	.LCFI9:
- 162              	 .cfi_def_cfa_offset 8
- 163              	 .cfi_offset 7,-8
- 164              	 .cfi_offset 14,-4
- 165 0002 82B0     	 sub sp,sp,#8
- 166              	.LCFI10:
- 167              	 .cfi_def_cfa_offset 16
- 168 0004 00AF     	 add r7,sp,#0
- 169              	.LCFI11:
- 170              	 .cfi_def_cfa_register 7
- 171 0006 7860     	 str r0,[r7,#4]
- 369:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_ToggleOutput: handler null pointer", handler != NULL);
- 370:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_ToggleOutput(handler->gpio_port, handler->gpio_pin);
- 172              	 .loc 4 370 0
- 173 0008 7B68     	 ldr r3,[r7,#4]
- 174 000a 1A68     	 ldr r2,[r3]
- 175 000c 7B68     	 ldr r3,[r7,#4]
- 176 000e 1B7B     	 ldrb r3,[r3,#12]
- 177 0010 101C     	 mov r0,r2
- 178 0012 191C     	 mov r1,r3
- 179 0014 FFF7FEFF 	 bl XMC_GPIO_ToggleOutput
- 371:N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO\digital_io.h **** }
- 180              	 .loc 4 371 0
- 181 0018 BD46     	 mov sp,r7
- 182 001a 02B0     	 add sp,sp,#8
- 183              	 
- 184 001c 80BD     	 pop {r7,pc}
- 185              	 .cfi_endproc
- 186              	.LFE220:
- 188              	 .comm handSignals,1676,4
- 189              	 .comm sensorReadings,16,4
- 190 001e C046     	 .section .text.IRQ0_Handler,"ax",%progbits
- 191              	 .align 2
- 192              	 .global IRQ0_Handler
- 193              	 .code 16
- 194              	 .thumb_func
- 196              	IRQ0_Handler:
- 197              	.LFB222:
- 198              	 .file 5 "../main.c"
+ 253              	 .loc 4 319 0
+ 254 0018 BD46     	 mov sp,r7
+ 255 001a 02B0     	 add sp,sp,#8
+ 256              	 
+ 257 001c 80BD     	 pop {r7,pc}
+ 258              	 .cfi_endproc
+ 259              	.LFE219:
+ 261              	 .comm handSignals,11276,4
+ 262              	 .comm sensorReadings,16,4
+ 263 001e C046     	 .section .text.IRQ21_Handler,"ax",%progbits
+ 264              	 .align 2
+ 265              	 .global IRQ21_Handler
+ 266              	 .code 16
+ 267              	 .thumb_func
+ 269              	IRQ21_Handler:
+ 270              	.LFB222:
+ 271              	 .file 5 "../main.c"
    1:../main.c     **** /*
    2:../main.c     ****  * main.c
    3:../main.c     ****  *
@@ -1730,195 +1721,305 @@
   14:../main.c     **** struct MyoHand handSignals;
   15:../main.c     **** struct FourTuple sensorReadings;
   16:../main.c     **** 
-  17:../main.c     **** //This samples the ADCs connected for the EMG sensors
-  18:../main.c     **** void SampleEMGs(void)
-  19:../main.c     **** {
- 199              	 .loc 5 19 0
- 200              	 .cfi_startproc
- 201 0000 80B5     	 push {r7,lr}
- 202              	.LCFI12:
- 203              	 .cfi_def_cfa_offset 8
- 204              	 .cfi_offset 7,-8
- 205              	 .cfi_offset 14,-4
- 206 0002 00AF     	 add r7,sp,#0
- 207              	.LCFI13:
- 208              	 .cfi_def_cfa_register 7
-  20:../main.c     **** 	//Acknowledge interrupt and clear it
-  21:../main.c     **** 	TIMER_ClearEvent(&TIMER_0);
- 209              	 .loc 5 21 0
- 210 0004 174B     	 ldr r3,.L11
- 211 0006 181C     	 mov r0,r3
- 212 0008 FFF7FEFF 	 bl TIMER_ClearEvent
-  22:../main.c     **** 	DIGITAL_IO_ToggleOutput(&LEDpin);
- 213              	 .loc 5 22 0
- 214 000c 164B     	 ldr r3,.L11+4
- 215 000e 181C     	 mov r0,r3
- 216 0010 FFF7FEFF 	 bl DIGITAL_IO_ToggleOutput
-  23:../main.c     **** 	sensorReadings.thumb = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_thumbChannel);
- 217              	 .loc 5 23 0
- 218 0014 154B     	 ldr r3,.L11+8
- 219 0016 181C     	 mov r0,r3
- 220 0018 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
- 221 001c 031C     	 mov r3,r0
- 222 001e 1A1C     	 mov r2,r3
- 223 0020 134B     	 ldr r3,.L11+12
- 224 0022 1A60     	 str r2,[r3]
-  24:../main.c     **** 	sensorReadings.index = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_indexChannel);
- 225              	 .loc 5 24 0
- 226 0024 134B     	 ldr r3,.L11+16
- 227 0026 181C     	 mov r0,r3
- 228 0028 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
- 229 002c 031C     	 mov r3,r0
- 230 002e 1A1C     	 mov r2,r3
- 231 0030 0F4B     	 ldr r3,.L11+12
- 232 0032 5A60     	 str r2,[r3,#4]
-  25:../main.c     **** 	sensorReadings.middle = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_middleChannel);
- 233              	 .loc 5 25 0
- 234 0034 104B     	 ldr r3,.L11+20
- 235 0036 181C     	 mov r0,r3
- 236 0038 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
- 237 003c 031C     	 mov r3,r0
- 238 003e 1A1C     	 mov r2,r3
- 239 0040 0B4B     	 ldr r3,.L11+12
- 240 0042 9A60     	 str r2,[r3,#8]
-  26:../main.c     **** 	sensorReadings.rp = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_rpChannel);
- 241              	 .loc 5 26 0
- 242 0044 0D4B     	 ldr r3,.L11+24
- 243 0046 181C     	 mov r0,r3
- 244 0048 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
- 245 004c 031C     	 mov r3,r0
- 246 004e 1A1C     	 mov r2,r3
- 247 0050 074B     	 ldr r3,.L11+12
- 248 0052 DA60     	 str r2,[r3,#12]
-  27:../main.c     **** 	MyoDataPush(&handSignals.sensorBuffer,&sensorReadings);
- 249              	 .loc 5 27 0
- 250 0054 0A4A     	 ldr r2,.L11+28
- 251 0056 064B     	 ldr r3,.L11+12
- 252 0058 101C     	 mov r0,r2
- 253 005a 191C     	 mov r1,r3
- 254 005c FFF7FEFF 	 bl MyoDataPush
-  28:../main.c     **** }
- 255              	 .loc 5 28 0
- 256 0060 BD46     	 mov sp,r7
- 257              	 
- 258 0062 80BD     	 pop {r7,pc}
- 259              	.L12:
- 260              	 .align 2
- 261              	.L11:
- 262 0064 00000000 	 .word TIMER_0
- 263 0068 00000000 	 .word LEDpin
- 264 006c 00000000 	 .word ADC_MEASUREMENT_thumbChannel_handle
- 265 0070 00000000 	 .word sensorReadings
- 266 0074 00000000 	 .word ADC_MEASUREMENT_indexChannel_handle
- 267 0078 00000000 	 .word ADC_MEASUREMENT_middleChannel_handle
- 268 007c 00000000 	 .word ADC_MEASUREMENT_rpChannel_handle
- 269 0080 00000000 	 .word handSignals
- 270              	 .cfi_endproc
- 271              	.LFE222:
- 273              	 .section .text.main,"ax",%progbits
- 274              	 .align 2
- 275              	 .global main
- 276              	 .code 16
- 277              	 .thumb_func
- 279              	main:
- 280              	.LFB223:
-  29:../main.c     **** 
-  30:../main.c     **** 
-  31:../main.c     **** int main(void)
-  32:../main.c     **** {
- 281              	 .loc 5 32 0
- 282              	 .cfi_startproc
- 283 0000 90B5     	 push {r4,r7,lr}
- 284              	.LCFI14:
- 285              	 .cfi_def_cfa_offset 12
- 286              	 .cfi_offset 4,-12
- 287              	 .cfi_offset 7,-8
- 288              	 .cfi_offset 14,-4
- 289 0002 83B0     	 sub sp,sp,#12
- 290              	.LCFI15:
- 291              	 .cfi_def_cfa_offset 24
- 292 0004 00AF     	 add r7,sp,#0
- 293              	.LCFI16:
- 294              	 .cfi_def_cfa_register 7
-  33:../main.c     ****   DAVE_STATUS_t status;
-  34:../main.c     **** 
-  35:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
- 295              	 .loc 5 35 0
- 296 0006 FC1D     	 add r4,r7,#7
- 297 0008 FFF7FEFF 	 bl DAVE_Init
- 298 000c 031C     	 mov r3,r0
- 299 000e 2370     	 strb r3,[r4]
+  17:../main.c     **** void InitializeLevels(struct MyoHand * myohandPtr);
+  18:../main.c     **** 
+  19:../main.c     **** //This samples the ADCs connected for the EMG sensors
+  20:../main.c     **** void SampleEMGs(void)
+  21:../main.c     **** {
+ 272              	 .loc 5 21 0
+ 273              	 .cfi_startproc
+ 274 0000 80B5     	 push {r7,lr}
+ 275              	.LCFI18:
+ 276              	 .cfi_def_cfa_offset 8
+ 277              	 .cfi_offset 7,-8
+ 278              	 .cfi_offset 14,-4
+ 279 0002 00AF     	 add r7,sp,#0
+ 280              	.LCFI19:
+ 281              	 .cfi_def_cfa_register 7
+  22:../main.c     **** 	//Acknowledge interrupt and clear it
+  23:../main.c     **** 	TIMER_ClearEvent(&TIMER_0);
+ 282              	 .loc 5 23 0
+ 283 0004 194B     	 ldr r3,.L11
+ 284 0006 181C     	 mov r0,r3
+ 285 0008 FFF7FEFF 	 bl TIMER_ClearEvent
+  24:../main.c     **** 	DIGITAL_IO_SetOutputHigh(&OutputPin1);
+ 286              	 .loc 5 24 0
+ 287 000c 184B     	 ldr r3,.L11+4
+ 288 000e 181C     	 mov r0,r3
+ 289 0010 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+  25:../main.c     **** 	sensorReadings.thumb = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_thumbChannel);
+ 290              	 .loc 5 25 0
+ 291 0014 174B     	 ldr r3,.L11+8
+ 292 0016 181C     	 mov r0,r3
+ 293 0018 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 294 001c 031C     	 mov r3,r0
+ 295 001e 1A1C     	 mov r2,r3
+ 296 0020 154B     	 ldr r3,.L11+12
+ 297 0022 1A60     	 str r2,[r3]
+  26:../main.c     **** 	sensorReadings.index = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_indexChannel);
+ 298              	 .loc 5 26 0
+ 299 0024 154B     	 ldr r3,.L11+16
+ 300 0026 181C     	 mov r0,r3
+ 301 0028 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 302 002c 031C     	 mov r3,r0
+ 303 002e 1A1C     	 mov r2,r3
+ 304 0030 114B     	 ldr r3,.L11+12
+ 305 0032 5A60     	 str r2,[r3,#4]
+  27:../main.c     **** 	sensorReadings.middle = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_middleChannel);
+ 306              	 .loc 5 27 0
+ 307 0034 124B     	 ldr r3,.L11+20
+ 308 0036 181C     	 mov r0,r3
+ 309 0038 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 310 003c 031C     	 mov r3,r0
+ 311 003e 1A1C     	 mov r2,r3
+ 312 0040 0D4B     	 ldr r3,.L11+12
+ 313 0042 9A60     	 str r2,[r3,#8]
+  28:../main.c     **** 	sensorReadings.rp = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_rpChannel);
+ 314              	 .loc 5 28 0
+ 315 0044 0F4B     	 ldr r3,.L11+24
+ 316 0046 181C     	 mov r0,r3
+ 317 0048 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 318 004c 031C     	 mov r3,r0
+ 319 004e 1A1C     	 mov r2,r3
+ 320 0050 094B     	 ldr r3,.L11+12
+ 321 0052 DA60     	 str r2,[r3,#12]
+  29:../main.c     **** 	MyoDataPush(&handSignals.sensorBuffer,&sensorReadings);
+ 322              	 .loc 5 29 0
+ 323 0054 0C4A     	 ldr r2,.L11+28
+ 324 0056 084B     	 ldr r3,.L11+12
+ 325 0058 101C     	 mov r0,r2
+ 326 005a 191C     	 mov r1,r3
+ 327 005c FFF7FEFF 	 bl MyoDataPush
+  30:../main.c     **** 	DIGITAL_IO_SetOutputLow(&OutputPin1);
+ 328              	 .loc 5 30 0
+ 329 0060 034B     	 ldr r3,.L11+4
+ 330 0062 181C     	 mov r0,r3
+ 331 0064 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+  31:../main.c     **** }
+ 332              	 .loc 5 31 0
+ 333 0068 BD46     	 mov sp,r7
+ 334              	 
+ 335 006a 80BD     	 pop {r7,pc}
+ 336              	.L12:
+ 337              	 .align 2
+ 338              	.L11:
+ 339 006c 00000000 	 .word TIMER_0
+ 340 0070 00000000 	 .word OutputPin1
+ 341 0074 00000000 	 .word ADC_MEASUREMENT_thumbChannel_handle
+ 342 0078 00000000 	 .word sensorReadings
+ 343 007c 00000000 	 .word ADC_MEASUREMENT_indexChannel_handle
+ 344 0080 00000000 	 .word ADC_MEASUREMENT_middleChannel_handle
+ 345 0084 00000000 	 .word ADC_MEASUREMENT_rpChannel_handle
+ 346 0088 00000000 	 .word handSignals
+ 347              	 .cfi_endproc
+ 348              	.LFE222:
+ 350              	 .section .text.main,"ax",%progbits
+ 351              	 .align 2
+ 352              	 .global main
+ 353              	 .code 16
+ 354              	 .thumb_func
+ 356              	main:
+ 357              	.LFB223:
+  32:../main.c     **** 
+  33:../main.c     **** int main(void)
+  34:../main.c     **** {
+ 358              	 .loc 5 34 0
+ 359              	 .cfi_startproc
+ 360 0000 90B5     	 push {r4,r7,lr}
+ 361              	.LCFI20:
+ 362              	 .cfi_def_cfa_offset 12
+ 363              	 .cfi_offset 4,-12
+ 364              	 .cfi_offset 7,-8
+ 365              	 .cfi_offset 14,-4
+ 366 0002 83B0     	 sub sp,sp,#12
+ 367              	.LCFI21:
+ 368              	 .cfi_def_cfa_offset 24
+ 369 0004 00AF     	 add r7,sp,#0
+ 370              	.LCFI22:
+ 371              	 .cfi_def_cfa_register 7
+  35:../main.c     ****   DAVE_STATUS_t status;
   36:../main.c     **** 
-  37:../main.c     ****   if(status != DAVE_STATUS_SUCCESS)
- 300              	 .loc 5 37 0
- 301 0010 FB1D     	 add r3,r7,#7
- 302 0012 1B78     	 ldrb r3,[r3]
- 303 0014 002B     	 cmp r3,#0
- 304 0016 00D0     	 beq .L14
- 305              	.L15:
-  38:../main.c     ****   {
-  39:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
-  40:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
-  41:../main.c     **** 
-  42:../main.c     ****     while(1U)
-  43:../main.c     ****     {
-  44:../main.c     **** 
-  45:../main.c     ****     }
- 306              	 .loc 5 45 0 discriminator 1
- 307 0018 FEE7     	 b .L15
- 308              	.L14:
-  46:../main.c     ****   }
-  47:../main.c     **** 
-  48:../main.c     **** 
-  49:../main.c     ****   /* 		INITIALIZATION OF VARIOUS COMPONENTS		*/
-  50:../main.c     ****   MyoHandINIT(&handSignals);
- 309              	 .loc 5 50 0
- 310 001a 044B     	 ldr r3,.L17
- 311 001c 181C     	 mov r0,r3
- 312 001e FFF7FEFF 	 bl MyoHandINIT
-  51:../main.c     **** 
-  52:../main.c     ****   //enable sampling
-  53:../main.c     ****   INTERRUPT_Enable(&samplingInterrupt);
- 313              	 .loc 5 53 0
- 314 0022 034B     	 ldr r3,.L17+4
- 315 0024 181C     	 mov r0,r3
- 316 0026 FFF7FEFF 	 bl INTERRUPT_Enable
- 317              	.L16:
-  54:../main.c     **** 
-  55:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
-  56:../main.c     ****   while(1U)
-  57:../main.c     ****   {
-  58:../main.c     **** 
-  59:../main.c     ****   }
- 318              	 .loc 5 59 0 discriminator 2
- 319 002a FEE7     	 b .L16
- 320              	.L18:
- 321              	 .align 2
- 322              	.L17:
- 323 002c 00000000 	 .word handSignals
- 324 0030 00000000 	 .word samplingInterrupt
- 325              	 .cfi_endproc
- 326              	.LFE223:
- 328              	 .text
- 329              	.Letext0:
- 330              	 .file 6 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
- 331              	 .file 7 "../Drivers/MyoDataCollector.h"
- 332              	 .file 8 "../Drivers/MyoHand.h"
- 333              	 .file 9 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
- 334              	 .file 10 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
- 335              	 .file 11 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
- 336              	 .file 12 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_vadc.h"
- 337              	 .file 13 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
- 338              	 .file 14 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_ccu4.h"
- 339              	 .file 15 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
- 340              	 .file 16 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/TIMER/timer.h"
- 341              	 .file 17 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_gpio.h"
- 342              	 .file 18 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DAVE.h"
- 343              	 .file 19 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
- 344              	 .file 20 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/ADC_MEASUREMENT/ADC_MEASUREMENT_Extern.h"
- 345              	 .file 21 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/TIMER/timer_extern.h"
- 346              	 .file 22 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/INTERRUPT/interrupt_extern.h"
- 347              	 .file 23 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+  37:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
+ 372              	 .loc 5 37 0
+ 373 0006 FC1D     	 add r4,r7,#7
+ 374 0008 FFF7FEFF 	 bl DAVE_Init
+ 375 000c 031C     	 mov r3,r0
+ 376 000e 2370     	 strb r3,[r4]
+  38:../main.c     **** 
+  39:../main.c     ****   if(status != DAVE_STATUS_SUCCESS)
+ 377              	 .loc 5 39 0
+ 378 0010 FB1D     	 add r3,r7,#7
+ 379 0012 1B78     	 ldrb r3,[r3]
+ 380 0014 002B     	 cmp r3,#0
+ 381 0016 00D0     	 beq .L14
+ 382              	.L15:
+  40:../main.c     ****   {
+  41:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
+  42:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
+  43:../main.c     **** 
+  44:../main.c     ****     while(1U)
+  45:../main.c     ****     {
+  46:../main.c     **** 
+  47:../main.c     ****     }
+ 383              	 .loc 5 47 0 discriminator 1
+ 384 0018 FEE7     	 b .L15
+ 385              	.L14:
+  48:../main.c     ****   }
+  49:../main.c     **** 
+  50:../main.c     **** 
+  51:../main.c     ****   /* 		INITIALIZATION OF VARIOUS COMPONENTS		*/
+  52:../main.c     ****   MyoHandINIT(&handSignals);
+ 386              	 .loc 5 52 0
+ 387 001a 064B     	 ldr r3,.L17
+ 388 001c 181C     	 mov r0,r3
+ 389 001e FFF7FEFF 	 bl MyoHandINIT
+  53:../main.c     **** 
+  54:../main.c     ****   //enable sampling
+  55:../main.c     ****   INTERRUPT_Enable(&samplingInterrupt);
+ 390              	 .loc 5 55 0
+ 391 0022 054B     	 ldr r3,.L17+4
+ 392 0024 181C     	 mov r0,r3
+ 393 0026 FFF7FEFF 	 bl INTERRUPT_Enable
+  56:../main.c     ****   //Initialize Sensor Levels now that sampling is occurring at the set interrupt frequency
+  57:../main.c     ****   //InitializeLevels(&handSignals);
+  58:../main.c     ****   InitializeLevels(&handSignals);
+ 394              	 .loc 5 58 0
+ 395 002a 024B     	 ldr r3,.L17
+ 396 002c 181C     	 mov r0,r3
+ 397 002e FFF7FEFF 	 bl InitializeLevels
+ 398              	.L16:
+  59:../main.c     **** 
+  60:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
+  61:../main.c     ****   while(1U)
+  62:../main.c     ****   {
+  63:../main.c     **** 	  //print Values
+  64:../main.c     ****   }
+ 399              	 .loc 5 64 0 discriminator 2
+ 400 0032 FEE7     	 b .L16
+ 401              	.L18:
+ 402              	 .align 2
+ 403              	.L17:
+ 404 0034 00000000 	 .word handSignals
+ 405 0038 00000000 	 .word samplingInterrupt
+ 406              	 .cfi_endproc
+ 407              	.LFE223:
+ 409              	 .section .text.InitializeLevels,"ax",%progbits
+ 410              	 .align 2
+ 411              	 .global InitializeLevels
+ 412              	 .code 16
+ 413              	 .thumb_func
+ 415              	InitializeLevels:
+ 416              	.LFB224:
+  65:../main.c     **** }
+  66:../main.c     **** 
+  67:../main.c     **** 
+  68:../main.c     **** //MUST BE CALLED --AFTER-- SAMPLING IS ALLOWED TO OCCUR VIA INTERRUPTS
+  69:../main.c     **** //5 seconds resting to compute yR - resting level for each channel
+  70:../main.c     **** //5 seconds contracted to compute yC - comfortable contraction level
+  71:../main.c     **** void InitializeLevels(struct MyoHand * myohandPtr)
+  72:../main.c     **** {
+ 417              	 .loc 5 72 0
+ 418              	 .cfi_startproc
+ 419 0000 90B5     	 push {r4,r7,lr}
+ 420              	.LCFI23:
+ 421              	 .cfi_def_cfa_offset 12
+ 422              	 .cfi_offset 4,-12
+ 423              	 .cfi_offset 7,-8
+ 424              	 .cfi_offset 14,-4
+ 425 0002 83B0     	 sub sp,sp,#12
+ 426              	.LCFI24:
+ 427              	 .cfi_def_cfa_offset 24
+ 428 0004 00AF     	 add r7,sp,#0
+ 429              	.LCFI25:
+ 430              	 .cfi_def_cfa_register 7
+ 431 0006 7860     	 str r0,[r7,#4]
+  73:../main.c     **** 
+  74:../main.c     **** 	DIGITAL_IO_SetOutputHigh(&LEDpin);
+ 432              	 .loc 5 74 0
+ 433 0008 134B     	 ldr r3,.L20
+ 434 000a 181C     	 mov r0,r3
+ 435 000c FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+  75:../main.c     **** 	//RELAX MUSCLES
+  76:../main.c     ****     //wait 5 seconds
+  77:../main.c     ****     //GetActivationLevels() from hand this is the yC set
+  78:../main.c     **** 	delayMils(5000);
+ 436              	 .loc 5 78 0
+ 437 0010 124B     	 ldr r3,.L20+4
+ 438 0012 181C     	 mov r0,r3
+ 439 0014 FFF7FEFF 	 bl delayMils
+  79:../main.c     **** 	myohandPtr->yR = myohandPtr->sensorBuffer.averages;
+ 440              	 .loc 5 79 0
+ 441 0018 7B68     	 ldr r3,[r7,#4]
+ 442 001a 1148     	 ldr r0,.L20+8
+ 443 001c 7A68     	 ldr r2,[r7,#4]
+ 444 001e 1149     	 ldr r1,.L20+12
+ 445 0020 1B18     	 add r3,r3,r0
+ 446 0022 5218     	 add r2,r2,r1
+ 447 0024 13CA     	 ldmia r2!,{r0,r1,r4}
+ 448 0026 13C3     	 stmia r3!,{r0,r1,r4}
+ 449 0028 1268     	 ldr r2,[r2]
+ 450 002a 1A60     	 str r2,[r3]
+  80:../main.c     ****     //CONTRACT MUSCLES TO A COMFORTABLE LEVEL
+  81:../main.c     **** 	//wait 5 seconds
+  82:../main.c     ****     //GetActivationLevels() from hand this is the yR set
+  83:../main.c     **** 	delayMils(5000);
+ 451              	 .loc 5 83 0
+ 452 002c 0B4B     	 ldr r3,.L20+4
+ 453 002e 181C     	 mov r0,r3
+ 454 0030 FFF7FEFF 	 bl delayMils
+  84:../main.c     **** 	myohandPtr->yC = myohandPtr->sensorBuffer.averages;
+ 455              	 .loc 5 84 0
+ 456 0034 7B68     	 ldr r3,[r7,#4]
+ 457 0036 0C48     	 ldr r0,.L20+16
+ 458 0038 7A68     	 ldr r2,[r7,#4]
+ 459 003a 0A49     	 ldr r1,.L20+12
+ 460 003c 1B18     	 add r3,r3,r0
+ 461 003e 5218     	 add r2,r2,r1
+ 462 0040 13CA     	 ldmia r2!,{r0,r1,r4}
+ 463 0042 13C3     	 stmia r3!,{r0,r1,r4}
+ 464 0044 1268     	 ldr r2,[r2]
+ 465 0046 1A60     	 str r2,[r3]
+  85:../main.c     **** 	DIGITAL_IO_SetOutputLow(&LEDpin);
+ 466              	 .loc 5 85 0
+ 467 0048 034B     	 ldr r3,.L20
+ 468 004a 181C     	 mov r0,r3
+ 469 004c FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+  86:../main.c     **** }
+ 470              	 .loc 5 86 0
+ 471 0050 BD46     	 mov sp,r7
+ 472 0052 03B0     	 add sp,sp,#12
+ 473              	 
+ 474 0054 90BD     	 pop {r4,r7,pc}
+ 475              	.L21:
+ 476 0056 C046     	 .align 2
+ 477              	.L20:
+ 478 0058 00000000 	 .word LEDpin
+ 479 005c 88130000 	 .word 5000
+ 480 0060 EC2B0000 	 .word 11244
+ 481 0064 CC2B0000 	 .word 11212
+ 482 0068 FC2B0000 	 .word 11260
+ 483              	 .cfi_endproc
+ 484              	.LFE224:
+ 486              	 .text
+ 487              	.Letext0:
+ 488              	 .file 6 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 489              	 .file 7 "../Drivers/MyoDataCollector.h"
+ 490              	 .file 8 "../Drivers/MyoHand.h"
+ 491              	 .file 9 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 492              	 .file 10 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
+ 493              	 .file 11 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
+ 494              	 .file 12 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_vadc.h"
+ 495              	 .file 13 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 496              	 .file 14 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_ccu4.h"
+ 497              	 .file 15 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+ 498              	 .file 16 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/TIMER/timer.h"
+ 499              	 .file 17 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_gpio.h"
+ 500              	 .file 18 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DAVE.h"
+ 501              	 .file 19 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+ 502              	 .file 20 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/ADC_MEASUREMENT/ADC_MEASUREMENT_Extern.h"
+ 503              	 .file 21 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/TIMER/timer_extern.h"
+ 504              	 .file 22 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/INTERRUPT/interrupt_extern.h"
+ 505              	 .file 23 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
     {standard input}:18     .text.__NVIC_EnableIRQ:00000000 $t
@@ -1926,19 +2027,25 @@ DEFINED SYMBOLS
     {standard input}:66     .text.__NVIC_EnableIRQ:00000030 $d
     {standard input}:71     .text.INTERRUPT_Enable:00000000 $t
     {standard input}:75     .text.INTERRUPT_Enable:00000000 INTERRUPT_Enable
-    {standard input}:107    .text.XMC_GPIO_ToggleOutput:00000000 $t
-    {standard input}:111    .text.XMC_GPIO_ToggleOutput:00000000 XMC_GPIO_ToggleOutput
-    {standard input}:146    .text.XMC_GPIO_ToggleOutput:00000020 $d
-    {standard input}:151    .text.DIGITAL_IO_ToggleOutput:00000000 $t
-    {standard input}:155    .text.DIGITAL_IO_ToggleOutput:00000000 DIGITAL_IO_ToggleOutput
-                            *COM*:0000068c handSignals
+    {standard input}:107    .text.XMC_GPIO_SetOutputHigh:00000000 $t
+    {standard input}:111    .text.XMC_GPIO_SetOutputHigh:00000000 XMC_GPIO_SetOutputHigh
+    {standard input}:147    .text.XMC_GPIO_SetOutputLow:00000000 $t
+    {standard input}:151    .text.XMC_GPIO_SetOutputLow:00000000 XMC_GPIO_SetOutputLow
+    {standard input}:187    .text.DIGITAL_IO_SetOutputHigh:00000000 $t
+    {standard input}:191    .text.DIGITAL_IO_SetOutputHigh:00000000 DIGITAL_IO_SetOutputHigh
+    {standard input}:225    .text.DIGITAL_IO_SetOutputLow:00000000 $t
+    {standard input}:229    .text.DIGITAL_IO_SetOutputLow:00000000 DIGITAL_IO_SetOutputLow
+                            *COM*:00002c0c handSignals
                             *COM*:00000010 sensorReadings
-    {standard input}:191    .text.IRQ0_Handler:00000000 $t
-    {standard input}:196    .text.IRQ0_Handler:00000000 IRQ0_Handler
-    {standard input}:262    .text.IRQ0_Handler:00000064 $d
-    {standard input}:274    .text.main:00000000 $t
-    {standard input}:279    .text.main:00000000 main
-    {standard input}:323    .text.main:0000002c $d
+    {standard input}:264    .text.IRQ21_Handler:00000000 $t
+    {standard input}:269    .text.IRQ21_Handler:00000000 IRQ21_Handler
+    {standard input}:339    .text.IRQ21_Handler:0000006c $d
+    {standard input}:351    .text.main:00000000 $t
+    {standard input}:356    .text.main:00000000 main
+    {standard input}:415    .text.InitializeLevels:00000000 InitializeLevels
+    {standard input}:404    .text.main:00000034 $d
+    {standard input}:410    .text.InitializeLevels:00000000 $t
+    {standard input}:478    .text.InitializeLevels:00000058 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
@@ -1946,7 +2053,7 @@ TIMER_ClearEvent
 ADC_MEASUREMENT_GetResult
 MyoDataPush
 TIMER_0
-LEDpin
+OutputPin1
 ADC_MEASUREMENT_thumbChannel_handle
 ADC_MEASUREMENT_indexChannel_handle
 ADC_MEASUREMENT_middleChannel_handle
@@ -1954,3 +2061,5 @@ ADC_MEASUREMENT_rpChannel_handle
 DAVE_Init
 MyoHandINIT
 samplingInterrupt
+delayMils
+LEDpin

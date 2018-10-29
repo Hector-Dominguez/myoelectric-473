@@ -66,11 +66,18 @@
  
 
 /* Moudule and Kernel Pointers */
-#define TIMER_0_KERNEL_PTR (XMC_CCU4_MODULE_t*)(void *)CCU40_BASE
-#define TIMER_0_SLICE_PTR  (XMC_CCU4_SLICE_t*)(void *)CCU40_CC41
+#define TIMER_0_KERNEL_PTR (XMC_CCU4_MODULE_t*)(void *)CCU41_BASE
+#define TIMER_0_SLICE_PTR  (XMC_CCU4_SLICE_t*)(void *)CCU41_CC41
 /* Shadow transfer masks */
 #define TIMER_0_SLICE_SH_MSK      XMC_CCU4_SHADOW_TRANSFER_SLICE_1
 #define TIMER_0_PRESCALER_SH_MSK  XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_1
+
+/* Moudule and Kernel Pointers */
+#define TIMER_1_KERNEL_PTR (XMC_CCU4_MODULE_t*)(void *)CCU40_BASE
+#define TIMER_1_SLICE_PTR  (XMC_CCU4_SLICE_t*)(void *)CCU40_CC41
+/* Shadow transfer masks */
+#define TIMER_1_SLICE_SH_MSK      XMC_CCU4_SHADOW_TRANSFER_SLICE_1
+#define TIMER_1_PRESCALER_SH_MSK  XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_1
 
 /** This is used to calculate the time in GetTime API */
 #define TIMER_CLK_CONST_SCALED (4473924266U)
