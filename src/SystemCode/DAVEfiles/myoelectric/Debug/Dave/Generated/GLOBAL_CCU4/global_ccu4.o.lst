@@ -1,0 +1,1170 @@
+   1              	 .cpu cortex-m0
+   2              	 .fpu softvfp
+   3              	 .eabi_attribute 20,1
+   4              	 .eabi_attribute 21,1
+   5              	 .eabi_attribute 23,3
+   6              	 .eabi_attribute 24,1
+   7              	 .eabi_attribute 25,1
+   8              	 .eabi_attribute 26,1
+   9              	 .eabi_attribute 30,6
+  10              	 .eabi_attribute 34,0
+  11              	 .eabi_attribute 18,4
+  12              	 .code 16
+  13              	 .file "global_ccu4.c"
+  14              	 .text
+  15              	.Ltext0:
+  16              	 .cfi_sections .debug_frame
+  17              	 .section .text.XMC_CCU4_StartPrescaler,"ax",%progbits
+  18              	 .align 2
+  19              	 .code 16
+  20              	 .thumb_func
+  22              	XMC_CCU4_StartPrescaler:
+  23              	.LFB47:
+  24              	 .file 1 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_ccu4.h"
+   1:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+   2:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @file xmc_ccu4.h
+   3:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @date 2017-09-15
+   4:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+   5:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @cond
+   6:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  **************************************************************************************************
+   7:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * XMClib v2.1.20 - XMC Peripheral Driver Library 
+   8:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+   9:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Copyright (c) 2015-2018, Infineon Technologies AG
+  10:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * All rights reserved.                        
+  11:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *                                             
+  12:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * following conditions are met:   
+  14:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *                                                                              
+  15:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * disclaimer.                        
+  17:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 
+  18:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 
+  21:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * products derived from this software without specific prior written permission.                  
+  23:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *                                                                              
+  24:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *                                                                              
+  32:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  **************************************************************************************************
+  35:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  36:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Change History
+  37:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * --------------
+  38:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  39:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2015-02-20:
+  40:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - Initial <br>
+  41:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - Documentation updates <br>
+  42:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  43:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2015-06-20:
+  44:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - Removed version macros and declaration of GetDriverVersion API <br>
+  45:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  46:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2015-07-22:
+  47:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - XMC_CCU4_SLICE_ConfigureStatusBitOverrideEvent() is updated to support XMC14 device. <br>
+  48:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  49:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2015-08-17:
+  50:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - XMC_CCU4_SLICE_PRESCALER_t enum is added to set the prescaler divider. <br>
+  51:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - XMC_CCU4_SLICE_SHADOW_TRANSFER_MODE_t enum item names are updated according to the guideli
+  52:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - XMC_CCU4_EnableShadowTransfer() API is made as inline, to improve the speed. <br>
+  53:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  54:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2015-09-29:
+  55:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - In XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_t, two more enum items are added to support exte
+  56:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *       settings.
+  57:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  58:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2015-10-07:
+  59:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - XMC_CCU4_SLICE_GetEvent() is made as inline.
+  60:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - XMC_CCU4_SLICE_MULTI_IRQ_ID_t is added to support the XMC_CCU4_SLICE_EnableMultipleEvents(
+  61:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *       XMC_CCU4_SLICE_DisableMultipleEvents() APIs.
+  62:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - DOC updates for the newly added APIs.
+  63:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  64:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2016-03-09:
+  65:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - Optimization of write only registers 
+  66:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  67:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2016-05-20:
+  68:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - Added XMC_CCU4_SLICE_StopClearTimer()
+  69:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - Changed implementation of XMC_CCU4_SLICE_StopTimer() and XMC_CCU4_SLICE_ClearTimer() to av
+  70:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  71:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2017-04-27:
+  72:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - XMC_CCU4_SLICE_SetPrescaler() changed div_val parameter to type XMC_CCU4_SLICE_PRESCALER_t
+  73:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 
+  74:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2017-09-15:
+  75:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *     - Fix XMC_CCU4_SLICE_SetShadowTransferMode()
+  76:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+  77:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @endcond
+  78:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+  79:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+  80:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #ifndef XMC_CCU4_H
+  81:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #define XMC_CCU4_H
+  82:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  
+  83:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**************************************************************************************************
+  84:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * HEADER FILES
+  85:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  **************************************************************************************************
+  86:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #include "xmc_common.h"
+  87:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU40)
+  88:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+  89:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if UC_FAMILY == XMC1
+  90:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  #include "xmc1_ccu4_map.h"
+  91:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+  92:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+  93:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if UC_FAMILY == XMC4
+  94:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  #include "xmc4_ccu4_map.h"
+  95:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+  96:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+  97:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+  98:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @addtogroup XMClib XMC Peripheral Library
+  99:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @{
+ 100:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 101:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  
+ 102:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 103:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @addtogroup CCU4
+ 104:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @brief Capture Compare Unit 4 (CCU4) low level driver for XMC family of microcontrollers<br>
+ 105:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 106:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * The CCU4 peripheral is a major component for systems that need general purpose timers for signal
+ 107:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * monitoring/conditioning and Pulse Width Modulation (PWM) signal generation. Power electronic con
+ 108:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * switched mode power supplies or interruptible power supplies, can easily be implemented with the
+ 109:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * CCU4 peripheral.\n
+ 110:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Each CCU4 module is comprised of four identical 16 bit Capture/Compare Timer slices, CC4y (where
+ 111:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * timer slice can work in compare mode or in capture mode.
+ 112:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 113:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * APIs provided in this file cover the following functional blocks of CCU4:\n
+ 114:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -- Timer configuration, Capture configuration, Function/Event configuration, Interrupt configura
+ 115:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par Note:
+ 116:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 1. SLICE (APIs prefixed with e.g. XMC_CCU4_SLICE_)
+ 117:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 2. Module (APIs are not having any prefix e.g. XMC_CCU4_)
+ 118:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 119:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par Timer(Compare mode) configuration:
+ 120:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * This section of the LLD provides the configuration structure XMC_CCU4_SLICE_COMPARE_CONFIG_t and
+ 121:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * function XMC_CCU4_SLICE_CompareInit().
+ 122:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 123:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * It can be used to:
+ 124:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Start and Stop the timer. (XMC_CCU4_SLICE_StartTimer(), XMC_CCU4_SLICE_StopTimer())
+ 125:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Update the period, compare, Dither, Prescaler  and Passive values. (XMC_CCU4_SLICE_SetTimerPe
+ 126:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    XMC_CCU4_SLICE_SetTimerCompareMatch(), XMC_CCU4_SLICE_SetPrescaler(), XMC_CCU4_SLICE_SetDithe
+ 127:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    XMC_CCU4_SLICE_SetPassiveLevel())
+ 128:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Enable the slices to support multichannel mode. (XMC_CCU4_SLICE_EnableMultiChannelMode())
+ 129:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 
+ 130:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par Capture configuration:
+ 131:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * This section of the LLD provides the configuration structure XMC_CCU4_SLICE_CAPTURE_CONFIG_t and
+ 132:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * function XMC_CCU4_SLICE_CaptureInit().
+ 133:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 134:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * It can be used to:
+ 135:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Configure the capture functionality. (XMC_CCU4_SLICE_Capture0Config(), XMC_CCU4_SLICE_Capture
+ 136:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Read the captured values along with the status, which indicate the value is latest or not.
+ 137:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    (XMC_CCU4_SLICE_GetCaptureRegisterValue())
+ 138:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 
+ 139:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par Function/Event configuration:
+ 140:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * This section of the LLD provides the configuration structure XMC_CCU4_SLICE_EVENT_CONFIG_t.\n
+ 141:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * 
+ 142:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * It can be used to:
+ 143:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Enable and Disable the events. (XMC_CCU4_SLICE_EnableEvent(), XMC_CCU4_SLICE_DisableEvent())
+ 144:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Configure to start and stop the timer on external events.(XMC_CCU4_SLICE_StartConfig(), XMC_C
+ 145:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Modulation, external load and Gating of the timer output.(XMC_CCU4_SLICE_ModulationConfig(), 
+ 146:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    XMC_CCU4_SLICE_LoadConfig(), XMC_CCU4_SLICE_GateConfig())
+ 147:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Control the count direction of the timer based on the external event. (XMC_CCU4_SLICE_Directi
+ 148:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# Count the external events.(XMC_CCU4_SLICE_CountConfig())
+ 149:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * -# External Trap. Which can be used as protective feature.(XMC_CCU4_SLICE_EnableTrap(), XMC_CCU4
+ 150:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    XMC_CCU4_SLICE_TrapConfig())
+ 151:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 152:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par Interrupt configuration:
+ 153:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * This section of the LLD provides the function to configure the interrupt node to each event (XMC
+ 154:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @{
+ 155:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 156:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  
+ 157:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**************************************************************************************************
+ 158:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * MACROS
+ 159:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  **************************************************************************************************
+ 160:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /* Macro to check if the interrupt enum passed is valid */
+ 161:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #define XMC_CCU4_SLICE_CHECK_INTERRUPT(interrupt) \
+ 162:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     ((interrupt == XMC_CCU4_SLICE_IRQ_ID_PERIOD_MATCH)           || \
+ 163:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****      (interrupt == XMC_CCU4_SLICE_IRQ_ID_ONE_MATCH)              || \
+ 164:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****      (interrupt == XMC_CCU4_SLICE_IRQ_ID_COMPARE_MATCH_UP)  || \
+ 165:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****      (interrupt == XMC_CCU4_SLICE_IRQ_ID_COMPARE_MATCH_DOWN)|| \
+ 166:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****      (interrupt == XMC_CCU4_SLICE_IRQ_ID_EVENT0)                 || \
+ 167:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****      (interrupt == XMC_CCU4_SLICE_IRQ_ID_EVENT1)                 || \
+ 168:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****      (interrupt == XMC_CCU4_SLICE_IRQ_ID_EVENT2)                 || \
+ 169:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****      (interrupt == XMC_CCU4_SLICE_IRQ_ID_TRAP))
+ 170:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 171:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**************************************************************************************************
+ 172:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * ENUMS
+ 173:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  **************************************************************************************************
+ 174:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 175:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 176:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Typedef for CCU4 Global data structure
+ 177:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 178:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef CCU4_GLOBAL_TypeDef XMC_CCU4_MODULE_t;
+ 179:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 180:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 181:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Typedef for CCU4 Slice data structure
+ 182:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 183:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef CCU4_CC4_TypeDef XMC_CCU4_SLICE_t;
+ 184:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 185:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 186:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Return Value of an API
+ 187:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 188:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_STATUS
+ 189:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 190:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_STATUS_OK      = 0U, /**< API fulfils request */
+ 191:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_STATUS_ERROR       , /**< API cannot fulfil the request */
+ 192:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_STATUS_RUNNING     , /**< The timer slice is currently running */
+ 193:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_STATUS_IDLE          /**< The timer slice is currently idle */
+ 194:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_STATUS_t;
+ 195:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 196:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 197:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  CCU4 module clock
+ 198:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 199:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_CLOCK
+ 200:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 201:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_CLOCK_SCU        = 0U, /**< Select the fCCU as the clock */
+ 202:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_CLOCK_EXTERNAL_A     , /**< External clock-A */
+ 203:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_CLOCK_EXTERNAL_B     , /**< External clock-B */
+ 204:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_CLOCK_EXTERNAL_C       /**< External clock-C */
+ 205:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_CLOCK_t;
+ 206:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 207:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 208:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * CCU4 set the shadow transfer type for multichannel mode
+ 209:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 210:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER
+ 211:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 212:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE0       = (uint32_t)0x4000000, /**< Shadow transfe
+ 213:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                      only for slice
+ 214:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE0  = (uint32_t)0x4000400, /**< Shadow transfe
+ 215:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                      and hardware f
+ 216:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE1       = (uint32_t)0x8000000, /**< Shadow transfe
+ 217:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                      only for slice
+ 218:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE1  = (uint32_t)0x8000800, /**< Shadow transfe
+ 219:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                      and hardware f
+ 220:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE2       = (uint32_t)0x10000000, /**< Shadow transf
+ 221:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                       only for slic
+ 222:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE2  = (uint32_t)0x10001000, /**< Shadow transf
+ 223:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                       and hardware 
+ 224:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_SLICE3       = (uint32_t)0x20000000, /**< Shadow transf
+ 225:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                       only for slic
+ 226:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_SW_MCSS_SLICE3  = (uint32_t)0x20002000  /**< Shadow transf
+ 227:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                       and hardware 
+ 228:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_MULTI_CHANNEL_SHADOW_TRANSFER_t;
+ 229:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 230:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 231:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Operational modes of CCU4 slice
+ 232:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 233:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_MODE
+ 234:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 235:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MODE_COMPARE  = 0U, /**< slice(CC4y) operates in Compare Mode */
+ 236:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MODE_CAPTURE        /**< slice(CC4y) operates in Capture Mode */
+ 237:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_MODE_t;
+ 238:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 239:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 240:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Timer counting modes for the slice
+ 241:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 242:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_TIMER_COUNT_MODE
+ 243:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 244:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_COUNT_MODE_EA  = 0U, /**< Edge Aligned Mode */
+ 245:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_COUNT_MODE_CA        /**< Center Aligned Mode */
+ 246:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_TIMER_COUNT_MODE_t;
+ 247:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 248:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 249:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Timer repetition mode for the slice
+ 250:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 251:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_TIMER_REPEAT_MODE
+ 252:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 253:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_REPEAT_MODE_REPEAT = 0U,  /**< Repetitive mode: continuous mode of operation
+ 254:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_REPEAT_MODE_SINGLE        /**< Single shot mode: Once a Period match/One mat
+ 255:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                       occurs timer goes to idle state */
+ 256:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_TIMER_REPEAT_MODE_t;
+ 257:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 258:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 259:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Timer counting direction for the CCU4 slice
+ 260:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 261:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_TIMER_COUNT_DIR
+ 262:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 263:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_COUNT_DIR_UP   = 0U, /**< Counting up */
+ 264:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_COUNT_DIR_DOWN       /**< Counting down */
+ 265:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_TIMER_COUNT_DIR_t;
+ 266:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 267:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 268:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Capture mode register sets
+ 269:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 270:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_CAP_REG_SET
+ 271:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 272:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_CAP_REG_SET_LOW  = 0U, /**< Capture register-0, Capture register-1 used */
+ 273:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_CAP_REG_SET_HIGH       /**< Capture register-2, Capture register-3 used */
+ 274:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_CAP_REG_SET_t;
+ 275:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 276:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 277:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Prescaler mode
+ 278:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 279:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_PRESCALER_MODE
+ 280:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 281:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_MODE_NORMAL = 0U, /**< Fixed division of module clock */
+ 282:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_MODE_FLOAT        /**< Floating divider. */
+ 283:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_PRESCALER_MODE_t;
+ 284:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 285:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 286:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Timer output passive level
+ 287:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 288:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL
+ 289:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 290:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_LOW  = 0U, /**< Passive level = Low */
+ 291:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_HIGH       /**< Passive level = High */
+ 292:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_t;
+ 293:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 294:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 295:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Timer clock Divider
+ 296:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 297:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_PRESCALER
+ 298:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 299:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_1  = 0U, /**< Slice Clock = fccu4 */
+ 300:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_2      , /**< Slice Clock = fccu4/2 */
+ 301:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_4      , /**< Slice Clock = fccu4/4 */
+ 302:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_8      , /**< Slice Clock = fccu4/8 */
+ 303:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_16     , /**< Slice Clock = fccu4/16 */
+ 304:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_32     , /**< Slice Clock = fccu4/32 */
+ 305:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_64     , /**< Slice Clock = fccu4/64 */
+ 306:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_128    , /**< Slice Clock = fccu4/128 */
+ 307:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_256    , /**< Slice Clock = fccu4/256 */
+ 308:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_512    , /**< Slice Clock = fccu4/512 */
+ 309:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_1024   , /**< Slice Clock = fccu4/1024 */
+ 310:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_2048   , /**< Slice Clock = fccu4/2048 */
+ 311:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_4096   , /**< Slice Clock = fccu4/4096 */
+ 312:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_8192   , /**< Slice Clock = fccu4/8192 */
+ 313:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_16384  , /**< Slice Clock = fccu4/16384 */
+ 314:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_PRESCALER_32768    /**< Slice Clock = fccu4/32768 */
+ 315:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_PRESCALER_t;
+ 316:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 317:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 318:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  External Function list
+ 319:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 320:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_FUNCTION
+ 321:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 322:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_START           = 0U, /**< Start function */
+ 323:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_STOP                , /**< Stop function */
+ 324:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_CAPTURE_EVENT0      , /**< Capture Event-0 function, CCycapt0 signal is u
+ 325:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                      generation */
+ 326:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_CAPTURE_EVENT1      , /**< Capture Event-1 function, CCycapt1 signal is u
+ 327:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                      generation */
+ 328:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_GATING              , /**< Gating function */
+ 329:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_DIRECTION           , /**< Direction function */
+ 330:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_LOAD                , /**< Load function */
+ 331:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_COUNT               , /**< Counting function */
+ 332:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_OVERRIDE            , /**< Override function */
+ 333:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_MODULATION          , /**< Modulation function */
+ 334:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_FUNCTION_TRAP                  /**< Trap function */
+ 335:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_FUNCTION_t;
+ 336:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 337:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 338:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  External Event list
+ 339:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 340:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_EVENT
+ 341:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 342:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_NONE  = 0U, /**< None */
+ 343:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_0         , /**< Event-0 */
+ 344:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_1         , /**< Event-1 */
+ 345:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_2           /**< Event-2 */
+ 346:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_EVENT_t;
+ 347:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 348:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 349:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  External Event trigger criteria  - Edge sensitivity
+ 350:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 351:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY
+ 352:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 353:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY_NONE         = 0U, /**< None */
+ 354:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY_RISING_EDGE      , /**< Rising Edge of the input signal gen
+ 355:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY_FALLING_EDGE     , /**< Falling Edge of the input signal ge
+ 356:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                 trigger */
+ 357:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY_DUAL_EDGE          /**< Both Rising and Falling edges cause
+ 358:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY_t;
+ 359:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 360:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 361:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  External Event trigger criteria  - Level sensitivity
+ 362:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 363:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY
+ 364:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 365:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_HIGH = 0U, /**< Level sensitive functions react to 
+ 366:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_ACTIVE_LOW  = 1U, /**< Level sensitive functions react to 
+ 367:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   /* Below enum items can be utilised specific to the functionality */
+ 368:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_COUNT_UP_ON_LOW = 0U, /**< Timer counts up, during Low sta
+ 369:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_COUNT_UP_ON_HIGH = 1U /**< Timer counts up, during High st
+ 370:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_t;
+ 371:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 372:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 373:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Low pass filter Configuration. The External Event input should be stable for a selected number 
+ 374:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 375:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_EVENT_FILTER
+ 376:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 377:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_FILTER_DISABLED  = 0U, /**< No Low Pass Filter */
+ 378:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_FILTER_3_CYCLES      , /**< 3 clock cycles */
+ 379:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_FILTER_5_CYCLES      , /**< 5 clock cycles */
+ 380:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_FILTER_7_CYCLES        /**< 7 clock cycles */
+ 381:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_EVENT_FILTER_t;
+ 382:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 383:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 384:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  External Event Input list. This list depicts the possible input connections to the CCU4 slice.
+ 385:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Interconnects are specific to each device.
+ 386:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 387:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef uint8_t XMC_CCU4_SLICE_INPUT_t;
+ 388:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 389:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 390:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Actions that can be performed upon detection of an external Timer STOP event
+ 391:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 392:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_END_MODE
+ 393:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 394:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_END_MODE_TIMER_STOP       = 0U, /**< Stops the timer, without clearing TIMER regis
+ 395:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_END_MODE_TIMER_CLEAR          , /**< Without stopping timer, clears the TIMER regi
+ 396:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_END_MODE_TIMER_STOP_CLEAR       /**< Stops the timer and clears the TIMER register
+ 397:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_END_MODE_t;
+ 398:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 399:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 400:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Actions that can be performed upon detection of an external Timer START event
+ 401:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 402:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_START_MODE
+ 403:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 404:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_START_MODE_TIMER_START       = 0U, /**< Start the timer from the current count of 
+ 405:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_START_MODE_TIMER_START_CLEAR       /**< Clears the TIMER register and start the ti
+ 406:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_START_MODE_t;
+ 407:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 408:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 409:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Modulation of timer output signals
+ 410:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 411:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_MODULATION_MODE
+ 412:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 413:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MODULATION_MODE_CLEAR_ST_OUT  = 0U, /**< Clear ST and OUT signals */
+ 414:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MODULATION_MODE_CLEAR_OUT           /**< Clear only the OUT signal */
+ 415:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_MODULATION_MODE_t;
+ 416:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 417:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 418:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Trap exit mode
+ 419:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 420:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_TRAP_EXIT_MODE
+ 421:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 422:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TRAP_EXIT_MODE_AUTOMATIC = 0U, /**< Clear trap state as soon as the trap signal is
+ 423:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TRAP_EXIT_MODE_SW              /**< Clear only when acknowledged by software */
+ 424:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_TRAP_EXIT_MODE_t;
+ 425:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 426:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 427:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Timer clear on capture
+ 428:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 429:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_TIMER_CLEAR_MODE
+ 430:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 431:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_CLEAR_MODE_NEVER    = 0U, /**< Never clear the timer on any capture event */
+ 432:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_CLEAR_MODE_CAP_HIGH     , /**< Clear only when timer value has been captured
+ 433:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_CLEAR_MODE_CAP_LOW      , /**< Clear only when timer value has been captured
+ 434:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_TIMER_CLEAR_MODE_ALWAYS         /**< Always clear the timer upon detection of any 
+ 435:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_TIMER_CLEAR_MODE_t;
+ 436:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 437:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 438:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Multi Channel Shadow transfer request configuration options
+ 439:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 440:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_MCMS_ACTION
+ 441:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 442:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MCMS_ACTION_TRANSFER_PR_CR          = 0U, /**< Transfer Compare and Period Shadow 
+ 443:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                 the actual registers upon MCS xfer 
+ 444:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MCMS_ACTION_TRANSFER_PR_CR_PCMP     = 1U, /**< Transfer Compare, Period and Presca
+ 445:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                 register values to the actual regis
+ 446:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                 request */
+ 447:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MCMS_ACTION_TRANSFER_PR_CR_PCMP_DIT = 3U  /**< Transfer Compare, Period ,Prescaler
+ 448:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                 Compare register values to the actu
+ 449:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                 MCS xfer request */
+ 450:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_MCMS_ACTION_t;
+ 451:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 452:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 453:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Available Interrupt Event Ids
+ 454:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 455:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_IRQ_ID
+ 456:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 457:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_PERIOD_MATCH       = 0U , /**< Period match counting up */
+ 458:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_ONE_MATCH          = 1U , /**< Period match -> One match counting down */
+ 459:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_COMPARE_MATCH_UP   = 2U , /**< Compare match counting up */
+ 460:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_COMPARE_MATCH_DOWN = 3U , /**< Compare match counting down */
+ 461:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_EVENT0             = 8U , /**< Event-0 occurrence */
+ 462:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_EVENT1             = 9U , /**< Event-1 occurrence */
+ 463:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_EVENT2             = 10U, /**< Event-2 occurrence */
+ 464:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_IRQ_ID_TRAP               = 11U  /**< Trap occurrence */
+ 465:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_IRQ_ID_t;
+ 466:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 467:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 468:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Available Interrupt Event Ids, which is added to support multi event APIs
+ 469:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 470:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_MULTI_IRQ_ID
+ 471:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 472:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MULTI_IRQ_ID_PERIOD_MATCH       = 0x1U,   /**< Period match counting up */
+ 473:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MULTI_IRQ_ID_ONE_MATCH          = 0x2U,   /**< Period match -> One match counting 
+ 474:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MULTI_IRQ_ID_COMPARE_MATCH_UP   = 0x4U,   /**< Compare match counting up */
+ 475:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MULTI_IRQ_ID_COMPARE_MATCH_DOWN = 0x8U,   /**< Compare match counting down */
+ 476:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MULTI_IRQ_ID_EVENT0             = 0x100U, /**< Event-0 occurrence */
+ 477:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MULTI_IRQ_ID_EVENT1             = 0x200U, /**< Event-1 occurrence */
+ 478:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MULTI_IRQ_ID_EVENT2             = 0x400U, /**< Event-2 occurrence */
+ 479:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_MULTI_IRQ_ID_t;
+ 480:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 481:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 482:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Service Request Lines for CCU4. Event are mapped to these SR lines and these are used to generat
+ 483:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 484:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_SR_ID
+ 485:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 486:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_SR_ID_0    = 0U, /**< Service Request Line-0 selected  */
+ 487:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_SR_ID_1        , /**< Service Request Line-1 selected  */
+ 488:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_SR_ID_2        , /**< Service Request Line-2 selected  */
+ 489:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_SR_ID_3          /**< Service Request Line-3 selected  */
+ 490:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_SR_ID_t;
+ 491:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 492:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 493:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Slice shadow transfer options.
+ 494:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 495:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SHADOW_TRANSFER
+ 496:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 497:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_SLICE_0            = CCU4_GCSS_S0SE_Msk, /**< Transfer Period, Compare a
+ 498:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           shadow register values to
+ 499:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           SLICE-0 */
+ 500:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_DITHER_SLICE_0     = CCU4_GCSS_S0DSE_Msk, /**< Transfer Dither compare s
+ 501:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           to actual register for SL
+ 502:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_0  = CCU4_GCSS_S0PSE_Msk, /**< Transfer Prescaler shadow
+ 503:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           actual register for SLICE
+ 504:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_SLICE_1            = CCU4_GCSS_S1SE_Msk, /**< Transfer Period, Compare a
+ 505:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           shadow register values to
+ 506:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           SLICE-1 */
+ 507:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_DITHER_SLICE_1     = CCU4_GCSS_S1DSE_Msk, /**< Transfer Dither compare s
+ 508:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           to actual registers for S
+ 509:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_1  = CCU4_GCSS_S1PSE_Msk, /**< Transfer Prescaler shadow
+ 510:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           actual register for SLICE
+ 511:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_SLICE_2            = CCU4_GCSS_S2SE_Msk, /**< Transfer Period, Compare a
+ 512:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           shadow register values to
+ 513:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           SLICE-2 */
+ 514:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_DITHER_SLICE_2     = CCU4_GCSS_S2DSE_Msk, /**< Transfer Dither compare s
+ 515:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           to actual register for SL
+ 516:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_2  = CCU4_GCSS_S2PSE_Msk, /**< Transfer Prescaler shadow
+ 517:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           actual register for SLICE
+ 518:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_SLICE_3            = CCU4_GCSS_S3SE_Msk, /**< Transfer Period, Compare a
+ 519:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           shadow register values to
+ 520:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           SLICE-3 */
+ 521:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_DITHER_SLICE_3     = CCU4_GCSS_S3DSE_Msk, /**< Transfer Dither compare s
+ 522:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           to actual register for SL
+ 523:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SHADOW_TRANSFER_PRESCALER_SLICE_3  = CCU4_GCSS_S3PSE_Msk  /**< Transfer Prescaler shadow
+ 524:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                           actual register for SLICE
+ 525:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SHADOW_TRANSFER_t;
+ 526:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 527:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU4V3) || defined(DOXYGEN)/* Defined for XMC1400 devices only */
+ 528:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 529:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Slice shadow transfer mode options.
+ 530:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @note Only available for XMC1400 series
+ 531:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 532:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_SHADOW_TRANSFER_MODE
+ 533:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 534:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_SHADOW_TRANSFER_MODE_IN_PERIOD_MATCH_AND_ONE_MATCH = 0U,  /**< Shadow transfer is 
+ 535:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                 One match. */
+ 536:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_SHADOW_TRANSFER_MODE_ONLY_IN_PERIOD_MATCH = 1U,  /**< Shadow transfer is done only
+ 537:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_SHADOW_TRANSFER_MODE_ONLY_IN_ONE_MATCH = 2U  /**< Shadow transfer is done only in 
+ 538:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_SHADOW_TRANSFER_MODE_t; 
+ 539:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   
+ 540:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   
+ 541:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 542:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Immediate write into configuration register
+ 543:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  @note Only available for XMC1400 series
+ 544:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 545:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_WRITE_INTO
+ 546:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 547:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_WRITE_INTO_PERIOD_CONFIGURATION = CCU4_CC4_STC_IRPC_Msk,                  /**< Imm
+ 548:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Wri
+ 549:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Con
+ 550:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_WRITE_INTO_COMPARE_CONFIGURATION = CCU4_CC4_STC_IRCC_Msk,                 /**< Imm
+ 551:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Wri
+ 552:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Con
+ 553:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_WRITE_INTO_PASSIVE_LEVEL_CONFIGURATION = CCU4_CC4_STC_IRLC_Msk,           /**< Imm
+ 554:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Wri
+ 555:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                            Config
+ 556:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_WRITE_INTO_DITHER_VALUE_CONFIGURATION = CCU4_CC4_STC_IRDC_Msk,            /**< Imm
+ 557:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Wri
+ 558:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                            Config
+ 559:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_WRITE_INTO_FLOATING_PRESCALER_VALUE_CONFIGURATION = CCU4_CC4_STC_IRFC_Msk /**< Imm
+ 560:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Wri
+ 561:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                 Val
+ 562:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_WRITE_INTO_t;
+ 563:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 564:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 565:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 566:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Automatic Shadow Transfer request when writing into shadow register
+ 567:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  @note Only available for XMC1400 series
+ 568:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 569:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO
+ 570:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 571:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_PERIOD_SHADOW = CCU4_CC4_STC_ASPC_Msk,        
+ 572:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                                  
+ 573:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                    
+ 574:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                    
+ 575:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_COMPARE_SHADOW = CCU4_CC4_STC_ASCC_Msk,       
+ 576:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                                  
+ 577:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                                  
+ 578:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                                  
+ 579:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_PASSIVE_LEVEL = CCU4_CC4_STC_ASLC_Msk,        
+ 580:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                                  
+ 581:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                    
+ 582:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_DITHER_SHADOW = CCU4_CC4_STC_ASDC_Msk,        
+ 583:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                    
+ 584:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                    
+ 585:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_FLOATING_PRESCALER_SHADOW = CCU4_CC4_STC_ASFC_
+ 586:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 	                                                                                                  
+ 587:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                    
+ 588:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                                                                    
+ 589:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 590:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_AUTOMAIC_SHADOW_TRANSFER_WRITE_INTO_t;
+ 591:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 592:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 593:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Used to create Mask needed for Multi-channel Shadow transfer enable/disable
+ 594:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 595:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef enum XMC_CCU4_SLICE_MASK
+ 596:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 597:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MASK_SLICE_0  = 1U , /**< SLICE-0 */
+ 598:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MASK_SLICE_1  = 2U , /**< SLICE-1 */
+ 599:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MASK_SLICE_2  = 4U , /**< SLICE-2 */
+ 600:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_MASK_SLICE_3  = 8U   /**< SLICE-3 */
+ 601:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_MASK_t;
+ 602:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 603:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 604:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**************************************************************************************************
+ 605:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * DATA STRUCTURES
+ 606:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  **************************************************************************************************
+ 607:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 608:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 609:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Configuration data structure of an External Event(Event-0/1/2).
+ 610:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Needed to configure the various aspects of an External Event.
+ 611:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  This structure will not connect the external event with an external function.
+ 612:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 613:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef struct XMC_CCU4_SLICE_EVENT_CONFIG
+ 614:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 615:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_INPUT_t                   mapped_input; /**< Required input signal for the Event *
+ 616:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_EDGE_SENSITIVITY_t  edge;         /**< Select the event edge of the input si
+ 617:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                               This is needed for an edge sensitive 
+ 618:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_LEVEL_SENSITIVITY_t level;        /**< Select the event level of the input s
+ 619:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                                               This is needed for an level sensitive
+ 620:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_CCU4_SLICE_EVENT_FILTER_t            duration;     /**< Low Pass filter duration in terms of 
+ 621:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_EVENT_CONFIG_t;
+ 622:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 623:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /*Anonymous structure/union guard start*/
+ 624:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(__CC_ARM)
+ 625:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   #pragma push
+ 626:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   #pragma anon_unions
+ 627:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #elif defined(__TASKING__)
+ 628:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   #pragma warning 586
+ 629:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 630:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 631:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 632:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Configuration data structure for CCU4 slice. Specifically configures the CCU4 slice to compare 
+ 633:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  This excludes event and function configuration.
+ 634:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 635:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef struct XMC_CCU4_SLICE_COMPARE_CONFIG
+ 636:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 637:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   union
+ 638:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   {
+ 639:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     struct
+ 640:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     {
+ 641:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t timer_mode : 1;         /**< Edge aligned or Centre Aligned.
+ 642:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                              Accepts enum ::XMC_CCU4_SLICE_TIMER_COUNT_MODE_t */
+ 643:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t monoshot : 1;           /**< Single shot or Continuous mode .
+ 644:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                              Accepts enum :: XMC_CCU4_SLICE_TIMER_REPEAT_MODE_t*/
+ 645:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t shadow_xfer_clear : 1;  /**< Should PR and CR shadow xfer happen when timer is clear
+ 646:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 10;
+ 647:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t dither_timer_period: 1; /**< Can the period of the timer dither? */
+ 648:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t dither_duty_cycle : 1;  /**< Can the compare match of the timer dither? */
+ 649:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 1;
+ 650:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t prescaler_mode: 1;      /**< Normal or floating prescaler mode.
+ 651:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                              Accepts enum :: XMC_CCU4_SLICE_PRESCALER_MODE_t*/
+ 652:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 8;
+ 653:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t mcm_enable : 1;         /**< Multi-Channel mode enable? */
+ 654:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 6;
+ 655:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     };
+ 656:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     uint32_t tc;
+ 657:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   };
+ 658:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t prescaler_initval : 4;      /**< Initial prescaler divider value 
+ 659:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                             Accepts enum :: XMC_CCU4_SLICE_PRESCALER_t */
+ 660:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t float_limit : 4;            /**< The max value which the prescaler divider can increment
+ 661:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t dither_limit : 4;           /**< The value that determines the spreading of dithering */
+ 662:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t passive_level : 1;          /**< Configuration of ST and OUT passive levels.
+ 663:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                              Accepts enum :: XMC_CCU4_SLICE_OUTPUT_PASSIVE_LEVEL_t*
+ 664:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t timer_concatenation : 1;    /**< Enables the concatenation of the timer if true.*/
+ 665:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_COMPARE_CONFIG_t;
+ 666:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 667:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 668:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Configuration data structure for CCU4 slice. Specifically configures the CCU4 slice to capture 
+ 669:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  This excludes event and function configuration.
+ 670:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */ 
+ 671:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** typedef struct XMC_CCU4_SLICE_CAPTURE_CONFIG
+ 672:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 673:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   union
+ 674:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   {
+ 675:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     struct
+ 676:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     {
+ 677:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 4;
+ 678:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t fifo_enable : 1;      /**< Should the capture registers be setup as a FIFO?(Extended
+ 679:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t timer_clear_mode : 2; /**< How should the timer register be cleared upon detection o
+ 680:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****                                           Accepts enum ::XMC_CCU4_SLICE_TIMER_CLEAR_MODE_t*/
+ 681:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 4;
+ 682:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t same_event : 1;       /**< Should the capture event for C1V/C0V and C3V/C2V be same 
+ 683:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t ignore_full_flag : 1; /**< Should updates to capture registers follow full flag rule
+ 684:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 3;
+ 685:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t prescaler_mode: 1;    /**< Normal or floating prescaler Accepts enum :: XMC_CCU4_SLI
+ 686:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****       uint32_t : 15;
+ 687:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     };
+ 688:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****     uint32_t tc;
+ 689:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   };
+ 690:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t prescaler_initval : 4;    /**< Prescaler divider value */
+ 691:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t float_limit : 4;          /**< The max value which the prescaler divider can increment t
+ 692:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   uint32_t timer_concatenation : 1;  /**< Enables the concatenation of the timer */
+ 693:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } XMC_CCU4_SLICE_CAPTURE_CONFIG_t;
+ 694:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /*Anonymous structure/union guard end*/
+ 695:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(__CC_ARM)
+ 696:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   #pragma pop
+ 697:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #elif defined(__TASKING__)
+ 698:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   #pragma warning restore
+ 699:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 700:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**************************************************************************************************
+ 701:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * API Prototypes
+ 702:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  **************************************************************************************************
+ 703:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 704:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #ifdef __cplusplus
+ 705:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** extern "C" {
+ 706:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 707:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 708:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** __STATIC_INLINE bool XMC_CCU4_IsValidModule(const XMC_CCU4_MODULE_t *const module)
+ 709:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 710:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   bool tmp = false;
+ 711:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   
+ 712:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = (module == CCU40);
+ 713:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   
+ 714:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU41) 
+ 715:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (module == CCU41);
+ 716:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 717:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 718:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU42)
+ 719:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (module == CCU42);
+ 720:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 721:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 722:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU43)
+ 723:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (module == CCU43);
+ 724:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 725:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   
+ 726:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   return tmp;  
+ 727:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } 
+ 728:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 729:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** __STATIC_INLINE bool XMC_CCU4_IsValidSlice(const XMC_CCU4_SLICE_t *const slice)
+ 730:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+ 731:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   bool tmp = false;
+ 732:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   
+ 733:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = (slice == CCU40_CC40);
+ 734:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU40_CC41)  
+ 735:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU40_CC41);
+ 736:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 737:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU40_CC42)  
+ 738:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU40_CC42);
+ 739:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 740:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU40_CC43)  
+ 741:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU40_CC43);
+ 742:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 743:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU41)  
+ 744:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU41_CC40);
+ 745:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU41_CC41)  
+ 746:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU41_CC41);
+ 747:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 748:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU41_CC42)  
+ 749:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU41_CC42);
+ 750:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 751:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU41_CC43)  
+ 752:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU41_CC43);
+ 753:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 754:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif 
+ 755:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU42)  
+ 756:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU42_CC40);
+ 757:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU42_CC41)  
+ 758:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU42_CC41);
+ 759:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 760:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU42_CC42)  
+ 761:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU42_CC42);
+ 762:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 763:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU42_CC43)  
+ 764:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU42_CC43);
+ 765:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 766:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 767:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU43)  
+ 768:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU43_CC40);
+ 769:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU43_CC41)  
+ 770:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU43_CC41);
+ 771:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 772:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU43_CC42)  
+ 773:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU43_CC42);
+ 774:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 775:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #if defined(CCU43_CC43)  
+ 776:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   tmp = tmp || (slice == CCU43_CC43);
+ 777:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif
+ 778:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** #endif 
+ 779:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   
+ 780:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   return tmp;  
+ 781:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** } 
+ 782:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 783:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 784:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @param module Constant pointer to CCU4 module
+ 785:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @param mcs_action multi-channel shadow transfer request configuration
+ 786:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @return <BR>
+ 787:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    None<BR>
+ 788:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 789:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Description:</b><br>
+ 790:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Initialization of global register GCTRL.<br>\n
+ 791:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  As part of module initialization, behaviour of the module upon detection
+ 792:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Multi-Channel Mode trigger is configured. Will also invoke the XMC_CCU4_EnableModule().
+ 793:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  The API call would bring up the required CCU4 module and also initialize the module for
+ 794:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  the required multi-channel shadow transfer.
+ 795:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 796:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Related APIs:</b><br>
+ 797:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * XMC_CCU4_SLICE_CompareInit()<BR> XMC_CCU4_SLICE_CaptureInit().
+ 798:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 799:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** void XMC_CCU4_Init(XMC_CCU4_MODULE_t *const module, const XMC_CCU4_SLICE_MCMS_ACTION_t mcs_action);
+ 800:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 801:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 802:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @param module Constant pointer to CCU4 module
+ 803:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @param clock Choice of input clock to the module
+ 804:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @return <BR>
+ 805:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    None<BR>
+ 806:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 807:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Description:</b><br>
+ 808:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Selects the Module Clock by configuring GCTRL.PCIS bits.<BR>\n
+ 809:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  There are 3 potential clock sources. This API helps to select the required clock source.
+ 810:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Call to this API is valid after the XMC_CCU4_Init().
+ 811:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 812:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Related APIs:</b><br>
+ 813:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * None.<BR>
+ 814:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 815:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** void XMC_CCU4_SetModuleClock(XMC_CCU4_MODULE_t *const module, const XMC_CCU4_CLOCK_t clock);
+ 816:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 817:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 818:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @param module Constant pointer to CCU4 module
+ 819:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @return <BR>
+ 820:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    None<BR>
+ 821:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 822:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Description:</b><br>
+ 823:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Enables the CCU4 module and brings it to active state.<BR>\n
+ 824:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Also disables the gating of the clock signal (if applicable depending on the device being select
+ 825:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Invoke this API before any operations are done on the CCU4 module. Invoked from  XMC_CCU4_Init()
+ 826:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 827:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Related APIs:</b><br>
+ 828:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * XMC_CCU4_SetModuleClock()<BR> XMC_CCU4_DisableModule()<BR> XMC_CCU4_StartPrescaler().
+ 829:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 830:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** void XMC_CCU4_EnableModule(XMC_CCU4_MODULE_t *const module);
+ 831:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 832:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 833:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @param module Constant pointer to CCU4 module
+ 834:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @return <BR>
+ 835:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    None<BR>
+ 836:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 837:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Description:</b><br>
+ 838:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Brings the CCU4 module to reset state and enables gating of the clock signal(if applicable depen
+ 839:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * on the device being selected).<BR>\n
+ 840:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Invoke this API when a CCU4 module needs to be disabled completely.
+ 841:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * Any operation on the CCU4 module will have no effect after this API is called.
+ 842:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 843:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Related APIs:</b><br>
+ 844:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * XMC_CCU4_EnableModule()<BR> XMC_CCU4_DisableModule().
+ 845:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 846:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** void XMC_CCU4_DisableModule(XMC_CCU4_MODULE_t *const module);
+ 847:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** 
+ 848:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** /**
+ 849:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @param module Constant pointer to CCU4 module
+ 850:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * @return <BR>
+ 851:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *    None<BR>
+ 852:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 853:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Description:</b><br>
+ 854:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Starts the prescaler and restores clocks to the timer slices, by setting GIDLC.SPRB bit.<BR>\n
+ 855:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  Once the input to the prescaler has been chosen and the prescaler divider of all slices program
+ 856:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  the prescaler itself may be started. Invoke this  API after XMC_CCU4_Init()
+ 857:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *  (Mandatory to fully initialize the module).Directly accessed register is GIDLC.
+ 858:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  *
+ 859:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * \par<b>Related APIs:</b><br>
+ 860:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * XMC_CCU4_Init()<BR> XMC_CCU4_EnableClock()<BR> XMC_CCU4_DisableClock()<BR> XMC_CCU4_StartPrescal
+ 861:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  * XMC_CCU4_StopPrescaler().
+ 862:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****  */
+ 863:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** __STATIC_INLINE void XMC_CCU4_StartPrescaler(XMC_CCU4_MODULE_t *const module)
+ 864:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** {
+  25              	 .loc 1 864 0
+  26              	 .cfi_startproc
+  27 0000 80B5     	 push {r7,lr}
+  28              	.LCFI0:
+  29              	 .cfi_def_cfa_offset 8
+  30              	 .cfi_offset 7,-8
+  31              	 .cfi_offset 14,-4
+  32 0002 82B0     	 sub sp,sp,#8
+  33              	.LCFI1:
+  34              	 .cfi_def_cfa_offset 16
+  35 0004 00AF     	 add r7,sp,#0
+  36              	.LCFI2:
+  37              	 .cfi_def_cfa_register 7
+  38 0006 7860     	 str r0,[r7,#4]
+ 865:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   XMC_ASSERT("XMC_CCU4_StartPrescaler:Invalid Module Pointer", XMC_CCU4_IsValidModule(module));
+ 866:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h ****   module->GIDLC |= (uint32_t) CCU4_GIDLC_SPRB_Msk;
+  39              	 .loc 1 866 0
+  40 0008 7B68     	 ldr r3,[r7,#4]
+  41 000a DB68     	 ldr r3,[r3,#12]
+  42 000c 8022     	 mov r2,#128
+  43 000e 5200     	 lsl r2,r2,#1
+  44 0010 1A43     	 orr r2,r3
+  45 0012 7B68     	 ldr r3,[r7,#4]
+  46 0014 DA60     	 str r2,[r3,#12]
+ 867:N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc\xmc_ccu4.h **** }
+  47              	 .loc 1 867 0
+  48 0016 BD46     	 mov sp,r7
+  49 0018 02B0     	 add sp,sp,#8
+  50              	 
+  51 001a 80BD     	 pop {r7,pc}
+  52              	 .cfi_endproc
+  53              	.LFE47:
+  55              	 .section .text.GLOBAL_CCU4_GetAppVersion,"ax",%progbits
+  56              	 .align 2
+  57              	 .global GLOBAL_CCU4_GetAppVersion
+  58              	 .code 16
+  59              	 .thumb_func
+  61              	GLOBAL_CCU4_GetAppVersion:
+  62              	.LFB115:
+  63              	 .file 2 "../Dave/Generated/GLOBAL_CCU4/global_ccu4.c"
+   1:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /**
+   2:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * @file global_ccu4.c
+   3:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * @date 2016-02-10
+   4:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+   5:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * NOTE:
+   6:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   7:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+   8:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * @cond
+   9:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  **************************************************************************************************
+  10:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * GLOBAL_CCU4 v4.1.12 - Configures the global properties of CCU4x peripheral instance.
+  11:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  12:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * Copyright (c) 2016, Infineon Technologies AG
+  13:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * All rights reserved.
+  14:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  15:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  16:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * following conditions are met:
+  17:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  18:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  19:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *   disclaimer.
+  20:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  21:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  22:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  23:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  24:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  25:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *   products derived from this software without specific prior written permission.
+  26:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  27:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  28:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  29:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  30:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  31:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  32:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  33:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  34:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  35:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  36:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * with Infineon Technologies AG (dave@infineon.com).
+  37:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  **************************************************************************************************
+  38:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  39:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * Change History
+  40:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * --------------
+  41:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  42:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * 2015-02-16:
+  43:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *     - Initial version<br>
+  44:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  45:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * @endcond
+  46:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  *
+  47:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  */
+  48:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /**************************************************************************************************
+  49:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * HEADER FILES
+  50:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  **************************************************************************************************
+  51:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  52:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** #include "global_ccu4.h"
+  53:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  54:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /**************************************************************************************************
+  55:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * MACROS
+  56:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  **************************************************************************************************
+  57:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  58:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /**************************************************************************************************
+  59:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * LOCAL DATA
+  60:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  **************************************************************************************************
+  61:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  
+  62:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /**************************************************************************************************
+  63:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * LOCAL ROUTINES
+  64:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  **************************************************************************************************
+  65:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  66:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /**************************************************************************************************
+  67:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  * API IMPLEMENTATION
+  68:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****  **************************************************************************************************
+  69:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /* Returns the version of the GLOBAL_CCU4 APP. */
+  70:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** DAVE_APP_VERSION_t GLOBAL_CCU4_GetAppVersion(void)
+  71:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** {
+  64              	 .loc 2 71 0
+  65              	 .cfi_startproc
+  66 0000 80B5     	 push {r7,lr}
+  67              	.LCFI3:
+  68              	 .cfi_def_cfa_offset 8
+  69              	 .cfi_offset 7,-8
+  70              	 .cfi_offset 14,-4
+  71 0002 82B0     	 sub sp,sp,#8
+  72              	.LCFI4:
+  73              	 .cfi_def_cfa_offset 16
+  74 0004 00AF     	 add r7,sp,#0
+  75              	.LCFI5:
+  76              	 .cfi_def_cfa_register 7
+  72:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   DAVE_APP_VERSION_t version;
+  73:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  74:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   version.major = GLOBAL_CCU4_MAJOR_VERSION;
+  77              	 .loc 2 74 0
+  78 0006 3B1C     	 mov r3,r7
+  79 0008 0422     	 mov r2,#4
+  80 000a 1A70     	 strb r2,[r3]
+  75:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   version.minor = GLOBAL_CCU4_MINOR_VERSION;
+  81              	 .loc 2 75 0
+  82 000c 3B1C     	 mov r3,r7
+  83 000e 0122     	 mov r2,#1
+  84 0010 5A70     	 strb r2,[r3,#1]
+  76:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   version.patch = GLOBAL_CCU4_PATCH_VERSION;
+  85              	 .loc 2 76 0
+  86 0012 3B1C     	 mov r3,r7
+  87 0014 0C22     	 mov r2,#12
+  88 0016 9A70     	 strb r2,[r3,#2]
+  77:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  78:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   return version;
+  89              	 .loc 2 78 0
+  90 0018 3B1D     	 add r3,r7,#4
+  91 001a 3A1C     	 mov r2,r7
+  92 001c 1188     	 ldrh r1,[r2]
+  93 001e 1980     	 strh r1,[r3]
+  94 0020 9278     	 ldrb r2,[r2,#2]
+  95 0022 9A70     	 strb r2,[r3,#2]
+  96 0024 3A1D     	 add r2,r7,#4
+  97 0026 0023     	 mov r3,#0
+  98 0028 1178     	 ldrb r1,[r2]
+  99 002a FF20     	 mov r0,#255
+ 100 002c 0140     	 and r1,r0
+ 101 002e FF20     	 mov r0,#255
+ 102 0030 8343     	 bic r3,r0
+ 103 0032 0B43     	 orr r3,r1
+ 104 0034 5178     	 ldrb r1,[r2,#1]
+ 105 0036 FF20     	 mov r0,#255
+ 106 0038 0140     	 and r1,r0
+ 107 003a 0902     	 lsl r1,r1,#8
+ 108 003c 0648     	 ldr r0,.L4
+ 109 003e 0340     	 and r3,r0
+ 110 0040 0B43     	 orr r3,r1
+ 111 0042 9278     	 ldrb r2,[r2,#2]
+ 112 0044 FF21     	 mov r1,#255
+ 113 0046 0A40     	 and r2,r1
+ 114 0048 1204     	 lsl r2,r2,#16
+ 115 004a 0449     	 ldr r1,.L4+4
+ 116 004c 0B40     	 and r3,r1
+ 117 004e 1343     	 orr r3,r2
+  79:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** }
+ 118              	 .loc 2 79 0
+ 119 0050 181C     	 mov r0,r3
+ 120 0052 BD46     	 mov sp,r7
+ 121 0054 02B0     	 add sp,sp,#8
+ 122              	 
+ 123 0056 80BD     	 pop {r7,pc}
+ 124              	.L5:
+ 125              	 .align 2
+ 126              	.L4:
+ 127 0058 FF00FFFF 	 .word -65281
+ 128 005c FFFF00FF 	 .word -16711681
+ 129              	 .cfi_endproc
+ 130              	.LFE115:
+ 132              	 .section .text.GLOBAL_CCU4_Init,"ax",%progbits
+ 133              	 .align 2
+ 134              	 .global GLOBAL_CCU4_Init
+ 135              	 .code 16
+ 136              	 .thumb_func
+ 138              	GLOBAL_CCU4_Init:
+ 139              	.LFB116:
+  80:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  81:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** /* Initializes the slice with the generated configuration */
+  82:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** GLOBAL_CCU4_STATUS_t GLOBAL_CCU4_Init(GLOBAL_CCU4_t* handle)
+  83:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** {
+ 140              	 .loc 2 83 0
+ 141              	 .cfi_startproc
+ 142 0000 80B5     	 push {r7,lr}
+ 143              	.LCFI6:
+ 144              	 .cfi_def_cfa_offset 8
+ 145              	 .cfi_offset 7,-8
+ 146              	 .cfi_offset 14,-4
+ 147 0002 82B0     	 sub sp,sp,#8
+ 148              	.LCFI7:
+ 149              	 .cfi_def_cfa_offset 16
+ 150 0004 00AF     	 add r7,sp,#0
+ 151              	.LCFI8:
+ 152              	 .cfi_def_cfa_register 7
+ 153 0006 7860     	 str r0,[r7,#4]
+  84:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   XMC_ASSERT("GLOBAL_CCU4_Init:NULL handler", (NULL != handle));
+  85:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  86:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   if (false == handle->is_initialized)
+ 154              	 .loc 2 86 0
+ 155 0008 7B68     	 ldr r3,[r7,#4]
+ 156 000a 5B7B     	 ldrb r3,[r3,#13]
+ 157 000c 0122     	 mov r2,#1
+ 158 000e 5340     	 eor r3,r2
+ 159 0010 DBB2     	 uxtb r3,r3
+ 160 0012 002B     	 cmp r3,#0
+ 161 0014 0FD0     	 beq .L7
+  87:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   {
+  88:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****     /* Enable CCU4 module */
+  89:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****     XMC_CCU4_Init(handle->module_ptr,handle->mcs_action);
+ 162              	 .loc 2 89 0
+ 163 0016 7B68     	 ldr r3,[r7,#4]
+ 164 0018 9A68     	 ldr r2,[r3,#8]
+ 165 001a 7B68     	 ldr r3,[r7,#4]
+ 166 001c 1B7B     	 ldrb r3,[r3,#12]
+ 167 001e 101C     	 mov r0,r2
+ 168 0020 191C     	 mov r1,r3
+ 169 0022 FFF7FEFF 	 bl XMC_CCU4_Init
+  90:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****     /* Start the prescaler */
+  91:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****     XMC_CCU4_StartPrescaler(handle->module_ptr);
+ 170              	 .loc 2 91 0
+ 171 0026 7B68     	 ldr r3,[r7,#4]
+ 172 0028 9B68     	 ldr r3,[r3,#8]
+ 173 002a 181C     	 mov r0,r3
+ 174 002c FFF7FEFF 	 bl XMC_CCU4_StartPrescaler
+  92:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****     /* Restricts multiple initializations */
+  93:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****     handle->is_initialized = true;
+ 175              	 .loc 2 93 0
+ 176 0030 7B68     	 ldr r3,[r7,#4]
+ 177 0032 0122     	 mov r2,#1
+ 178 0034 5A73     	 strb r2,[r3,#13]
+ 179              	.L7:
+  94:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   }
+  95:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** 
+  96:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c ****   return (GLOBAL_CCU4_STATUS_SUCCESS);
+ 180              	 .loc 2 96 0
+ 181 0036 0023     	 mov r3,#0
+  97:../Dave/Generated/GLOBAL_CCU4/global_ccu4.c **** }
+ 182              	 .loc 2 97 0
+ 183 0038 181C     	 mov r0,r3
+ 184 003a BD46     	 mov sp,r7
+ 185 003c 02B0     	 add sp,sp,#8
+ 186              	 
+ 187 003e 80BD     	 pop {r7,pc}
+ 188              	 .cfi_endproc
+ 189              	.LFE116:
+ 191              	 .text
+ 192              	.Letext0:
+ 193              	 .file 3 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 194              	 .file 4 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 195              	 .file 5 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
+ 196              	 .file 6 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
+ 197              	 .file 7 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DAVE_Common.h"
+ 198              	 .file 8 "../Dave/Generated/GLOBAL_CCU4/global_ccu4.h"
+ 199              	 .file 9 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 global_ccu4.c
+    {standard input}:18     .text.XMC_CCU4_StartPrescaler:00000000 $t
+    {standard input}:22     .text.XMC_CCU4_StartPrescaler:00000000 XMC_CCU4_StartPrescaler
+    {standard input}:56     .text.GLOBAL_CCU4_GetAppVersion:00000000 $t
+    {standard input}:61     .text.GLOBAL_CCU4_GetAppVersion:00000000 GLOBAL_CCU4_GetAppVersion
+    {standard input}:127    .text.GLOBAL_CCU4_GetAppVersion:00000058 $d
+    {standard input}:133    .text.GLOBAL_CCU4_Init:00000000 $t
+    {standard input}:138    .text.GLOBAL_CCU4_Init:00000000 GLOBAL_CCU4_Init
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+XMC_CCU4_Init

@@ -1,0 +1,217 @@
+   1              	 .cpu cortex-m0
+   2              	 .fpu softvfp
+   3              	 .eabi_attribute 20,1
+   4              	 .eabi_attribute 21,1
+   5              	 .eabi_attribute 23,3
+   6              	 .eabi_attribute 24,1
+   7              	 .eabi_attribute 25,1
+   8              	 .eabi_attribute 26,1
+   9              	 .eabi_attribute 30,6
+  10              	 .eabi_attribute 34,0
+  11              	 .eabi_attribute 18,4
+  12              	 .code 16
+  13              	 .file "adc_measurement_conf.c"
+  14              	 .text
+  15              	.Ltext0:
+  16              	 .cfi_sections .debug_frame
+  17              	 .global global_iclass_config
+  18              	 .section .rodata.global_iclass_config,"a",%progbits
+  19              	 .align 2
+  22              	global_iclass_config:
+  23 0000 01       	 .byte 1
+  24 0001 00       	 .byte 0
+  25 0002 0000     	 .space 2
+  26              	 .global thumbChannel_ch_config
+  27              	 .section .data.thumbChannel_ch_config,"aw",%progbits
+  28              	 .align 2
+  31              	thumbChannel_ch_config:
+  32 0000 02       	 .byte 2
+  33 0001 00       	 .byte 0
+  34 0002 2A       	 .byte 42
+  35 0003 00       	 .byte 0
+  36 0004 00000000 	 .word 0
+  37 0008 00000000 	 .space 4
+  38 000c 00       	 .byte 0
+  39 000d FF       	 .byte -1
+  40 000e 0000     	 .space 2
+  41              	 .global thumbChannel_res_config
+  42              	 .section .bss.thumbChannel_res_config,"aw",%nobits
+  43              	 .align 2
+  46              	thumbChannel_res_config:
+  47 0000 00000000 	 .space 4
+  48              	 .global ADC_MEASUREMENT_thumbChannel_handle
+  49              	 .section .data.ADC_MEASUREMENT_thumbChannel_handle,"aw",%progbits
+  50              	 .align 2
+  53              	ADC_MEASUREMENT_thumbChannel_handle:
+  54 0000 00000000 	 .word thumbChannel_ch_config
+  55 0004 00000000 	 .word thumbChannel_res_config
+  56 0008 00080348 	 .word 1208158208
+  57 000c 01       	 .byte 1
+  58 000d 05       	 .byte 5
+  59 000e 0000     	 .space 2
+  60              	 .global indexChannel_ch_config
+  61              	 .section .data.indexChannel_ch_config,"aw",%progbits
+  62              	 .align 2
+  65              	indexChannel_ch_config:
+  66 0000 02       	 .byte 2
+  67 0001 00       	 .byte 0
+  68 0002 22       	 .byte 34
+  69 0003 00       	 .byte 0
+  70 0004 00000000 	 .word 0
+  71 0008 00000000 	 .space 4
+  72 000c 00       	 .byte 0
+  73 000d 05       	 .byte 5
+  74 000e 0000     	 .space 2
+  75              	 .global indexChannel_res_config
+  76              	 .section .bss.indexChannel_res_config,"aw",%nobits
+  77              	 .align 2
+  80              	indexChannel_res_config:
+  81 0000 00000000 	 .space 4
+  82              	 .global ADC_MEASUREMENT_indexChannel_handle
+  83              	 .section .data.ADC_MEASUREMENT_indexChannel_handle,"aw",%progbits
+  84              	 .align 2
+  87              	ADC_MEASUREMENT_indexChannel_handle:
+  88 0000 00000000 	 .word indexChannel_ch_config
+  89 0004 00000000 	 .word indexChannel_res_config
+  90 0008 00040348 	 .word 1208157184
+  91 000c 00       	 .byte 0
+  92 000d 00       	 .byte 0
+  93 000e 0000     	 .space 2
+  94              	 .global middleChannel_ch_config
+  95              	 .section .data.middleChannel_ch_config,"aw",%progbits
+  96              	 .align 2
+  99              	middleChannel_ch_config:
+ 100 0000 02       	 .byte 2
+ 101 0001 00       	 .byte 0
+ 102 0002 27       	 .byte 39
+ 103 0003 00       	 .byte 0
+ 104 0004 00000000 	 .word 0
+ 105 0008 00000000 	 .space 4
+ 106 000c 00       	 .byte 0
+ 107 000d 06       	 .byte 6
+ 108 000e 0000     	 .space 2
+ 109              	 .global middleChannel_res_config
+ 110              	 .section .bss.middleChannel_res_config,"aw",%nobits
+ 111              	 .align 2
+ 114              	middleChannel_res_config:
+ 115 0000 00000000 	 .space 4
+ 116              	 .global ADC_MEASUREMENT_middleChannel_handle
+ 117              	 .section .data.ADC_MEASUREMENT_middleChannel_handle,"aw",%progbits
+ 118              	 .align 2
+ 121              	ADC_MEASUREMENT_middleChannel_handle:
+ 122 0000 00000000 	 .word middleChannel_ch_config
+ 123 0004 00000000 	 .word middleChannel_res_config
+ 124 0008 00040348 	 .word 1208157184
+ 125 000c 00       	 .byte 0
+ 126 000d 01       	 .byte 1
+ 127 000e 0000     	 .space 2
+ 128              	 .global rpChannel_ch_config
+ 129              	 .section .data.rpChannel_ch_config,"aw",%progbits
+ 130              	 .align 2
+ 133              	rpChannel_ch_config:
+ 134 0000 02       	 .byte 2
+ 135 0001 00       	 .byte 0
+ 136 0002 29       	 .byte 41
+ 137 0003 00       	 .byte 0
+ 138 0004 00000000 	 .word 0
+ 139 0008 00000000 	 .space 4
+ 140 000c 00       	 .byte 0
+ 141 000d FF       	 .byte -1
+ 142 000e 0000     	 .space 2
+ 143              	 .global rpChannel_res_config
+ 144              	 .section .bss.rpChannel_res_config,"aw",%nobits
+ 145              	 .align 2
+ 148              	rpChannel_res_config:
+ 149 0000 00000000 	 .space 4
+ 150              	 .global ADC_MEASUREMENT_rpChannel_handle
+ 151              	 .section .data.ADC_MEASUREMENT_rpChannel_handle,"aw",%progbits
+ 152              	 .align 2
+ 155              	ADC_MEASUREMENT_rpChannel_handle:
+ 156 0000 00000000 	 .word rpChannel_ch_config
+ 157 0004 00000000 	 .word rpChannel_res_config
+ 158 0008 00040348 	 .word 1208157184
+ 159 000c 00       	 .byte 0
+ 160 000d 07       	 .byte 7
+ 161 000e 0000     	 .space 2
+ 162              	 .global ADC_MEASUREMENT_channel_array
+ 163              	 .section .data.ADC_MEASUREMENT_channel_array,"aw",%progbits
+ 164              	 .align 2
+ 167              	ADC_MEASUREMENT_channel_array:
+ 168 0000 00000000 	 .word ADC_MEASUREMENT_thumbChannel_handle
+ 169 0004 00000000 	 .word ADC_MEASUREMENT_indexChannel_handle
+ 170 0008 00000000 	 .word ADC_MEASUREMENT_middleChannel_handle
+ 171 000c 00000000 	 .word ADC_MEASUREMENT_rpChannel_handle
+ 172              	 .global backgnd_config
+ 173              	 .section .rodata.backgnd_config,"a",%progbits
+ 174              	 .align 2
+ 177              	backgnd_config:
+ 178 0000 05       	 .byte 5
+ 179 0001 000000   	 .space 3
+ 180 0004 00       	 .space 1
+ 181 0005 00       	 .byte 0
+ 182 0006 00       	 .byte 0
+ 183 0007 00       	 .byte 0
+ 184 0008 10       	 .byte 16
+ 185 0009 000000   	 .space 3
+ 186              	 .global ADC_MEASUREMENT_0
+ 187              	 .section .data.ADC_MEASUREMENT_0,"aw",%progbits
+ 188              	 .align 2
+ 191              	ADC_MEASUREMENT_0:
+ 192 0000 00000000 	 .word ADC_MEASUREMENT_channel_array
+ 193 0004 00000000 	 .word backgnd_config
+ 194 0008 00000000 	 .word global_iclass_config
+ 195 000c 00000000 	 .word GLOBAL_ADC_0
+ 196 0010 00000000 	 .word 0
+ 197 0014 00000000 	 .word 0
+ 198 0018 02       	 .byte 2
+ 199 0019 04       	 .byte 4
+ 200 001a 01       	 .byte 1
+ 201 001b 00       	 .space 1
+ 202              	 .text
+ 203              	.Letext0:
+ 204              	 .file 1 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 205              	 .file 2 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 206              	 .file 3 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
+ 207              	 .file 4 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc_vadc.h"
+ 208              	 .file 5 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_ADC/global_adc.h"
+ 209              	 .file 6 "../Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 210              	 .file 7 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+ 211              	 .file 8 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/GLOBAL_ADC/global_adc_extern.h"
+ 212              	 .file 9 "../Dave/Generated/ADC_MEASUREMENT/adc_measurement_conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 adc_measurement_conf.c
+    {standard input}:22     .rodata.global_iclass_config:00000000 global_iclass_config
+    {standard input}:19     .rodata.global_iclass_config:00000000 $d
+    {standard input}:31     .data.thumbChannel_ch_config:00000000 thumbChannel_ch_config
+    {standard input}:28     .data.thumbChannel_ch_config:00000000 $d
+    {standard input}:46     .bss.thumbChannel_res_config:00000000 thumbChannel_res_config
+    {standard input}:43     .bss.thumbChannel_res_config:00000000 $d
+    {standard input}:53     .data.ADC_MEASUREMENT_thumbChannel_handle:00000000 ADC_MEASUREMENT_thumbChannel_handle
+    {standard input}:50     .data.ADC_MEASUREMENT_thumbChannel_handle:00000000 $d
+    {standard input}:65     .data.indexChannel_ch_config:00000000 indexChannel_ch_config
+    {standard input}:62     .data.indexChannel_ch_config:00000000 $d
+    {standard input}:80     .bss.indexChannel_res_config:00000000 indexChannel_res_config
+    {standard input}:77     .bss.indexChannel_res_config:00000000 $d
+    {standard input}:87     .data.ADC_MEASUREMENT_indexChannel_handle:00000000 ADC_MEASUREMENT_indexChannel_handle
+    {standard input}:84     .data.ADC_MEASUREMENT_indexChannel_handle:00000000 $d
+    {standard input}:99     .data.middleChannel_ch_config:00000000 middleChannel_ch_config
+    {standard input}:96     .data.middleChannel_ch_config:00000000 $d
+    {standard input}:114    .bss.middleChannel_res_config:00000000 middleChannel_res_config
+    {standard input}:111    .bss.middleChannel_res_config:00000000 $d
+    {standard input}:121    .data.ADC_MEASUREMENT_middleChannel_handle:00000000 ADC_MEASUREMENT_middleChannel_handle
+    {standard input}:118    .data.ADC_MEASUREMENT_middleChannel_handle:00000000 $d
+    {standard input}:133    .data.rpChannel_ch_config:00000000 rpChannel_ch_config
+    {standard input}:130    .data.rpChannel_ch_config:00000000 $d
+    {standard input}:148    .bss.rpChannel_res_config:00000000 rpChannel_res_config
+    {standard input}:145    .bss.rpChannel_res_config:00000000 $d
+    {standard input}:155    .data.ADC_MEASUREMENT_rpChannel_handle:00000000 ADC_MEASUREMENT_rpChannel_handle
+    {standard input}:152    .data.ADC_MEASUREMENT_rpChannel_handle:00000000 $d
+    {standard input}:167    .data.ADC_MEASUREMENT_channel_array:00000000 ADC_MEASUREMENT_channel_array
+    {standard input}:164    .data.ADC_MEASUREMENT_channel_array:00000000 $d
+    {standard input}:177    .rodata.backgnd_config:00000000 backgnd_config
+    {standard input}:174    .rodata.backgnd_config:00000000 $d
+    {standard input}:191    .data.ADC_MEASUREMENT_0:00000000 ADC_MEASUREMENT_0
+    {standard input}:188    .data.ADC_MEASUREMENT_0:00000000 $d
+
+UNDEFINED SYMBOLS
+GLOBAL_ADC_0

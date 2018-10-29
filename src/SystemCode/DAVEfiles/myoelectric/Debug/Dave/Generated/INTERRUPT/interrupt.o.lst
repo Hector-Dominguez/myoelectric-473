@@ -1,0 +1,1490 @@
+   1              	 .cpu cortex-m0
+   2              	 .fpu softvfp
+   3              	 .eabi_attribute 20,1
+   4              	 .eabi_attribute 21,1
+   5              	 .eabi_attribute 23,3
+   6              	 .eabi_attribute 24,1
+   7              	 .eabi_attribute 25,1
+   8              	 .eabi_attribute 26,1
+   9              	 .eabi_attribute 30,6
+  10              	 .eabi_attribute 34,0
+  11              	 .eabi_attribute 18,4
+  12              	 .code 16
+  13              	 .file "interrupt.c"
+  14              	 .text
+  15              	.Ltext0:
+  16              	 .cfi_sections .debug_frame
+  17              	 .section .text.__NVIC_EnableIRQ,"ax",%progbits
+  18              	 .align 2
+  19              	 .code 16
+  20              	 .thumb_func
+  22              	__NVIC_EnableIRQ:
+  23              	.LFB25:
+  24              	 .file 1 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include/core_cm0.h"
+   1:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**************************************************************************//**
+   2:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * @file     core_cm0.h
+   3:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * @brief    CMSIS Cortex-M0 Core Peripheral Access Layer Header File
+   4:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * @version  V5.0.5
+   5:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * @date     28. May 2018
+   6:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+   7:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*
+   8:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.
+   9:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  *
+  10:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  *
+  12:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * not use this file except in compliance with the License.
+  14:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * You may obtain a copy of the License at
+  15:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  *
+  16:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  *
+  18:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * See the License for the specific language governing permissions and
+  22:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  * limitations under the License.
+  23:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+  24:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  25:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #if   defined ( __ICCARM__ )
+  26:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #pragma system_include         /* treat file as system include file for MISRA check */
+  27:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #elif defined (__clang__)
+  28:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #pragma clang system_header   /* treat file as system include file */
+  29:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif
+  30:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  31:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifndef __CORE_CM0_H_GENERIC
+  32:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __CORE_CM0_H_GENERIC
+  33:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  34:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #include <stdint.h>
+  35:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  36:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+  37:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  extern "C" {
+  38:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif
+  39:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  40:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+  41:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
+  42:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   CMSIS violates the following MISRA-C:2004 rules:
+  43:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  44:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****    \li Required Rule 8.5, object/function definition in header file.<br>
+  45:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****      Function definitions in header files are used to allow 'inlining'.
+  46:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  47:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****    \li Required Rule 18.4, declaration of union type or object of union type: '{...}'.<br>
+  48:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****      Unions are used for effective representation of core registers.
+  49:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  50:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****    \li Advisory Rule 19.7, Function-like macro defined.<br>
+  51:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****      Function-like macros are used to allow more efficient code.
+  52:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+  53:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  54:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  55:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*******************************************************************************
+  56:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  *                 CMSIS definitions
+  57:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+  58:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+  59:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup Cortex_M0
+  60:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+  61:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+  62:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  63:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #include "cmsis_version.h"
+  64:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  
+  65:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*  CMSIS CM0 definitions */
+  66:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __CM0_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)              /*!< \deprecated [31:16] C
+  67:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __CM0_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)               /*!< \deprecated [15:0]  C
+  68:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __CM0_CMSIS_VERSION       ((__CM0_CMSIS_VERSION_MAIN << 16U) | \
+  69:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****                                     __CM0_CMSIS_VERSION_SUB           )  /*!< \deprecated CMSIS HAL
+  70:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  71:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __CORTEX_M                (0U)                                   /*!< Cortex-M Core */
+  72:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  73:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /** __FPU_USED indicates whether an FPU is used or not.
+  74:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     This core does not support an FPU at all
+  75:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** */
+  76:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __FPU_USED       0U
+  77:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  78:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #if defined ( __CC_ARM )
+  79:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __TARGET_FPU_VFP
+  80:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  81:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  82:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  83:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+  84:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __ARM_PCS_VFP
+  85:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  86:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  87:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  88:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __GNUC__ )
+  89:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
+  90:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  91:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  92:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  93:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __ICCARM__ )
+  94:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __ARMVFP__
+  95:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+  96:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+  97:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+  98:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __TI_ARM__ )
+  99:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __TI_VFP_SUPPORT__
+ 100:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 101:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 102:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 103:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __TASKING__ )
+ 104:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #if defined __FPU_VFP__
+ 105:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 106:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 107:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 108:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #elif defined ( __CSMC__ )
+ 109:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #if ( __CSMC__ & 0x400U)
+ 110:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 111:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 112:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 113:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 114:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 115:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #include "cmsis_compiler.h"               /* CMSIS compiler specific defines */
+ 116:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 117:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 118:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+ 119:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+ 120:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 121:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 122:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif /* __CORE_CM0_H_GENERIC */
+ 123:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 124:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifndef __CMSIS_GENERIC
+ 125:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 126:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifndef __CORE_CM0_H_DEPENDANT
+ 127:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __CORE_CM0_H_DEPENDANT
+ 128:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 129:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+ 130:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  extern "C" {
+ 131:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 132:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 133:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* check device defines and use defaults */
+ 134:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #if defined __CHECK_DEVICE_DEFINES
+ 135:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef __CM0_REV
+ 136:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #define __CM0_REV               0x0000U
+ 137:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #warning "__CM0_REV not defined in device header file; using default!"
+ 138:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 139:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 140:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef __NVIC_PRIO_BITS
+ 141:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #define __NVIC_PRIO_BITS          2U
+ 142:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
+ 143:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 144:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 145:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef __Vendor_SysTickConfig
+ 146:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #define __Vendor_SysTickConfig    0U
+ 147:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #warning "__Vendor_SysTickConfig not defined in device header file; using default!"
+ 148:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 149:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 150:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 151:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* IO definitions (access restrictions to peripheral registers) */
+ 152:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 153:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     \defgroup CMSIS_glob_defs CMSIS Global Defines
+ 154:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 155:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     <strong>IO Type Qualifiers</strong> are used
+ 156:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     \li to specify the access to peripheral variables.
+ 157:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     \li for automatic generation of peripheral register debug information.
+ 158:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** */
+ 159:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifdef __cplusplus
+ 160:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define   __I     volatile             /*!< Defines 'read only' permissions */
+ 161:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #else
+ 162:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define   __I     volatile const       /*!< Defines 'read only' permissions */
+ 163:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif
+ 164:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define     __O     volatile             /*!< Defines 'write only' permissions */
+ 165:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define     __IO    volatile             /*!< Defines 'read / write' permissions */
+ 166:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 167:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* following defines should be used for structure members */
+ 168:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define     __IM     volatile const      /*! Defines 'read only' structure member permissions */
+ 169:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define     __OM     volatile            /*! Defines 'write only' structure member permissions */
+ 170:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define     __IOM    volatile            /*! Defines 'read / write' structure member permissions */
+ 171:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 172:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group Cortex_M0 */
+ 173:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 174:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 175:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 176:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*******************************************************************************
+ 177:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  *                 Register Abstraction
+ 178:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   Core Register contain:
+ 179:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   - Core Register
+ 180:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   - Core NVIC Register
+ 181:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   - Core SCB Register
+ 182:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   - Core SysTick Register
+ 183:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+ 184:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 185:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_core_register Defines and Type Definitions
+ 186:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief Type definitions and defines for Cortex-M processor based devices.
+ 187:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** */
+ 188:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 189:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 190:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 191:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_CORE  Status and Control Registers
+ 192:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Core Register type definitions.
+ 193:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 194:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 195:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 196:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 197:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Application Program Status Register (APSR).
+ 198:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 199:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 200:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 201:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 202:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 203:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:28;              /*!< bit:  0..27  Reserved */
+ 204:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+ 205:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+ 206:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+ 207:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+ 208:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 209:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 210:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** } APSR_Type;
+ 211:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 212:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* APSR Register Definitions */
+ 213:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_N_Pos                         31U                                            /*!< APSR
+ 214:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_N_Msk                         (1UL << APSR_N_Pos)                            /*!< APSR
+ 215:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 216:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_Z_Pos                         30U                                            /*!< APSR
+ 217:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_Z_Msk                         (1UL << APSR_Z_Pos)                            /*!< APSR
+ 218:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 219:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_C_Pos                         29U                                            /*!< APSR
+ 220:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_C_Msk                         (1UL << APSR_C_Pos)                            /*!< APSR
+ 221:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 222:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_V_Pos                         28U                                            /*!< APSR
+ 223:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define APSR_V_Msk                         (1UL << APSR_V_Pos)                            /*!< APSR
+ 224:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 225:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 226:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 227:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Interrupt Program Status Register (IPSR).
+ 228:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 229:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 230:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 231:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 232:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 233:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+ 234:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:23;              /*!< bit:  9..31  Reserved */
+ 235:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 236:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 237:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** } IPSR_Type;
+ 238:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 239:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* IPSR Register Definitions */
+ 240:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define IPSR_ISR_Pos                        0U                                            /*!< IPSR
+ 241:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define IPSR_ISR_Msk                       (0x1FFUL /*<< IPSR_ISR_Pos*/)                  /*!< IPSR
+ 242:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 243:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 244:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 245:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
+ 246:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 247:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 248:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 249:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 250:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 251:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+ 252:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:15;              /*!< bit:  9..23  Reserved */
+ 253:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t T:1;                        /*!< bit:     24  Thumb bit        (read 0) */
+ 254:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved1:3;               /*!< bit: 25..27  Reserved */
+ 255:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+ 256:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+ 257:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+ 258:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+ 259:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 260:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 261:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** } xPSR_Type;
+ 262:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 263:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* xPSR Register Definitions */
+ 264:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_N_Pos                         31U                                            /*!< xPSR
+ 265:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_N_Msk                         (1UL << xPSR_N_Pos)                            /*!< xPSR
+ 266:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 267:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_Z_Pos                         30U                                            /*!< xPSR
+ 268:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_Z_Msk                         (1UL << xPSR_Z_Pos)                            /*!< xPSR
+ 269:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 270:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_C_Pos                         29U                                            /*!< xPSR
+ 271:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_C_Msk                         (1UL << xPSR_C_Pos)                            /*!< xPSR
+ 272:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 273:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_V_Pos                         28U                                            /*!< xPSR
+ 274:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_V_Msk                         (1UL << xPSR_V_Pos)                            /*!< xPSR
+ 275:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 276:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_T_Pos                         24U                                            /*!< xPSR
+ 277:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_T_Msk                         (1UL << xPSR_T_Pos)                            /*!< xPSR
+ 278:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 279:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_ISR_Pos                        0U                                            /*!< xPSR
+ 280:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define xPSR_ISR_Msk                       (0x1FFUL /*<< xPSR_ISR_Pos*/)                  /*!< xPSR
+ 281:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 282:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 283:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 284:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Union type to access the Control Registers (CONTROL).
+ 285:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 286:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** typedef union
+ 287:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 288:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   struct
+ 289:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 290:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved0:1;               /*!< bit:      0  Reserved */
+ 291:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t SPSEL:1;                    /*!< bit:      1  Stack to be used */
+ 292:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     uint32_t _reserved1:30;              /*!< bit:  2..31  Reserved */
+ 293:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 294:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 295:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** } CONTROL_Type;
+ 296:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 297:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* CONTROL Register Definitions */
+ 298:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define CONTROL_SPSEL_Pos                   1U                                            /*!< CONT
+ 299:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define CONTROL_SPSEL_Msk                  (1UL << CONTROL_SPSEL_Pos)                     /*!< CONT
+ 300:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 301:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_CORE */
+ 302:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 303:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 304:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 305:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 306:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_NVIC  Nested Vectored Interrupt Controller (NVIC)
+ 307:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Type definitions for the NVIC Registers
+ 308:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 309:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 310:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 311:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 312:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).
+ 313:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 314:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** typedef struct
+ 315:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 316:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ISER[1U];               /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register */
+ 317:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED0[31U];
+ 318:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ICER[1U];               /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register 
+ 319:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RSERVED1[31U];
+ 320:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ISPR[1U];               /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register *
+ 321:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED2[31U];
+ 322:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ICPR[1U];               /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register
+ 323:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED3[31U];
+ 324:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED4[64U];
+ 325:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t IP[8U];                 /*!< Offset: 0x300 (R/W)  Interrupt Priority Register */
+ 326:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }  NVIC_Type;
+ 327:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 328:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_NVIC */
+ 329:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 330:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 331:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 332:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_core_register
+ 333:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_SCB     System Control Block (SCB)
+ 334:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Type definitions for the System Control Block Registers
+ 335:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 336:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 337:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 338:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 339:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Structure type to access the System Control Block (SCB).
+ 340:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 341:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** typedef struct
+ 342:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 343:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IM  uint32_t CPUID;                  /*!< Offset: 0x000 (R/ )  CPUID Base Register */
+ 344:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t ICSR;                   /*!< Offset: 0x004 (R/W)  Interrupt Control and State Regi
+ 345:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED0;
+ 346:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t AIRCR;                  /*!< Offset: 0x00C (R/W)  Application Interrupt and Reset 
+ 347:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t SCR;                    /*!< Offset: 0x010 (R/W)  System Control Register */
+ 348:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t CCR;                    /*!< Offset: 0x014 (R/W)  Configuration Control Register *
+ 349:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****         uint32_t RESERVED1;
+ 350:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t SHP[2U];                /*!< Offset: 0x01C (R/W)  System Handlers Priority Registe
+ 351:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t SHCSR;                  /*!< Offset: 0x024 (R/W)  System Handler Control and State
+ 352:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** } SCB_Type;
+ 353:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 354:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SCB CPUID Register Definitions */
+ 355:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Pos          24U                                            /*!< SCB 
+ 356:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Msk          (0xFFUL << SCB_CPUID_IMPLEMENTER_Pos)          /*!< SCB 
+ 357:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 358:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_VARIANT_Pos              20U                                            /*!< SCB 
+ 359:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_VARIANT_Msk              (0xFUL << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
+ 360:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 361:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Pos         16U                                            /*!< SCB 
+ 362:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Msk         (0xFUL << SCB_CPUID_ARCHITECTURE_Pos)          /*!< SCB 
+ 363:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 364:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_PARTNO_Pos                4U                                            /*!< SCB 
+ 365:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_PARTNO_Msk               (0xFFFUL << SCB_CPUID_PARTNO_Pos)              /*!< SCB 
+ 366:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 367:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_REVISION_Pos              0U                                            /*!< SCB 
+ 368:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CPUID_REVISION_Msk             (0xFUL /*<< SCB_CPUID_REVISION_Pos*/)          /*!< SCB 
+ 369:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 370:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SCB Interrupt Control State Register Definitions */
+ 371:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Pos            31U                                            /*!< SCB 
+ 372:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
+ 373:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 374:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVSET_Pos             28U                                            /*!< SCB 
+ 375:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
+ 376:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 377:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Pos             27U                                            /*!< SCB 
+ 378:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Msk             (1UL << SCB_ICSR_PENDSVCLR_Pos)                /*!< SCB 
+ 379:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 380:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTSET_Pos             26U                                            /*!< SCB 
+ 381:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTSET_Msk             (1UL << SCB_ICSR_PENDSTSET_Pos)                /*!< SCB 
+ 382:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 383:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Pos             25U                                            /*!< SCB 
+ 384:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Msk             (1UL << SCB_ICSR_PENDSTCLR_Pos)                /*!< SCB 
+ 385:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 386:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23U                                            /*!< SCB 
+ 387:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1UL << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
+ 388:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 389:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPENDING_Pos            22U                                            /*!< SCB 
+ 390:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_ISRPENDING_Msk            (1UL << SCB_ICSR_ISRPENDING_Pos)               /*!< SCB 
+ 391:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 392:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTPENDING_Pos           12U                                            /*!< SCB 
+ 393:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTPENDING_Msk           (0x1FFUL << SCB_ICSR_VECTPENDING_Pos)          /*!< SCB 
+ 394:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 395:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Pos             0U                                            /*!< SCB 
+ 396:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Msk            (0x1FFUL /*<< SCB_ICSR_VECTACTIVE_Pos*/)       /*!< SCB 
+ 397:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 398:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SCB Application Interrupt and Reset Control Register Definitions */
+ 399:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEY_Pos              16U                                            /*!< SCB 
+ 400:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEY_Msk              (0xFFFFUL << SCB_AIRCR_VECTKEY_Pos)            /*!< SCB 
+ 401:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 402:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Pos          16U                                            /*!< SCB 
+ 403:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Msk          (0xFFFFUL << SCB_AIRCR_VECTKEYSTAT_Pos)        /*!< SCB 
+ 404:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 405:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Pos            15U                                            /*!< SCB 
+ 406:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Msk            (1UL << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB 
+ 407:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 408:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2U                                            /*!< SCB 
+ 409:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1UL << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
+ 410:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 411:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Pos         1U                                            /*!< SCB 
+ 412:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Msk        (1UL << SCB_AIRCR_VECTCLRACTIVE_Pos)           /*!< SCB 
+ 413:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 414:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SCB System Control Register Definitions */
+ 415:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SEVONPEND_Pos               4U                                            /*!< SCB 
+ 416:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
+ 417:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 418:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Pos               2U                                            /*!< SCB 
+ 419:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
+ 420:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 421:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Pos             1U                                            /*!< SCB 
+ 422:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Msk            (1UL << SCB_SCR_SLEEPONEXIT_Pos)               /*!< SCB 
+ 423:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 424:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SCB Configuration Control Register Definitions */
+ 425:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_STKALIGN_Pos                9U                                            /*!< SCB 
+ 426:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_STKALIGN_Msk               (1UL << SCB_CCR_STKALIGN_Pos)                  /*!< SCB 
+ 427:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 428:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Pos             3U                                            /*!< SCB 
+ 429:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Msk            (1UL << SCB_CCR_UNALIGN_TRP_Pos)               /*!< SCB 
+ 430:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 431:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SCB System Handler Control and State Register Definitions */
+ 432:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Pos         15U                                            /*!< SCB 
+ 433:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Msk         (1UL << SCB_SHCSR_SVCALLPENDED_Pos)            /*!< SCB 
+ 434:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 435:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_SCB */
+ 436:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 437:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 438:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 439:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_core_register
+ 440:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_SysTick     System Tick Timer (SysTick)
+ 441:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Type definitions for the System Timer Registers.
+ 442:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 443:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 444:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 445:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 446:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief  Structure type to access the System Timer (SysTick).
+ 447:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 448:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** typedef struct
+ 449:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 450:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t CTRL;                   /*!< Offset: 0x000 (R/W)  SysTick Control and Status Regis
+ 451:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t LOAD;                   /*!< Offset: 0x004 (R/W)  SysTick Reload Value Register */
+ 452:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IOM uint32_t VAL;                    /*!< Offset: 0x008 (R/W)  SysTick Current Value Register *
+ 453:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   __IM  uint32_t CALIB;                  /*!< Offset: 0x00C (R/ )  SysTick Calibration Register */
+ 454:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** } SysTick_Type;
+ 455:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 456:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Control / Status Register Definitions */
+ 457:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16U                                            /*!< SysT
+ 458:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
+ 459:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 460:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2U                                            /*!< SysT
+ 461:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
+ 462:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 463:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_TICKINT_Pos            1U                                            /*!< SysT
+ 464:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
+ 465:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 466:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_ENABLE_Pos             0U                                            /*!< SysT
+ 467:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CTRL_ENABLE_Msk            (1UL /*<< SysTick_CTRL_ENABLE_Pos*/)           /*!< SysT
+ 468:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 469:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Reload Register Definitions */
+ 470:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_LOAD_RELOAD_Pos             0U                                            /*!< SysT
+ 471:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFUL /*<< SysTick_LOAD_RELOAD_Pos*/)    /*!< SysT
+ 472:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 473:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Current Register Definitions */
+ 474:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_VAL_CURRENT_Pos             0U                                            /*!< SysT
+ 475:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_VAL_CURRENT_Msk            (0xFFFFFFUL /*<< SysTick_VAL_CURRENT_Pos*/)    /*!< SysT
+ 476:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 477:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* SysTick Calibration Register Definitions */
+ 478:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_NOREF_Pos            31U                                            /*!< SysT
+ 479:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_NOREF_Msk            (1UL << SysTick_CALIB_NOREF_Pos)               /*!< SysT
+ 480:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 481:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_SKEW_Pos             30U                                            /*!< SysT
+ 482:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysT
+ 483:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 484:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_TENMS_Pos             0U                                            /*!< SysT
+ 485:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL /*<< SysTick_CALIB_TENMS_Pos*/)    /*!< SysT
+ 486:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 487:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_SysTick */
+ 488:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 489:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 490:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 491:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_core_register
+ 492:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_CoreDebug       Core Debug Registers (CoreDebug)
+ 493:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Cortex-M0 Core Debug Registers (DCB registers, SHCSR, and DFSR) are only accessible ove
+ 494:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****             Therefore they are not covered by the Cortex-M0 header file.
+ 495:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 496:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 497:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_CoreDebug */
+ 498:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 499:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 500:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 501:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 502:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_core_bitfield     Core register bit field macros
+ 503:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Macros for use with bit field definitions (xxx_Pos, xxx_Msk).
+ 504:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 505:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 506:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 507:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 508:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Mask and shift a bit field value for use in a register bit range.
+ 509:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] field  Name of the register bit field.
+ 510:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] value  Value of the bit field. This parameter is interpreted as an uint32_t type.
+ 511:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \return           Masked and shifted value.
+ 512:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** */
+ 513:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define _VAL2FLD(field, value)    (((uint32_t)(value) << field ## _Pos) & field ## _Msk)
+ 514:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 515:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 516:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief     Mask and shift a register value to extract a bit filed value.
+ 517:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] field  Name of the register bit field.
+ 518:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param[in] value  Value of register. This parameter is interpreted as an uint32_t type.
+ 519:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \return           Masked and shifted bit field value.
+ 520:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** */
+ 521:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define _FLD2VAL(field, value)    (((uint32_t)(value) & field ## _Msk) >> field ## _Pos)
+ 522:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 523:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} end of group CMSIS_core_bitfield */
+ 524:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 525:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 526:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 527:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup    CMSIS_core_register
+ 528:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup   CMSIS_core_base     Core Definitions
+ 529:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief      Definitions for base addresses, unions, and structures.
+ 530:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 531:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 532:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 533:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* Memory mapping of Core Hardware */
+ 534:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCS_BASE            (0xE000E000UL)                            /*!< System Control Space Bas
+ 535:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick_BASE        (SCS_BASE +  0x0010UL)                    /*!< SysTick Base Address */
+ 536:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address */
+ 537:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Bas
+ 538:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 539:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SCB                 ((SCB_Type       *)     SCB_BASE      )   /*!< SCB configuration struct
+ 540:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define SysTick             ((SysTick_Type   *)     SysTick_BASE  )   /*!< SysTick configuration st
+ 541:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struc
+ 542:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 543:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 544:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*@} */
+ 545:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 546:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 547:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 548:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*******************************************************************************
+ 549:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  *                Hardware Abstraction Layer
+ 550:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   Core Function Interface contains:
+ 551:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   - Core NVIC Functions
+ 552:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   - Core SysTick Functions
+ 553:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   - Core Register Access Functions
+ 554:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  ******************************************************************************/
+ 555:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 556:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_Core_FunctionInterface Functions and Instructions Reference
+ 557:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** */
+ 558:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 559:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 560:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 561:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* ##########################   NVIC functions  #################################### */
+ 562:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 563:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \ingroup  CMSIS_Core_FunctionInterface
+ 564:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \defgroup CMSIS_Core_NVICFunctions NVIC Functions
+ 565:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief    Functions that manage interrupts and exceptions via the NVIC.
+ 566:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   @{
+ 567:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 568:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 569:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifdef CMSIS_NVIC_VIRTUAL
+ 570:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef CMSIS_NVIC_VIRTUAL_HEADER_FILE
+ 571:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #define CMSIS_NVIC_VIRTUAL_HEADER_FILE "cmsis_nvic_virtual.h"
+ 572:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 573:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #include CMSIS_NVIC_VIRTUAL_HEADER_FILE
+ 574:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #else
+ 575:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SetPriorityGrouping    __NVIC_SetPriorityGrouping
+ 576:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetPriorityGrouping    __NVIC_GetPriorityGrouping
+ 577:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_EnableIRQ              __NVIC_EnableIRQ
+ 578:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetEnableIRQ           __NVIC_GetEnableIRQ
+ 579:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_DisableIRQ             __NVIC_DisableIRQ
+ 580:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetPendingIRQ          __NVIC_GetPendingIRQ
+ 581:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SetPendingIRQ          __NVIC_SetPendingIRQ
+ 582:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_ClearPendingIRQ        __NVIC_ClearPendingIRQ
+ 583:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /*#define NVIC_GetActive              __NVIC_GetActive             not available for Cortex-M0 */
+ 584:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SetPriority            __NVIC_SetPriority
+ 585:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetPriority            __NVIC_GetPriority
+ 586:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SystemReset            __NVIC_SystemReset
+ 587:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif /* CMSIS_NVIC_VIRTUAL */
+ 588:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 589:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #ifdef CMSIS_VECTAB_VIRTUAL
+ 590:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #ifndef CMSIS_VECTAB_VIRTUAL_HEADER_FILE
+ 591:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     #define CMSIS_VECTAB_VIRTUAL_HEADER_FILE "cmsis_vectab_virtual.h"
+ 592:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #endif
+ 593:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #include CMSIS_VECTAB_VIRTUAL_HEADER_FILE
+ 594:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #else
+ 595:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_SetVector              __NVIC_SetVector
+ 596:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   #define NVIC_GetVector              __NVIC_GetVector
+ 597:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #endif  /* (CMSIS_VECTAB_VIRTUAL) */
+ 598:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 599:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define NVIC_USER_IRQ_OFFSET          16
+ 600:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 601:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 602:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* The following EXC_RETURN values are saved the LR on exception entry */
+ 603:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define EXC_RETURN_HANDLER         (0xFFFFFFF1UL)     /* return to Handler mode, uses MSP after ret
+ 604:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define EXC_RETURN_THREAD_MSP      (0xFFFFFFF9UL)     /* return to Thread mode, uses MSP after retu
+ 605:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define EXC_RETURN_THREAD_PSP      (0xFFFFFFFDUL)     /* return to Thread mode, uses PSP after retu
+ 606:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 607:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 608:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* Interrupt Priorities are WORD accessible only under Armv6-M                  */
+ 609:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /* The following MACROS handle generation of the register offset and byte masks */
+ 610:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define _BIT_SHIFT(IRQn)         (  ((((uint32_t)(int32_t)(IRQn))         )      &  0x03UL) * 8UL)
+ 611:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define _SHP_IDX(IRQn)           ( (((((uint32_t)(int32_t)(IRQn)) & 0x0FUL)-8UL) >>    2UL)      )
+ 612:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define _IP_IDX(IRQn)            (   (((uint32_t)(int32_t)(IRQn))                >>    2UL)      )
+ 613:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 614:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __NVIC_SetPriorityGrouping(X) (void)(X)
+ 615:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** #define __NVIC_GetPriorityGrouping()  (0U)
+ 616:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 617:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 618:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Enable Interrupt
+ 619:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \details Enables a device specific interrupt in the NVIC interrupt controller.
+ 620:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 621:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 622:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 623:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+ 624:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+  25              	 .loc 1 624 0
+  26              	 .cfi_startproc
+  27 0000 80B5     	 push {r7,lr}
+  28              	.LCFI0:
+  29              	 .cfi_def_cfa_offset 8
+  30              	 .cfi_offset 7,-8
+  31              	 .cfi_offset 14,-4
+  32 0002 82B0     	 sub sp,sp,#8
+  33              	.LCFI1:
+  34              	 .cfi_def_cfa_offset 16
+  35 0004 00AF     	 add r7,sp,#0
+  36              	.LCFI2:
+  37              	 .cfi_def_cfa_register 7
+  38 0006 021C     	 mov r2,r0
+  39 0008 FB1D     	 add r3,r7,#7
+  40 000a 1A70     	 strb r2,[r3]
+ 625:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+  41              	 .loc 1 625 0
+  42 000c FB1D     	 add r3,r7,#7
+  43 000e 1B78     	 ldrb r3,[r3]
+  44 0010 7F2B     	 cmp r3,#127
+  45 0012 09D8     	 bhi .L1
+ 626:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 627:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ISER[0U] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
+  46              	 .loc 1 627 0
+  47 0014 064B     	 ldr r3,.L3
+  48 0016 FA1D     	 add r2,r7,#7
+  49 0018 1278     	 ldrb r2,[r2]
+  50 001a 111C     	 mov r1,r2
+  51 001c 1F22     	 mov r2,#31
+  52 001e 0A40     	 and r2,r1
+  53 0020 0121     	 mov r1,#1
+  54 0022 9140     	 lsl r1,r1,r2
+  55 0024 0A1C     	 mov r2,r1
+  56 0026 1A60     	 str r2,[r3]
+  57              	.L1:
+ 628:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 629:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+  58              	 .loc 1 629 0
+  59 0028 BD46     	 mov sp,r7
+  60 002a 02B0     	 add sp,sp,#8
+  61              	 
+  62 002c 80BD     	 pop {r7,pc}
+  63              	.L4:
+  64 002e C046     	 .align 2
+  65              	.L3:
+  66 0030 00E100E0 	 .word -536813312
+  67              	 .cfi_endproc
+  68              	.LFE25:
+  70              	 .section .text.__NVIC_SetPriority,"ax",%progbits
+  71              	 .align 2
+  72              	 .code 16
+  73              	 .thumb_func
+  75              	__NVIC_SetPriority:
+  76              	.LFB31:
+ 630:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 631:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 632:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 633:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Get Interrupt Enable status
+ 634:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \details Returns a device specific interrupt enable status from the NVIC interrupt controller.
+ 635:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 636:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \return             0  Interrupt is not enabled.
+ 637:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \return             1  Interrupt is enabled.
+ 638:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 639:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 640:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
+ 641:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 642:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 643:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 644:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     return((uint32_t)(((NVIC->ISER[0U] & (1UL << (((uint32_t)IRQn) & 0x1FUL))) != 0UL) ? 1UL : 0UL)
+ 645:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 646:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   else
+ 647:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 648:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     return(0U);
+ 649:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 650:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+ 651:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 652:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 653:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 654:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Disable Interrupt
+ 655:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \details Disables a device specific interrupt in the NVIC interrupt controller.
+ 656:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 657:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 658:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 659:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
+ 660:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 661:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 662:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 663:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ICER[0U] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
+ 664:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     __DSB();
+ 665:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     __ISB();
+ 666:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 667:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+ 668:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 669:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 670:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 671:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Get Pending Interrupt
+ 672:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \details Reads the NVIC pending register and returns the pending bit for the specified device spe
+ 673:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 674:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \return             0  Interrupt status is not pending.
+ 675:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \return             1  Interrupt status is pending.
+ 676:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 677:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 678:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
+ 679:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 680:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 681:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 682:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     return((uint32_t)(((NVIC->ISPR[0U] & (1UL << (((uint32_t)IRQn) & 0x1FUL))) != 0UL) ? 1UL : 0UL)
+ 683:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 684:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   else
+ 685:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 686:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     return(0U);
+ 687:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 688:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+ 689:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 690:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 691:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 692:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Set Pending Interrupt
+ 693:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \details Sets the pending bit of a device specific interrupt in the NVIC pending register.
+ 694:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 695:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 696:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 697:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
+ 698:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 699:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 700:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 701:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ISPR[0U] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
+ 702:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 703:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+ 704:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 705:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 706:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 707:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Clear Pending Interrupt
+ 708:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \details Clears the pending bit of a device specific interrupt in the NVIC pending register.
+ 709:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Device specific interrupt number.
+ 710:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \note    IRQn must not be negative.
+ 711:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 712:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+ 713:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+ 714:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+ 715:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 716:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->ICPR[0U] = (uint32_t)(1UL << (((uint32_t)IRQn) & 0x1FUL));
+ 717:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 718:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+ 719:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 720:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** 
+ 721:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** /**
+ 722:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \brief   Set Interrupt Priority
+ 723:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \details Sets the priority of a device specific interrupt or a processor exception.
+ 724:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****            The interrupt number can be positive to specify a device specific interrupt,
+ 725:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****            or negative to specify a processor exception.
+ 726:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]      IRQn  Interrupt number.
+ 727:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \param [in]  priority  Priority to set.
+ 728:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   \note    The priority cannot be set for every processor exception.
+ 729:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****  */
+ 730:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+ 731:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** {
+  77              	 .loc 1 731 0
+  78              	 .cfi_startproc
+  79 0000 B0B5     	 push {r4,r5,r7,lr}
+  80              	.LCFI3:
+  81              	 .cfi_def_cfa_offset 16
+  82              	 .cfi_offset 4,-16
+  83              	 .cfi_offset 5,-12
+  84              	 .cfi_offset 7,-8
+  85              	 .cfi_offset 14,-4
+  86 0002 82B0     	 sub sp,sp,#8
+  87              	.LCFI4:
+  88              	 .cfi_def_cfa_offset 24
+  89 0004 00AF     	 add r7,sp,#0
+  90              	.LCFI5:
+  91              	 .cfi_def_cfa_register 7
+  92 0006 021C     	 mov r2,r0
+  93 0008 3960     	 str r1,[r7]
+  94 000a FB1D     	 add r3,r7,#7
+  95 000c 1A70     	 strb r2,[r3]
+ 732:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   if ((int32_t)(IRQn) >= 0)
+  96              	 .loc 1 732 0
+  97 000e FB1D     	 add r3,r7,#7
+  98 0010 1B78     	 ldrb r3,[r3]
+  99 0012 7F2B     	 cmp r3,#127
+ 100 0014 27D8     	 bhi .L6
+ 733:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 734:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     NVIC->IP[_IP_IDX(IRQn)]  = ((uint32_t)(NVIC->IP[_IP_IDX(IRQn)]  & ~(0xFFUL << _BIT_SHIFT(IRQn))
+ 101              	 .loc 1 734 0
+ 102 0016 2D4C     	 ldr r4,.L8
+ 103 0018 FB1D     	 add r3,r7,#7
+ 104 001a 1B78     	 ldrb r3,[r3]
+ 105 001c 5BB2     	 sxtb r3,r3
+ 106 001e 9B08     	 lsr r3,r3,#2
+ 107 0020 2A49     	 ldr r1,.L8
+ 108 0022 FA1D     	 add r2,r7,#7
+ 109 0024 1278     	 ldrb r2,[r2]
+ 110 0026 52B2     	 sxtb r2,r2
+ 111 0028 9208     	 lsr r2,r2,#2
+ 112 002a C032     	 add r2,r2,#192
+ 113 002c 9200     	 lsl r2,r2,#2
+ 114 002e 5258     	 ldr r2,[r2,r1]
+ 115 0030 F91D     	 add r1,r7,#7
+ 116 0032 0978     	 ldrb r1,[r1]
+ 117 0034 081C     	 mov r0,r1
+ 118 0036 0321     	 mov r1,#3
+ 119 0038 0140     	 and r1,r0
+ 120 003a C900     	 lsl r1,r1,#3
+ 121 003c 081C     	 mov r0,r1
+ 122 003e FF21     	 mov r1,#255
+ 123 0040 8140     	 lsl r1,r1,r0
+ 124 0042 C943     	 mvn r1,r1
+ 125 0044 1140     	 and r1,r2
+ 735:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 126              	 .loc 1 735 0
+ 127 0046 3A68     	 ldr r2,[r7]
+ 128 0048 9201     	 lsl r2,r2,#6
+ 129 004a FF20     	 mov r0,#255
+ 130 004c 0240     	 and r2,r0
+ 131 004e F81D     	 add r0,r7,#7
+ 132 0050 0078     	 ldrb r0,[r0]
+ 133 0052 051C     	 mov r5,r0
+ 134 0054 0320     	 mov r0,#3
+ 135 0056 2840     	 and r0,r5
+ 136 0058 C000     	 lsl r0,r0,#3
+ 137 005a 8240     	 lsl r2,r2,r0
+ 734:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 138              	 .loc 1 734 0
+ 139 005c 0A43     	 orr r2,r1
+ 140 005e C033     	 add r3,r3,#192
+ 141 0060 9B00     	 lsl r3,r3,#2
+ 142 0062 1A51     	 str r2,[r3,r4]
+ 143 0064 2EE0     	 b .L5
+ 144              	.L6:
+ 736:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 737:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   else
+ 738:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   {
+ 739:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****     SCB->SHP[_SHP_IDX(IRQn)] = ((uint32_t)(SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFFUL << _BIT_SHIFT(IRQn))
+ 145              	 .loc 1 739 0
+ 146 0066 1A4C     	 ldr r4,.L8+4
+ 147 0068 FB1D     	 add r3,r7,#7
+ 148 006a 1B78     	 ldrb r3,[r3]
+ 149 006c 1A1C     	 mov r2,r3
+ 150 006e 0F23     	 mov r3,#15
+ 151 0070 1340     	 and r3,r2
+ 152 0072 083B     	 sub r3,r3,#8
+ 153 0074 9908     	 lsr r1,r3,#2
+ 154 0076 164A     	 ldr r2,.L8+4
+ 155 0078 FB1D     	 add r3,r7,#7
+ 156 007a 1B78     	 ldrb r3,[r3]
+ 157 007c 181C     	 mov r0,r3
+ 158 007e 0F23     	 mov r3,#15
+ 159 0080 0340     	 and r3,r0
+ 160 0082 083B     	 sub r3,r3,#8
+ 161 0084 9B08     	 lsr r3,r3,#2
+ 162 0086 0633     	 add r3,r3,#6
+ 163 0088 9B00     	 lsl r3,r3,#2
+ 164 008a D318     	 add r3,r2,r3
+ 165 008c 5B68     	 ldr r3,[r3,#4]
+ 166 008e FA1D     	 add r2,r7,#7
+ 167 0090 1278     	 ldrb r2,[r2]
+ 168 0092 101C     	 mov r0,r2
+ 169 0094 0322     	 mov r2,#3
+ 170 0096 0240     	 and r2,r0
+ 171 0098 D200     	 lsl r2,r2,#3
+ 172 009a 101C     	 mov r0,r2
+ 173 009c FF22     	 mov r2,#255
+ 174 009e 8240     	 lsl r2,r2,r0
+ 175 00a0 D243     	 mvn r2,r2
+ 176 00a2 1A40     	 and r2,r3
+ 740:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 177              	 .loc 1 740 0
+ 178 00a4 3B68     	 ldr r3,[r7]
+ 179 00a6 9B01     	 lsl r3,r3,#6
+ 180 00a8 FF20     	 mov r0,#255
+ 181 00aa 0340     	 and r3,r0
+ 182 00ac F81D     	 add r0,r7,#7
+ 183 00ae 0078     	 ldrb r0,[r0]
+ 184 00b0 051C     	 mov r5,r0
+ 185 00b2 0320     	 mov r0,#3
+ 186 00b4 2840     	 and r0,r5
+ 187 00b6 C000     	 lsl r0,r0,#3
+ 188 00b8 8340     	 lsl r3,r3,r0
+ 739:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 189              	 .loc 1 739 0
+ 190 00ba 1A43     	 orr r2,r3
+ 191 00bc 8B1D     	 add r3,r1,#6
+ 192 00be 9B00     	 lsl r3,r3,#2
+ 193 00c0 E318     	 add r3,r4,r3
+ 194 00c2 5A60     	 str r2,[r3,#4]
+ 195              	.L5:
+ 741:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h ****   }
+ 742:N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Include\core_cm0.h **** }
+ 196              	 .loc 1 742 0
+ 197 00c4 BD46     	 mov sp,r7
+ 198 00c6 02B0     	 add sp,sp,#8
+ 199              	 
+ 200 00c8 B0BD     	 pop {r4,r5,r7,pc}
+ 201              	.L9:
+ 202 00ca C046     	 .align 2
+ 203              	.L8:
+ 204 00cc 00E100E0 	 .word -536813312
+ 205 00d0 00ED00E0 	 .word -536810240
+ 206              	 .cfi_endproc
+ 207              	.LFE31:
+ 209              	 .section .text.INTERRUPT_Enable,"ax",%progbits
+ 210              	 .align 2
+ 211              	 .code 16
+ 212              	 .thumb_func
+ 214              	INTERRUPT_Enable:
+ 215              	.LFB65:
+ 216              	 .file 2 "../Dave/Generated/INTERRUPT/interrupt.h"
+   1:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+   2:../Dave/Generated/INTERRUPT/interrupt.h ****  * @file interrupt.h
+   3:../Dave/Generated/INTERRUPT/interrupt.h ****  * @date 2015-10-05
+   4:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+   5:../Dave/Generated/INTERRUPT/interrupt.h ****  * NOTE:
+   6:../Dave/Generated/INTERRUPT/interrupt.h ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   7:../Dave/Generated/INTERRUPT/interrupt.h ****  * regenerated.
+   8:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+   9:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+  10:../Dave/Generated/INTERRUPT/interrupt.h ****  * @cond
+  11:../Dave/Generated/INTERRUPT/interrupt.h ****  **************************************************************************************************
+  12:../Dave/Generated/INTERRUPT/interrupt.h ****  * INTERRUPT v4.0.8 Helps the user to overwrite the provided ISR in system file
+  13:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  14:../Dave/Generated/INTERRUPT/interrupt.h ****  * Copyright (c) 2015, Infineon Technologies AG
+  15:../Dave/Generated/INTERRUPT/interrupt.h ****  * All rights reserved.
+  16:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  17:../Dave/Generated/INTERRUPT/interrupt.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  18:../Dave/Generated/INTERRUPT/interrupt.h ****  * following conditions are met:
+  19:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  20:../Dave/Generated/INTERRUPT/interrupt.h ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  21:../Dave/Generated/INTERRUPT/interrupt.h ****  *   disclaimer.
+  22:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  23:../Dave/Generated/INTERRUPT/interrupt.h ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  24:../Dave/Generated/INTERRUPT/interrupt.h ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  25:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  26:../Dave/Generated/INTERRUPT/interrupt.h ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  27:../Dave/Generated/INTERRUPT/interrupt.h ****  *   products derived from this software without specific prior written permission.
+  28:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  29:../Dave/Generated/INTERRUPT/interrupt.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  30:../Dave/Generated/INTERRUPT/interrupt.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  31:../Dave/Generated/INTERRUPT/interrupt.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  32:../Dave/Generated/INTERRUPT/interrupt.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  33:../Dave/Generated/INTERRUPT/interrupt.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  34:../Dave/Generated/INTERRUPT/interrupt.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  35:../Dave/Generated/INTERRUPT/interrupt.h ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  36:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  37:../Dave/Generated/INTERRUPT/interrupt.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  38:../Dave/Generated/INTERRUPT/interrupt.h ****  * with Infineon Technologies AG (dave@infineon.com).
+  39:../Dave/Generated/INTERRUPT/interrupt.h ****  **************************************************************************************************
+  40:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  41:../Dave/Generated/INTERRUPT/interrupt.h ****  * Change History
+  42:../Dave/Generated/INTERRUPT/interrupt.h ****  * --------------
+  43:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  44:../Dave/Generated/INTERRUPT/interrupt.h ****  * 2015-02-16:
+  45:../Dave/Generated/INTERRUPT/interrupt.h ****  *     - Initial version<br>
+  46:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  47:../Dave/Generated/INTERRUPT/interrupt.h ****  * 2015-05-08:
+  48:../Dave/Generated/INTERRUPT/interrupt.h ****  *     - subpriority field is biased based on family<br>
+  49:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  50:../Dave/Generated/INTERRUPT/interrupt.h ****  * 2015-07-30:
+  51:../Dave/Generated/INTERRUPT/interrupt.h ****  *     - Added a field named "irqctrl" for XMC1400 devices
+  52:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  53:../Dave/Generated/INTERRUPT/interrupt.h ****  * 2015-10-05:
+  54:../Dave/Generated/INTERRUPT/interrupt.h ****  *     - Merged config elements into the APP structure
+  55:../Dave/Generated/INTERRUPT/interrupt.h ****  * @endcond
+  56:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+  57:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+  58:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  59:../Dave/Generated/INTERRUPT/interrupt.h **** #ifndef INTERRUPT_H
+  60:../Dave/Generated/INTERRUPT/interrupt.h **** #define INTERRUPT_H
+  61:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  62:../Dave/Generated/INTERRUPT/interrupt.h **** /**************************************************************************************************
+  63:../Dave/Generated/INTERRUPT/interrupt.h ****  * HEADER FILES
+  64:../Dave/Generated/INTERRUPT/interrupt.h ****  **************************************************************************************************
+  65:../Dave/Generated/INTERRUPT/interrupt.h **** #include <xmc_common.h>
+  66:../Dave/Generated/INTERRUPT/interrupt.h **** #include <DAVE_Common.h>
+  67:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  68:../Dave/Generated/INTERRUPT/interrupt.h **** #if (UC_SERIES == XMC14)
+  69:../Dave/Generated/INTERRUPT/interrupt.h **** #include <xmc_scu.h>
+  70:../Dave/Generated/INTERRUPT/interrupt.h **** #endif
+  71:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  72:../Dave/Generated/INTERRUPT/interrupt.h **** #include "interrupt_conf.h"
+  73:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  74:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  75:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+  76:../Dave/Generated/INTERRUPT/interrupt.h ****  * @addtogroup INTERRUPT
+  77:../Dave/Generated/INTERRUPT/interrupt.h ****  * @{
+  78:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+  79:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  80:../Dave/Generated/INTERRUPT/interrupt.h **** /**************************************************************************************************
+  81:../Dave/Generated/INTERRUPT/interrupt.h ****  * MACROS
+  82:../Dave/Generated/INTERRUPT/interrupt.h ****  **************************************************************************************************
+  83:../Dave/Generated/INTERRUPT/interrupt.h **** 
+  84:../Dave/Generated/INTERRUPT/interrupt.h **** /**************************************************************************************************
+  85:../Dave/Generated/INTERRUPT/interrupt.h ****  * ENUMS
+  86:../Dave/Generated/INTERRUPT/interrupt.h ****  **************************************************************************************************
+  87:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+  88:../Dave/Generated/INTERRUPT/interrupt.h ****  * @ingroup INTERRUPT_enumerations
+  89:../Dave/Generated/INTERRUPT/interrupt.h ****  * @{
+  90:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+  91:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+  92:../Dave/Generated/INTERRUPT/interrupt.h ****  * Initialization status.
+  93:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+  94:../Dave/Generated/INTERRUPT/interrupt.h **** typedef enum INTERRUPT_STATUS
+  95:../Dave/Generated/INTERRUPT/interrupt.h **** {
+  96:../Dave/Generated/INTERRUPT/interrupt.h ****   INTERRUPT_STATUS_SUCCESS = 0U,  /**< APP initialization success */
+  97:../Dave/Generated/INTERRUPT/interrupt.h ****   INTERRUPT_STATUS_FAILURE = 1U   /**< APP initialization failure */
+  98:../Dave/Generated/INTERRUPT/interrupt.h **** } INTERRUPT_STATUS_t;
+  99:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 100:../Dave/Generated/INTERRUPT/interrupt.h ****  * @}
+ 101:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 102:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 103:../Dave/Generated/INTERRUPT/interrupt.h **** /**************************************************************************************************
+ 104:../Dave/Generated/INTERRUPT/interrupt.h ****  * DATA STRUCTURES
+ 105:../Dave/Generated/INTERRUPT/interrupt.h ****  **************************************************************************************************
+ 106:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 107:../Dave/Generated/INTERRUPT/interrupt.h ****  * @ingroup INTERRUPT_datastructures
+ 108:../Dave/Generated/INTERRUPT/interrupt.h ****  * @{
+ 109:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 110:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 111:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 112:../Dave/Generated/INTERRUPT/interrupt.h ****  * @brief This structure holds run-time configurations of INTERRUPT APP.
+ 113:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 114:../Dave/Generated/INTERRUPT/interrupt.h **** typedef struct INTERRUPT
+ 115:../Dave/Generated/INTERRUPT/interrupt.h **** {
+ 116:../Dave/Generated/INTERRUPT/interrupt.h **** #if(UC_SERIES == XMC14)
+ 117:../Dave/Generated/INTERRUPT/interrupt.h ****   const XMC_SCU_IRQCTRL_t irqctrl;  /**< selects the interrupt source for a NVIC interrupt node*/
+ 118:../Dave/Generated/INTERRUPT/interrupt.h **** #endif	
+ 119:../Dave/Generated/INTERRUPT/interrupt.h ****   const IRQn_Type node;       /**< Mapped NVIC Node */
+ 120:../Dave/Generated/INTERRUPT/interrupt.h ****   const uint8_t priority; 	  /**< Node Interrupt Priority */
+ 121:../Dave/Generated/INTERRUPT/interrupt.h **** #if(UC_FAMILY == XMC4)
+ 122:../Dave/Generated/INTERRUPT/interrupt.h ****   const uint8_t subpriority;  /**< Node Interrupt SubPriority only valid for XMC4x */
+ 123:../Dave/Generated/INTERRUPT/interrupt.h **** #endif  
+ 124:../Dave/Generated/INTERRUPT/interrupt.h ****   const bool enable_at_init;  /**< Interrupt enable for Node */
+ 125:../Dave/Generated/INTERRUPT/interrupt.h **** } INTERRUPT_t;
+ 126:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 127:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 128:../Dave/Generated/INTERRUPT/interrupt.h ****  * @}
+ 129:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 130:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 131:../Dave/Generated/INTERRUPT/interrupt.h **** /**************************************************************************************************
+ 132:../Dave/Generated/INTERRUPT/interrupt.h ****  * API PROTOTYPES
+ 133:../Dave/Generated/INTERRUPT/interrupt.h ****  **************************************************************************************************
+ 134:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 135:../Dave/Generated/INTERRUPT/interrupt.h **** #ifdef __cplusplus
+ 136:../Dave/Generated/INTERRUPT/interrupt.h **** extern "C" {
+ 137:../Dave/Generated/INTERRUPT/interrupt.h **** #endif
+ 138:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 139:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 140:../Dave/Generated/INTERRUPT/interrupt.h ****  * @ingroup INTERRUPT_apidoc
+ 141:../Dave/Generated/INTERRUPT/interrupt.h ****  * @{
+ 142:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 143:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 144:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 145:../Dave/Generated/INTERRUPT/interrupt.h ****  * @brief Get INTERRUPT APP version.
+ 146:../Dave/Generated/INTERRUPT/interrupt.h ****  * @return @ref DAVE_APP_VERSION_t APP version information (major, minor and
+ 147:../Dave/Generated/INTERRUPT/interrupt.h ****  *                                 patch number)
+ 148:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+ 149:../Dave/Generated/INTERRUPT/interrupt.h ****  * \par<b>Description: </b><br>
+ 150:../Dave/Generated/INTERRUPT/interrupt.h ****  * The function can be used to check application software compatibility with a
+ 151:../Dave/Generated/INTERRUPT/interrupt.h ****  * specific version of the APP.
+ 152:../Dave/Generated/INTERRUPT/interrupt.h ****  * @code
+ 153:../Dave/Generated/INTERRUPT/interrupt.h ****  * #include <DAVE.h>
+ 154:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+ 155:../Dave/Generated/INTERRUPT/interrupt.h ****  * int main(void)
+ 156:../Dave/Generated/INTERRUPT/interrupt.h ****  * {
+ 157:../Dave/Generated/INTERRUPT/interrupt.h ****  *   DAVE_APP_VERSION_t version;
+ 158:../Dave/Generated/INTERRUPT/interrupt.h ****  *   DAVE_Init();
+ 159:../Dave/Generated/INTERRUPT/interrupt.h ****  *   version = INTERRUPT_GetAppVersion();
+ 160:../Dave/Generated/INTERRUPT/interrupt.h ****  *   if(version.major != 4U)
+ 161:../Dave/Generated/INTERRUPT/interrupt.h ****  *   {
+ 162:../Dave/Generated/INTERRUPT/interrupt.h ****  *   }
+ 163:../Dave/Generated/INTERRUPT/interrupt.h ****  *   while(1)
+ 164:../Dave/Generated/INTERRUPT/interrupt.h ****  *   {}
+ 165:../Dave/Generated/INTERRUPT/interrupt.h ****  *   return 0;
+ 166:../Dave/Generated/INTERRUPT/interrupt.h ****  * }
+ 167:../Dave/Generated/INTERRUPT/interrupt.h ****  * @endcode<BR> </p>
+ 168:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 169:../Dave/Generated/INTERRUPT/interrupt.h **** DAVE_APP_VERSION_t INTERRUPT_GetAppVersion(void);
+ 170:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 171:../Dave/Generated/INTERRUPT/interrupt.h ****  * @brief Initializes INTERRUPT APP instance.
+ 172:../Dave/Generated/INTERRUPT/interrupt.h ****  * @param handle Constant pointer to constant structure of type @ref INTERRUPT_t
+ 173:../Dave/Generated/INTERRUPT/interrupt.h ****  * @return @ref INTERRUPT_STATUS_t
+ 174:../Dave/Generated/INTERRUPT/interrupt.h ****  * <BR><P ALIGN="LEFT"><B>Example:</B>
+ 175:../Dave/Generated/INTERRUPT/interrupt.h ****  * Pre-requisite: Instantiate one instance of INTERRUPT APP
+ 176:../Dave/Generated/INTERRUPT/interrupt.h ****  * @code
+ 177:../Dave/Generated/INTERRUPT/interrupt.h ****  *  #include <DAVE.h>
+ 178:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+ 179:../Dave/Generated/INTERRUPT/interrupt.h ****  *  int main(void)
+ 180:../Dave/Generated/INTERRUPT/interrupt.h ****  *  {
+ 181:../Dave/Generated/INTERRUPT/interrupt.h ****  *    DAVE_Init();  // INTERRUPT_Init(&INTERRUPT_0) is called within DAVE_Init()
+ 182:../Dave/Generated/INTERRUPT/interrupt.h ****  *    while(1)
+ 183:../Dave/Generated/INTERRUPT/interrupt.h ****  *    {}
+ 184:../Dave/Generated/INTERRUPT/interrupt.h ****  *    return 0;
+ 185:../Dave/Generated/INTERRUPT/interrupt.h ****  *  }
+ 186:../Dave/Generated/INTERRUPT/interrupt.h ****  * @endcode<BR> </p>
+ 187:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+ 188:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 189:../Dave/Generated/INTERRUPT/interrupt.h **** INTERRUPT_STATUS_t INTERRUPT_Init(const INTERRUPT_t *const handler);
+ 190:../Dave/Generated/INTERRUPT/interrupt.h **** 
+ 191:../Dave/Generated/INTERRUPT/interrupt.h **** /**
+ 192:../Dave/Generated/INTERRUPT/interrupt.h ****  * @brief Enables the IRQ.
+ 193:../Dave/Generated/INTERRUPT/interrupt.h ****  * @param handle Constant pointer to constant structure of type @ref INTERRUPT_t
+ 194:../Dave/Generated/INTERRUPT/interrupt.h ****  * @return None
+ 195:../Dave/Generated/INTERRUPT/interrupt.h ****  * <BR><P ALIGN="LEFT"><B>Example:</B>
+ 196:../Dave/Generated/INTERRUPT/interrupt.h ****  * Pre-requisite: Instantiate one instance of INTERRUPT APP
+ 197:../Dave/Generated/INTERRUPT/interrupt.h ****  * @code
+ 198:../Dave/Generated/INTERRUPT/interrupt.h ****  *  #include <DAVE.h>
+ 199:../Dave/Generated/INTERRUPT/interrupt.h ****  *
+ 200:../Dave/Generated/INTERRUPT/interrupt.h ****  *  int main(void)
+ 201:../Dave/Generated/INTERRUPT/interrupt.h ****  *  {
+ 202:../Dave/Generated/INTERRUPT/interrupt.h ****  *    DAVE_Init(); // INTERRUPT_Init() is called within DAVE_Init()
+ 203:../Dave/Generated/INTERRUPT/interrupt.h ****  *    INTERRUPT_Enable(&INTERRUPT_0);
+ 204:../Dave/Generated/INTERRUPT/interrupt.h ****  *    while(1)
+ 205:../Dave/Generated/INTERRUPT/interrupt.h ****  *    {}
+ 206:../Dave/Generated/INTERRUPT/interrupt.h ****  *    return 0;
+ 207:../Dave/Generated/INTERRUPT/interrupt.h ****  *  }
+ 208:../Dave/Generated/INTERRUPT/interrupt.h ****  * @endcode<BR> </p>
+ 209:../Dave/Generated/INTERRUPT/interrupt.h ****  */
+ 210:../Dave/Generated/INTERRUPT/interrupt.h **** __STATIC_INLINE void INTERRUPT_Enable(const INTERRUPT_t *const handler)
+ 211:../Dave/Generated/INTERRUPT/interrupt.h **** {
+ 217              	 .loc 2 211 0
+ 218              	 .cfi_startproc
+ 219 0000 80B5     	 push {r7,lr}
+ 220              	.LCFI6:
+ 221              	 .cfi_def_cfa_offset 8
+ 222              	 .cfi_offset 7,-8
+ 223              	 .cfi_offset 14,-4
+ 224 0002 82B0     	 sub sp,sp,#8
+ 225              	.LCFI7:
+ 226              	 .cfi_def_cfa_offset 16
+ 227 0004 00AF     	 add r7,sp,#0
+ 228              	.LCFI8:
+ 229              	 .cfi_def_cfa_register 7
+ 230 0006 7860     	 str r0,[r7,#4]
+ 212:../Dave/Generated/INTERRUPT/interrupt.h ****   XMC_ASSERT("Handler NULL", (handler != NULL));
+ 213:../Dave/Generated/INTERRUPT/interrupt.h ****   NVIC_EnableIRQ(handler->node);
+ 231              	 .loc 2 213 0
+ 232 0008 7B68     	 ldr r3,[r7,#4]
+ 233 000a 9B78     	 ldrb r3,[r3,#2]
+ 234 000c 5BB2     	 sxtb r3,r3
+ 235 000e 181C     	 mov r0,r3
+ 236 0010 FFF7FEFF 	 bl __NVIC_EnableIRQ
+ 214:../Dave/Generated/INTERRUPT/interrupt.h **** }
+ 237              	 .loc 2 214 0
+ 238 0014 BD46     	 mov sp,r7
+ 239 0016 02B0     	 add sp,sp,#8
+ 240              	 
+ 241 0018 80BD     	 pop {r7,pc}
+ 242              	 .cfi_endproc
+ 243              	.LFE65:
+ 245 001a C046     	 .section .text.INTERRUPT_GetAppVersion,"ax",%progbits
+ 246              	 .align 2
+ 247              	 .global INTERRUPT_GetAppVersion
+ 248              	 .code 16
+ 249              	 .thumb_func
+ 251              	INTERRUPT_GetAppVersion:
+ 252              	.LFB70:
+ 253              	 .file 3 "../Dave/Generated/INTERRUPT/interrupt.c"
+   1:../Dave/Generated/INTERRUPT/interrupt.c **** /**
+   2:../Dave/Generated/INTERRUPT/interrupt.c ****  * @file interrupt.c
+   3:../Dave/Generated/INTERRUPT/interrupt.c ****  * @date 2015-09-18
+   4:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+   5:../Dave/Generated/INTERRUPT/interrupt.c ****  * NOTE:
+   6:../Dave/Generated/INTERRUPT/interrupt.c ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   7:../Dave/Generated/INTERRUPT/interrupt.c ****  */
+   8:../Dave/Generated/INTERRUPT/interrupt.c **** /**
+   9:../Dave/Generated/INTERRUPT/interrupt.c ****  * @cond
+  10:../Dave/Generated/INTERRUPT/interrupt.c ****  **************************************************************************************************
+  11:../Dave/Generated/INTERRUPT/interrupt.c ****  * INTERRUPT v4.0.8 Helps the user to overwrite the provided ISR in system file
+  12:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  13:../Dave/Generated/INTERRUPT/interrupt.c ****  * Copyright (c) 2015, Infineon Technologies AG
+  14:../Dave/Generated/INTERRUPT/interrupt.c ****  * All rights reserved.
+  15:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  16:../Dave/Generated/INTERRUPT/interrupt.c ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  17:../Dave/Generated/INTERRUPT/interrupt.c ****  * following conditions are met:
+  18:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  19:../Dave/Generated/INTERRUPT/interrupt.c ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  20:../Dave/Generated/INTERRUPT/interrupt.c ****  *   disclaimer.
+  21:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  22:../Dave/Generated/INTERRUPT/interrupt.c ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  23:../Dave/Generated/INTERRUPT/interrupt.c ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  24:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  25:../Dave/Generated/INTERRUPT/interrupt.c ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  26:../Dave/Generated/INTERRUPT/interrupt.c ****  *   products derived from this software without specific prior written permission.
+  27:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  28:../Dave/Generated/INTERRUPT/interrupt.c ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  29:../Dave/Generated/INTERRUPT/interrupt.c ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  30:../Dave/Generated/INTERRUPT/interrupt.c ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  31:../Dave/Generated/INTERRUPT/interrupt.c ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  32:../Dave/Generated/INTERRUPT/interrupt.c ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  33:../Dave/Generated/INTERRUPT/interrupt.c ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  34:../Dave/Generated/INTERRUPT/interrupt.c ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  35:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  36:../Dave/Generated/INTERRUPT/interrupt.c ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  37:../Dave/Generated/INTERRUPT/interrupt.c ****  * with Infineon Technologies AG (dave@infineon.com).
+  38:../Dave/Generated/INTERRUPT/interrupt.c ****  **************************************************************************************************
+  39:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  40:../Dave/Generated/INTERRUPT/interrupt.c ****  * Change History
+  41:../Dave/Generated/INTERRUPT/interrupt.c ****  * --------------
+  42:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  43:../Dave/Generated/INTERRUPT/interrupt.c ****  * 2015-02-16:
+  44:../Dave/Generated/INTERRUPT/interrupt.c ****  *     - Initial version<br>
+  45:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  46:../Dave/Generated/INTERRUPT/interrupt.c ****  * 2015-07-30:
+  47:../Dave/Generated/INTERRUPT/interrupt.c ****  *     - Added support for XMC1400 devices
+  48:../Dave/Generated/INTERRUPT/interrupt.c ****  * 2015-09-18:
+  49:../Dave/Generated/INTERRUPT/interrupt.c ****  *     - Removed config structure access
+  50:../Dave/Generated/INTERRUPT/interrupt.c ****  * @endcond
+  51:../Dave/Generated/INTERRUPT/interrupt.c ****  *
+  52:../Dave/Generated/INTERRUPT/interrupt.c ****  */
+  53:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  54:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  55:../Dave/Generated/INTERRUPT/interrupt.c **** /**************************************************************************************************
+  56:../Dave/Generated/INTERRUPT/interrupt.c ****  * HEADER FILES
+  57:../Dave/Generated/INTERRUPT/interrupt.c ****  **************************************************************************************************
+  58:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  59:../Dave/Generated/INTERRUPT/interrupt.c **** #include "interrupt.h"
+  60:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  61:../Dave/Generated/INTERRUPT/interrupt.c **** /**************************************************************************************************
+  62:../Dave/Generated/INTERRUPT/interrupt.c **** 	* MACROS
+  63:../Dave/Generated/INTERRUPT/interrupt.c ****  **************************************************************************************************
+  64:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  65:../Dave/Generated/INTERRUPT/interrupt.c **** /**************************************************************************************************
+  66:../Dave/Generated/INTERRUPT/interrupt.c ****  * LOCAL DATA
+  67:../Dave/Generated/INTERRUPT/interrupt.c ****  **************************************************************************************************
+  68:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  69:../Dave/Generated/INTERRUPT/interrupt.c **** /**************************************************************************************************
+  70:../Dave/Generated/INTERRUPT/interrupt.c ****  * LOCAL ROUTINES
+  71:../Dave/Generated/INTERRUPT/interrupt.c ****  **************************************************************************************************
+  72:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  73:../Dave/Generated/INTERRUPT/interrupt.c **** /**************************************************************************************************
+  74:../Dave/Generated/INTERRUPT/interrupt.c **** * API IMPLEMENTATION
+  75:../Dave/Generated/INTERRUPT/interrupt.c **** ***************************************************************************************************
+  76:../Dave/Generated/INTERRUPT/interrupt.c **** /*
+  77:../Dave/Generated/INTERRUPT/interrupt.c ****  * API to retrieve the version of the INTERRUPT APP
+  78:../Dave/Generated/INTERRUPT/interrupt.c ****  */
+  79:../Dave/Generated/INTERRUPT/interrupt.c **** DAVE_APP_VERSION_t INTERRUPT_GetAppVersion(void)
+  80:../Dave/Generated/INTERRUPT/interrupt.c **** {
+ 254              	 .loc 3 80 0
+ 255              	 .cfi_startproc
+ 256 0000 80B5     	 push {r7,lr}
+ 257              	.LCFI9:
+ 258              	 .cfi_def_cfa_offset 8
+ 259              	 .cfi_offset 7,-8
+ 260              	 .cfi_offset 14,-4
+ 261 0002 82B0     	 sub sp,sp,#8
+ 262              	.LCFI10:
+ 263              	 .cfi_def_cfa_offset 16
+ 264 0004 00AF     	 add r7,sp,#0
+ 265              	.LCFI11:
+ 266              	 .cfi_def_cfa_register 7
+  81:../Dave/Generated/INTERRUPT/interrupt.c ****   DAVE_APP_VERSION_t version;
+  82:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  83:../Dave/Generated/INTERRUPT/interrupt.c ****   version.major = INTERRUPT_MAJOR_VERSION;
+ 267              	 .loc 3 83 0
+ 268 0006 3B1C     	 mov r3,r7
+ 269 0008 0422     	 mov r2,#4
+ 270 000a 1A70     	 strb r2,[r3]
+  84:../Dave/Generated/INTERRUPT/interrupt.c ****   version.minor = INTERRUPT_MINOR_VERSION;
+ 271              	 .loc 3 84 0
+ 272 000c 3B1C     	 mov r3,r7
+ 273 000e 0022     	 mov r2,#0
+ 274 0010 5A70     	 strb r2,[r3,#1]
+  85:../Dave/Generated/INTERRUPT/interrupt.c ****   version.patch = INTERRUPT_PATCH_VERSION;
+ 275              	 .loc 3 85 0
+ 276 0012 3B1C     	 mov r3,r7
+ 277 0014 0822     	 mov r2,#8
+ 278 0016 9A70     	 strb r2,[r3,#2]
+  86:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  87:../Dave/Generated/INTERRUPT/interrupt.c ****   return (version);
+ 279              	 .loc 3 87 0
+ 280 0018 3B1D     	 add r3,r7,#4
+ 281 001a 3A1C     	 mov r2,r7
+ 282 001c 1188     	 ldrh r1,[r2]
+ 283 001e 1980     	 strh r1,[r3]
+ 284 0020 9278     	 ldrb r2,[r2,#2]
+ 285 0022 9A70     	 strb r2,[r3,#2]
+ 286 0024 3A1D     	 add r2,r7,#4
+ 287 0026 0023     	 mov r3,#0
+ 288 0028 1178     	 ldrb r1,[r2]
+ 289 002a FF20     	 mov r0,#255
+ 290 002c 0140     	 and r1,r0
+ 291 002e FF20     	 mov r0,#255
+ 292 0030 8343     	 bic r3,r0
+ 293 0032 0B43     	 orr r3,r1
+ 294 0034 5178     	 ldrb r1,[r2,#1]
+ 295 0036 FF20     	 mov r0,#255
+ 296 0038 0140     	 and r1,r0
+ 297 003a 0902     	 lsl r1,r1,#8
+ 298 003c 0648     	 ldr r0,.L13
+ 299 003e 0340     	 and r3,r0
+ 300 0040 0B43     	 orr r3,r1
+ 301 0042 9278     	 ldrb r2,[r2,#2]
+ 302 0044 FF21     	 mov r1,#255
+ 303 0046 0A40     	 and r2,r1
+ 304 0048 1204     	 lsl r2,r2,#16
+ 305 004a 0449     	 ldr r1,.L13+4
+ 306 004c 0B40     	 and r3,r1
+ 307 004e 1343     	 orr r3,r2
+  88:../Dave/Generated/INTERRUPT/interrupt.c **** }
+ 308              	 .loc 3 88 0
+ 309 0050 181C     	 mov r0,r3
+ 310 0052 BD46     	 mov sp,r7
+ 311 0054 02B0     	 add sp,sp,#8
+ 312              	 
+ 313 0056 80BD     	 pop {r7,pc}
+ 314              	.L14:
+ 315              	 .align 2
+ 316              	.L13:
+ 317 0058 FF00FFFF 	 .word -65281
+ 318 005c FFFF00FF 	 .word -16711681
+ 319              	 .cfi_endproc
+ 320              	.LFE70:
+ 322              	 .section .text.INTERRUPT_Init,"ax",%progbits
+ 323              	 .align 2
+ 324              	 .global INTERRUPT_Init
+ 325              	 .code 16
+ 326              	 .thumb_func
+ 328              	INTERRUPT_Init:
+ 329              	.LFB71:
+  89:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  90:../Dave/Generated/INTERRUPT/interrupt.c **** /*
+  91:../Dave/Generated/INTERRUPT/interrupt.c ****  * API to initialize the INTERRUPT APP
+  92:../Dave/Generated/INTERRUPT/interrupt.c ****  */
+  93:../Dave/Generated/INTERRUPT/interrupt.c **** INTERRUPT_STATUS_t INTERRUPT_Init(const INTERRUPT_t *const handler)
+  94:../Dave/Generated/INTERRUPT/interrupt.c **** {
+ 330              	 .loc 3 94 0
+ 331              	 .cfi_startproc
+ 332 0000 80B5     	 push {r7,lr}
+ 333              	.LCFI12:
+ 334              	 .cfi_def_cfa_offset 8
+ 335              	 .cfi_offset 7,-8
+ 336              	 .cfi_offset 14,-4
+ 337 0002 82B0     	 sub sp,sp,#8
+ 338              	.LCFI13:
+ 339              	 .cfi_def_cfa_offset 16
+ 340 0004 00AF     	 add r7,sp,#0
+ 341              	.LCFI14:
+ 342              	 .cfi_def_cfa_register 7
+ 343 0006 7860     	 str r0,[r7,#4]
+  95:../Dave/Generated/INTERRUPT/interrupt.c ****   XMC_ASSERT("INTERRUPT_Init:HandlePtr NULL", (handler != NULL));
+  96:../Dave/Generated/INTERRUPT/interrupt.c ****   
+  97:../Dave/Generated/INTERRUPT/interrupt.c **** #if(UC_FAMILY == XMC4)
+  98:../Dave/Generated/INTERRUPT/interrupt.c **** 
+  99:../Dave/Generated/INTERRUPT/interrupt.c ****   NVIC_SetPriority(handler->node,
+ 100:../Dave/Generated/INTERRUPT/interrupt.c ****                    NVIC_EncodePriority(NVIC_GetPriorityGrouping(),
+ 101:../Dave/Generated/INTERRUPT/interrupt.c ****                                        handler->priority,
+ 102:../Dave/Generated/INTERRUPT/interrupt.c ****                                        handler->subpriority));
+ 103:../Dave/Generated/INTERRUPT/interrupt.c ****   if (handler->enable_at_init == true)
+ 104:../Dave/Generated/INTERRUPT/interrupt.c ****   {
+ 105:../Dave/Generated/INTERRUPT/interrupt.c ****     INTERRUPT_Enable(handler);
+ 106:../Dave/Generated/INTERRUPT/interrupt.c ****   }
+ 107:../Dave/Generated/INTERRUPT/interrupt.c **** #endif
+ 108:../Dave/Generated/INTERRUPT/interrupt.c **** 
+ 109:../Dave/Generated/INTERRUPT/interrupt.c **** #if(UC_FAMILY == XMC1)
+ 110:../Dave/Generated/INTERRUPT/interrupt.c ****   NVIC_SetPriority(handler->node, handler->priority);
+ 344              	 .loc 3 110 0
+ 345 0008 7B68     	 ldr r3,[r7,#4]
+ 346 000a 9A78     	 ldrb r2,[r3,#2]
+ 347 000c 7B68     	 ldr r3,[r7,#4]
+ 348 000e DB78     	 ldrb r3,[r3,#3]
+ 349 0010 191C     	 mov r1,r3
+ 350 0012 53B2     	 sxtb r3,r2
+ 351 0014 181C     	 mov r0,r3
+ 352 0016 FFF7FEFF 	 bl __NVIC_SetPriority
+ 111:../Dave/Generated/INTERRUPT/interrupt.c ****   
+ 112:../Dave/Generated/INTERRUPT/interrupt.c **** #if (UC_SERIES == XMC14)
+ 113:../Dave/Generated/INTERRUPT/interrupt.c ****   XMC_SCU_SetInterruptControl((uint8_t)handler->node, (XMC_SCU_IRQCTRL_t)((handler->node << 8) | ha
+ 353              	 .loc 3 113 0
+ 354 001a 7B68     	 ldr r3,[r7,#4]
+ 355 001c 9B78     	 ldrb r3,[r3,#2]
+ 356 001e DAB2     	 uxtb r2,r3
+ 357 0020 7B68     	 ldr r3,[r7,#4]
+ 358 0022 9B78     	 ldrb r3,[r3,#2]
+ 359 0024 5BB2     	 sxtb r3,r3
+ 360 0026 1B02     	 lsl r3,r3,#8
+ 361 0028 99B2     	 uxth r1,r3
+ 362 002a 7B68     	 ldr r3,[r7,#4]
+ 363 002c 1B88     	 ldrh r3,[r3]
+ 364 002e 9BB2     	 uxth r3,r3
+ 365 0030 0B43     	 orr r3,r1
+ 366 0032 9BB2     	 uxth r3,r3
+ 367 0034 9BB2     	 uxth r3,r3
+ 368 0036 101C     	 mov r0,r2
+ 369 0038 191C     	 mov r1,r3
+ 370 003a FFF7FEFF 	 bl XMC_SCU_SetInterruptControl
+ 114:../Dave/Generated/INTERRUPT/interrupt.c **** #endif
+ 115:../Dave/Generated/INTERRUPT/interrupt.c **** 
+ 116:../Dave/Generated/INTERRUPT/interrupt.c ****   /* Enable the interrupt if enable_at_init is enabled */
+ 117:../Dave/Generated/INTERRUPT/interrupt.c ****   if (handler->enable_at_init == true)
+ 371              	 .loc 3 117 0
+ 372 003e 7B68     	 ldr r3,[r7,#4]
+ 373 0040 1B79     	 ldrb r3,[r3,#4]
+ 374 0042 002B     	 cmp r3,#0
+ 375 0044 03D0     	 beq .L16
+ 118:../Dave/Generated/INTERRUPT/interrupt.c ****   {
+ 119:../Dave/Generated/INTERRUPT/interrupt.c ****     INTERRUPT_Enable(handler);
+ 376              	 .loc 3 119 0
+ 377 0046 7B68     	 ldr r3,[r7,#4]
+ 378 0048 181C     	 mov r0,r3
+ 379 004a FFF7FEFF 	 bl INTERRUPT_Enable
+ 380              	.L16:
+ 120:../Dave/Generated/INTERRUPT/interrupt.c ****   }
+ 121:../Dave/Generated/INTERRUPT/interrupt.c **** #endif
+ 122:../Dave/Generated/INTERRUPT/interrupt.c **** 
+ 123:../Dave/Generated/INTERRUPT/interrupt.c ****   return (INTERRUPT_STATUS_SUCCESS);
+ 381              	 .loc 3 123 0
+ 382 004e 0023     	 mov r3,#0
+ 124:../Dave/Generated/INTERRUPT/interrupt.c **** }
+ 383              	 .loc 3 124 0
+ 384 0050 181C     	 mov r0,r3
+ 385 0052 BD46     	 mov sp,r7
+ 386 0054 02B0     	 add sp,sp,#8
+ 387              	 
+ 388 0056 80BD     	 pop {r7,pc}
+ 389              	 .cfi_endproc
+ 390              	.LFE71:
+ 392              	 .text
+ 393              	.Letext0:
+ 394              	 .file 4 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 395              	 .file 5 "n:\\eecs 473\\dave_4-4-2_64bit_2018-02-23\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 396              	 .file 6 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/XMC1400.h"
+ 397              	 .file 7 "N:/EECS 473/Myoelectric/myoelectric/Dave/Generated/DAVE_Common.h"
+ 398              	 .file 8 "N:/EECS 473/Myoelectric/myoelectric/Libraries/XMCLib/inc/xmc1_scu.h"
+ 399              	 .file 9 "N:/EECS 473/Myoelectric/myoelectric/Libraries/CMSIS/Infineon/XMC1400_series/Include/system_XMC1400.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 interrupt.c
+    {standard input}:18     .text.__NVIC_EnableIRQ:00000000 $t
+    {standard input}:22     .text.__NVIC_EnableIRQ:00000000 __NVIC_EnableIRQ
+    {standard input}:66     .text.__NVIC_EnableIRQ:00000030 $d
+    {standard input}:71     .text.__NVIC_SetPriority:00000000 $t
+    {standard input}:75     .text.__NVIC_SetPriority:00000000 __NVIC_SetPriority
+    {standard input}:204    .text.__NVIC_SetPriority:000000cc $d
+    {standard input}:210    .text.INTERRUPT_Enable:00000000 $t
+    {standard input}:214    .text.INTERRUPT_Enable:00000000 INTERRUPT_Enable
+    {standard input}:246    .text.INTERRUPT_GetAppVersion:00000000 $t
+    {standard input}:251    .text.INTERRUPT_GetAppVersion:00000000 INTERRUPT_GetAppVersion
+    {standard input}:317    .text.INTERRUPT_GetAppVersion:00000058 $d
+    {standard input}:323    .text.INTERRUPT_Init:00000000 $t
+    {standard input}:328    .text.INTERRUPT_Init:00000000 INTERRUPT_Init
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+XMC_SCU_SetInterruptControl
